@@ -9,8 +9,6 @@ class boardController
         if(!isset($_GET["uri2"])) {
             require_once './views/board.php';
         }
-
-
     }
 
     public function submissions(){
@@ -62,7 +60,6 @@ class boardController
 
             if(isset($avdata[0])) {
                 $avdata = $avdata[0];
-
                 $now = DateTime::createFromFormat('H:i:s', date("H:i:s", strtotime("now")));
                 $start = DateTime::createFromFormat('H:i:s', $avdata["StartTime"]);
                 $end = DateTime::createFromFormat('H:i:s', $avdata["EndTime"]);
@@ -75,13 +72,11 @@ class boardController
             }else{
                 $data[$key]["Available"] = 0;
             }
-
-
         }
+
         header('Content-Type: application/json');
         echo json_encode($data);
     }
-
 }
 
 ?>

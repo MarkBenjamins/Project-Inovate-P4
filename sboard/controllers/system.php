@@ -42,7 +42,6 @@ class systemController
             echo json_encode(true);
         }
     }
-
 }
 
 ?>

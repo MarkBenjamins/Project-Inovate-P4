@@ -179,9 +179,6 @@ class usersController
         }
         header("Location: /users");
     }
-
-
-
 }
 
 ?>

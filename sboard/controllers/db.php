@@ -4,7 +4,6 @@ define("DBU","loves21_sboard");
 define("DBP","RQ6J2hzs40");
 define("DBN","loves21_sboard");
 
-
 class Database
 {
     public function __construct(){
@@ -20,8 +19,6 @@ class Database
         }
         return $con;
     }
-
-
 }
 
 ?>
