@@ -1,0 +1,34 @@
+<?php
+//error_reporting(E_ALL | E_STRICT);
+error_reporting();
+ini_set('display_errors', 0);
+
+
+foreach(glob("controllers/*.php") as $file){
+    require $file;
+}
+$ses = new SessionController;
+$token = "ce46ba460ce7da28734b1e88d5c3714fd68dd3c32ea81c955172e5de7393dcf8";
+
+if($ses->checkSession() || isset($_GET["uri"]) && $_GET["uri"] == "session" || isset($_GET["uri"]) && $_GET["uri"] == "upload"
+    || isset($_GET["token"]) && $_GET["token"] == $token && isset($_GET["uri"]) && $_GET["uri"] == "board") {
+
+    if (isset($_GET["uri"])) {
+        $cont = $_GET["uri"] . "Controller";
+        $cont = new $cont();
+    } else {
+        $cont = "availabilityController";
+        $cont = new $cont();
+    }
+
+    if (isset($_GET["uri2"])) {
+        if (method_exists($cont, $_GET["uri2"])) {
+            $method = $_GET["uri2"];
+            $cont->$method();
+        }
+    }
+
+}else{
+    $ses->showLogin();
+}
+?>
