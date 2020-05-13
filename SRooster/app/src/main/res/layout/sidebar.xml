@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="left|center"
+    android:clickable="false"
+    android:focusable="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="105dp"
+        android:background="@color/SideBarBG"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_marginTop="5dp"
+            android:background="@drawable/circle"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/sidebarLetters"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="OM"
+                android:textColor="#fff" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/SideBarBG"
+            android:clickable="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/sidebarName"
+                android:layout_width="match_parent"
+                android:layout_height="18dp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/sidebarEmail"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text=""
+                android:textColor="@android:color/white"
+                android:textSize="13sp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="100dp"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/FavoriteList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/background_light"
+            android:clickable="false"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:focusable="false" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-110dp"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/NavList"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="1dp"
+            android:background="@android:color/background_light"
+            android:clickable="false"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:focusable="false" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>
