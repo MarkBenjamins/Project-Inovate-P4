@@ -2,8 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css" type="text/css">
-        <link rel="stylesheet" href="bootstrap-grid.css" type="text/css">
+        <link rel="stylesheet" href="Css/style.css" type="text/css">
+        <link rel="stylesheet" href="Css/bootstrap-grid.css" type="text/css">
         <title></title>
     </head>
     <body>
