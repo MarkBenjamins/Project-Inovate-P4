@@ -22,6 +22,7 @@ body
     background-color: white;
     margin-right: 10px;
     margin-left: 10px;
+    text-align: center;
 }
 
 .darkmode
@@ -29,21 +30,24 @@ body
     height: 70px;
     width: 70px;
     background-color: grey;
-    margin-right: 10px;
     margin-left: 10px;
     float: right;
 }
 
-.worksheet 
+.worksheet
+{
+    padding-left: 40px;
+}
+
+.newsfeed 
 {
     height: 100%;
     background-color: white;
-    border: 20px solid var(--light-blue-color);
-    margin-left: 30px;
-    padding: 10px;
+    margin-left: 10px;
 }
 
 .aanwezigheid
 {
+    
 }
 
