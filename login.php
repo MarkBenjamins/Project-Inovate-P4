@@ -9,6 +9,7 @@
 </form>
 
 <?php
+require "DBConnect.php";
 if (isset($_POST["submit"])) 
 {
     // Als invoer-velden leeg zijn error.
