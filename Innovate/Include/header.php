@@ -1,11 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
         <link rel="stylesheet" href="Css/style.css" type="text/css">
         <link rel="stylesheet" href="Css/bootstrap-grid.css" type="text/css">
+        <meta charset="UTF-8">
+        <meta name="description" content="Project innovate INF1C">
+        <meta name="author" content=
+            "Tessa Ramaker, 
+            Mark Benjamins, 
+            Koen Somsen, 
+            Jenny van Engelenburg, 
+            Arjan Vijn, 
+            Niels Exel, 
+            Daniël Roosken,
+            Storm Visser"
+        >
         <title></title>
     </head>
+
     <body>
         <?php
         /*  Huidige tijd, datum en weeknummer.
