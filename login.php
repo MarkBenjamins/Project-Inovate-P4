@@ -21,18 +21,10 @@ if (isset($_POST["submit"]))
         $Username = $_POST["Username"];
         $password = $_POST["password"];
 
-        // hier moet db naam nog bij in
-        $connect = mysqli_connect("localhost", "root", "", "");
-
-        // hier moet een goede query
-        $sql = "SELECT * FROM gebruikers WHERE `gebruikersnaam` = ?";
-
-        if ($stmt = mysqli_prepare($connect, $sql)) 
-        {
 
            // stuk code om de data te versturen en te controleren
 
-        }
+
     }
 }
 ?>
