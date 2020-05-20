@@ -15,16 +15,16 @@
     }
     else 
     {
-        $DBName = "naam";
-        $Tablename = "naam";
+        $DBName = "innovate";
+        $Tablename = "docent";
         mysqli_select_db($DBConnect, $DBName);
 
-        $SQL = "SELECT";
+        $SQL = "SELECT `Status`, `Voornaam`, `Achternaam`, `Foto` FROM `docent`";
 
         if ($stmt = mysqli_prepare($DBConnect, $SQL))
         {
             $SQLResult = mysqli_stmt_execute($stmt);
-            mysqli_stmt_bind_result($stmt, $name, $picture, $available);
+            mysqli_stmt_bind_result($stmt, $status, $fname, $lname, $picpath);
             mysqli_stmt_store_result($stmt);
 
             if ($SQLResult !== false)
@@ -32,7 +32,9 @@
                 $numberOfRows = mysqli_stmt_num_rows($stmt);
                 while (mysqli_stmt_fetch($stmt))
                 {
-                    echo "resultatenin een tabel";
+                    $name = $fname + " " + $lname;
+                    echo "naam: " . $name;
+                    echo "Status: " . $status;
                 }
             }
             else
