@@ -32,9 +32,10 @@
                 $numberOfRows = mysqli_stmt_num_rows($stmt);
                 while (mysqli_stmt_fetch($stmt))
                 {
-                    $name = $fname + " " + $lname;
-                    echo "naam: " . $name;
-                    echo "Status: " . $status;
+                    // echo alles (moet nog in een tabel)
+                    $name = $fname . " " . $lname;
+                    echo "naam: " . $name . "<br>";
+                    echo "Status: " . $status . "<br>";
                 }
             }
             else
@@ -43,6 +44,8 @@
             }
         }
     }
+    //refresh de pagina na 10 seconden
+    header("refresh:10; url = docentenAanwezig.php");
     ?>
 </body>
 </html>
