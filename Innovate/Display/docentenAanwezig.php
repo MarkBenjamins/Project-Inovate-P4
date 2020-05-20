@@ -34,8 +34,26 @@
                 {
                     // echo alles (moet nog in een tabel)
                     $name = $fname . " " . $lname;
-                    echo "naam: " . $name . "<br>";
-                    echo "Status: " . $status . "<br>";
+                    // set de kleur aan de hand van de status
+                    switch ($status) {
+                        case 0:
+                            $color = "green";
+                            break;
+                        case 1:
+                            $color = "yellow";
+                            break;
+                        case 2:
+                            $color = "red";
+                            break;
+                        default:
+                            $color = "grey";
+                    }
+                    echo "<table style='border: 2px solid black; width: 100%;'>
+                            <tr>
+                                <td style='color:" . $color . ";border: 2px solid black;'> &#9751 </td>
+                                <td style='color:" . $color . ";border: 2px solid black;'>" . $name . "</td>
+                            </tr>
+                          </table>";
                 }
             }
             else
