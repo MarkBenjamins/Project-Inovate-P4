@@ -9,10 +9,10 @@
 <body>
     <?php
     $DBConnect = mysqli_connect("127.0.0.1", "root", "");
-    if ($DBConnect == false) 
+    if ($DBConnect == false)
     {
         echo "unable to connect to the database server";
-    } 
+    }
     else 
     {
         $DBName = "naam";
@@ -21,16 +21,16 @@
 
         $SQL = "SELECT";
 
-        if($stmt = mysqli_prepare($DBConnect, $SQL))
+        if ($stmt = mysqli_prepare($DBConnect, $SQL))
         {
             $SQLResult = mysqli_stmt_execute($stmt);
             mysqli_stmt_bind_result($stmt, $name, $picture, $available);
             mysqli_stmt_store_result($stmt);
-            
-            if($SQLResult !== false)
+
+            if ($SQLResult !== false)
             {
                 $numberOfRows = mysqli_stmt_num_rows($stmt);
-                while(mysqli_stmt_fetch($stmt))
+                while (mysqli_stmt_fetch($stmt))
                 {
                     echo "resultatenin een tabel";
                 }
@@ -38,7 +38,7 @@
             else
             {
                 echo "Query failed";
-            } 
+            }
         }
     }
     ?>
