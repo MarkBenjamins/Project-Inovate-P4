@@ -3,7 +3,9 @@
     <head>
         <link rel="stylesheet" href="../Css/bootstrap.css" type="text/css">
         <link rel="stylesheet" href="../Css/style.css" type="text/css">
+        <link rel="icon" type="image/x-icon" href="../img/logo.ico" /> 
         <meta charset="UTF-8">
+        <meta http-equiv="refresh" content="30">
         <meta name="description" content="Project innovate INF1C">
         <meta name="author" content=
             "Tessa Ramaker,
