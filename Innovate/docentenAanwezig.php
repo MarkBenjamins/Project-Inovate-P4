@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="Css\style.css" type="text/css">
@@ -33,7 +32,7 @@
                 $numberOfRows = mysqli_stmt_num_rows($stmt);
                 while (mysqli_stmt_fetch($stmt))
                 {
-                    echo "<table";
+                    echo "resultatenin een tabel";
                 }
             }
             else
@@ -44,5 +43,4 @@
     }
     ?>
 </body>
-
 </html>
