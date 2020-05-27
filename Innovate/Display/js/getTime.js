@@ -3,7 +3,8 @@
  * Note: Dit gebreurd bij elke refresh.
  * @return {time} De huidige tijd van het device.
  */
-function getTime(){
+function getTime()
+{
     let today = new Date();
     let hr = today.getHours();
     let min = today.getMinutes();
