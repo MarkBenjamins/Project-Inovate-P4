@@ -28,7 +28,7 @@
         
         <div class="row header">
             <div class="col-2 white">
-                <h2>10:00</h2>
+            <h2><span id="time"></span></h2>
             </div>
             <div class="col-1 white">	
                 <p class="weather-icon">
@@ -43,3 +43,4 @@
                 <button class="darkmode"><img src="" alt=""></button>
             </div>
         </div>
+        <script src="../Display/js/getTime.js"></script>

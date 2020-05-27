@@ -10,5 +10,8 @@ function getTime()
     let min = today.getMinutes();
     //let sec = today.getSeconds();
     let time = hr + ":" + min;
+    let element = document.getElementById('time');
+    element.innerHTML = time;
     return time;
 }
+window.onload = getTime;
