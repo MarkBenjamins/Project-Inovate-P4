@@ -43,5 +43,6 @@
                 <button class="darkmode"><img src="" alt=""></button>
             </div>
         </div>
-        <script src="../Display/js/getTime.js"></script>
-        <script src="../Display/js/getDate.js"></script>
+        <script src="../Display/js/getDateAndTime.js"></script>
+        <!-- <script src="../Display/js/getTime.js"></script> -->
+        <!-- <script src="../Display/js/getDate.js"></script> -->
