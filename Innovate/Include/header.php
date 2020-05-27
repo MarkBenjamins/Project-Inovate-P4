@@ -32,9 +32,9 @@
             </div>
             <div class="col-1 white">	
                 <p class="weather-icon">
-                    <img src="<?php echo $current->image;?>">
+					<img src="<?php echo "../img/iconen-weerlive/" . $current->image . ".png";?>">
                 </p>
-                <p><?php echo convert2cen($current->temp,$current->temp_unit);?> °C</p>
+                <p><?php echo $temperatuur;?> °C</p>
             </div>
             <div class="col-6 white">
                 <h2>Maandag 25 juni, weeknr. 23</h2>

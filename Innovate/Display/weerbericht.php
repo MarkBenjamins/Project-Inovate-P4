@@ -21,7 +21,7 @@ $samenvatting =$current->samenv;
       return $value;
     }else if($unit=='F'){
       $cen = ($value - 32) / 1.8;
-      	return round($cen,2);
+      	return round($cen,0);
       }
   }
 ?>
