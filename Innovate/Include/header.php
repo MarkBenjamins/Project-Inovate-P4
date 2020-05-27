@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="../Css/style.css" type="text/css">
         <link rel="icon" type="image/x-icon" href="../img/logo.ico" /> 
         <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="1">
+        <meta http-equiv="refresh" content="30">
         <meta name="description" content="Project innovate INF1C">
         <meta name="author" content=
             "Tessa Ramaker,
@@ -37,10 +37,11 @@
                 <p><?php echo $temperatuur;?> °C</p>
             </div>
             <div class="col-6 white">
-                <h2>Maandag 25 juni, weeknr. 23</h2>
+                <h2><span id="date"></span></h2>
             </div>
             <div class="col-1">
                 <button class="darkmode"><img src="" alt=""></button>
             </div>
         </div>
         <script src="../Display/js/getTime.js"></script>
+        <script src="../Display/js/getDate.js"></script>

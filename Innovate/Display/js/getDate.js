@@ -10,5 +10,8 @@ function getCurrentDate()
     let month = today.getMonth();
     let day = today.getDate();
     let date = year + "/" + month + "/" + day;
+    let element = document.getElementById('date');
+    element2.innerHTML = date;
     return date;
 }
+window.onload = getCurrentDate;
