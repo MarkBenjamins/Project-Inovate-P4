@@ -37,11 +37,10 @@ include "../display/weerbericht.php";
                 <h2>10:00</h2>
             </div>
             <div class="col-1 white">	
-            <p><?php echo convert2cen($current->temp,$current->temp_unit);?> °C</p>
-            <p class="weather-icon">
-              <img src="<?php echo $current->image;?>">
-              <?php echo $current->description;?>
-            </p>
+                <p class="weather-icon">
+                    <img src="<?php echo $current->image;?>">
+                </p>
+                <p><?php echo convert2cen($current->temp,$current->temp_unit);?> °C</p>
             </div>
             <div class="col-6 white">
                 <h2>Maandag 25 juni, weeknr. 23</h2>
