@@ -1,5 +1,6 @@
 //een simpele json file die ik verwacht te krijgen
-let json = {
+let json = 
+{
     firstName: "Gerjan",
     lastName: "Van Oenen",
     status: 0,
@@ -7,9 +8,11 @@ let json = {
 }
 //alles hieronder moet geloopt worden aan de hand van de json file
 //een functie om aan de hand van de status de kleur te returnen
-function getColour(){
+function getColour()
+{
     let colour;
-    switch(json.status) {
+    switch(json.status)
+    {
         case 0:
             colour = "green"    //aanwezig en beschikbaar
             break;
@@ -21,13 +24,14 @@ function getColour(){
             break;
         default:
             colour = "grey"     //default als het onbekend is
-      }
-      return colour;
+    }
+    return colour;
 }
 window.onload = getColour;
 
 //functie om de naam en foto path op te halen
-function getDetails(){
+function getDetails()
+{
     let colour = getColour()
     // voeg de voor en achternaam samen
     let details = json.firstName + " "+ json.lastName + " " + json.Path;
