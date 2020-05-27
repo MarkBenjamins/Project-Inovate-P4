@@ -36,15 +36,10 @@ include "../display/weerbericht.php";
             <div class="col-2 white">
                 <h2>10:00</h2>
             </div>
-            <div class="col-1 white">
-                
-   
-      
-        
-         
+            <div class="col-1 white">	
             <p><?php echo convert2cen($current->temp,$current->temp_unit);?> °C</p>
             <p class="weather-icon">
-              <img style="margin-left:-10px;" src="<?php echo $current->image;?>">
+              <img src="<?php echo $current->image;?>">
               <?php echo $current->description;?>
             </p>
             </div>
