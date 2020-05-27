@@ -1,13 +1,7 @@
 <!DOCTYPE html>
-
-
 <?php
-include "../display/weerbericht.php";
-
-
-
+    include "../display/weerbericht.php";
 ?>
-
 
 <html lang="en">
     <head>
