@@ -21,7 +21,7 @@
             Daniël Roosken,
             Storm Visser"
         >
-        <title></title>
+        <title>Project Innovate</title>
     </head>
 
     <body>
