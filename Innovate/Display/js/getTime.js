@@ -8,9 +8,9 @@ function getTime()
     let today = new Date();
     let hr = today.getHours();
     let min = today.getMinutes();
-    let sec = today.getSeconds();
-    let time = hr + ":" + min + ":" + sec;
-    //let time = hr + ":" + min;
+    //let sec = today.getSeconds();
+    //let time = hr + ":" + min + ":" + sec;
+    let time = hr + ":" + min;
     let element = document.getElementById('time');
     element.innerHTML = time;
     return time;
