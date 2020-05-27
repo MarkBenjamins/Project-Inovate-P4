@@ -5,7 +5,7 @@ let json = {
     status: 0,
     Path : "http//:foto.com"
 }
-
+//alles hieronder moet geloopt worden aan de hand van de json file
 //een functie om aan de hand van de status de kleur te returnen
 function getColour(){
     let colour;
