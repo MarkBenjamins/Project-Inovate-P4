@@ -1,3 +1,4 @@
+const TODAY = new Date();
 /**
  * Functie om de tijd van het device op te halen.
  * Note: Dit gebreurd bij elke refresh.
@@ -5,9 +6,8 @@
  */
 function getTime()
 {
-    const today = new Date();
-    let hr = today.getHours();
-    let min = today.getMinutes();
+    let hr = TODAY.getHours();
+    let min = TODAY.getMinutes();
     //let sec = today.getSeconds();
     //let time = hr + ":" + min + ":" + sec;
     let time = hr + ":" + min;

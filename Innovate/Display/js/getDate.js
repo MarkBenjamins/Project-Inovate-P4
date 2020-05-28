@@ -1,3 +1,4 @@
+const TODAY = new Date();
 /**
  * Functie om de datum van het device op te halen.
  * Note: Dit gebreurd bij elke refresh.
@@ -5,10 +6,9 @@
  */
 function getCurrentDate()
 {
-    const today = new Date();
-    let year = today.getFullYear();
-    let month = today.getMonth();
-    let day = today.getDate();
+    let year = TODAY.getFullYear();
+    let month = TODAY.getMonth();
+    let day = TODAY.getDate();
     let date = day +  "-" + month + "-" + year;
     //let date = year + "/" + month + "/" + day;
     let element = document.getElementById('date');
