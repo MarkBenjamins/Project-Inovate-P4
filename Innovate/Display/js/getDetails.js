@@ -1,6 +1,5 @@
 //een simpele json file die ik verwacht te krijgen
-let json = 
-{
+const json = {
     firstName: "Gerjan",
     lastName: "Van Oenen",
     status: 0,
@@ -32,17 +31,14 @@ window.onload = getColour;
 //functie om de naam en foto path op te halen
 function getDetails()
 {
-    let colour = getColour()
     // voeg de voor en achternaam samen
     let details = json.firstName + " "+ json.lastName + " " + json.Path;
     //haal het element op van H1
-    let element = document.getElementById('header');
+    let element = document.createElement("li");
     //set de style van die header aan de hand van getColour()
-    element.style.color = colour;
-    //haal het element "span" op
-    let element2 = document.getElementById('head');
+    element.style.color = getColour();
     //zet de inoud van dat element aan de hand van de details
-    element2.innerHTML = details;
+    element.innerHTML = details;
     return details;
 }
 window.onload = getDetails;
