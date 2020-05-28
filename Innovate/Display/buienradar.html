@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+    include "../display/weerbericht.php";
+?>
+
 <html lang="en">
     <head>
         <link rel="stylesheet" href="../Css/bootstrap.css" type="text/css">
@@ -17,46 +21,48 @@
             Daniël Roosken,
             Storm Visser"
         >
-        <title>Newsfeed</title>
+
+        <title>Buienradar</title>
+
     </head>
 
     <body>
         
         <div class="row header">
             <div class="col-2 white">
-                <h2>10:00</h2>
+            <h2><span id="time"></span></h2>
             </div>
-            <div class="col-1 white">
-                <h2>zon</h2>
+            <div class="col-1 white">	
+                <p class="weather-icon">
+		<img src="<?php echo '../img/iconen-weerlive/' . $current->image . '.png';?>">
+                </p>
+                <p><?php echo $temperatuur;?> °C</p>
             </div>
             <div class="col-6 white">
-                <h2>Maandag 25 juni, weeknr. 23</h2>
+                <h2><span id="date"></span></h2>
             </div>
             <div class="col-1">
                 <button class="darkmode"><img src="" alt=""></button>
             </div>
             <div class="col-2"></div>
         </div>
-
+        <!-- <script src="../Display/js/getTime.js"></script> -->
+        <!-- <script src="../Display/js/getDate.js"></script> -->
+        <script src="../Display/js/getDateAndTime.js"></script>
+        
         <div class="row worksheet">
             <div class="col-10 newsfeed">
-                <h1>NEWSFEED</h1>
+                <h1>BUIENRADAR</h1>
             </div>
             <div class="col-1 aanwezigheid">
-                <div class="teacher">
-                <div class="color"></div><p class="docent">Docent1</p>
-                </div>
-                <div style="clear:left;"></div>
-                <div class="teacher">
-                <div class="color"></div><p class="docent">Docent2</p>
-                </div>
-                <div style="clear:left;"></div>
-                <div class="teacher">
-                <div class="color"></div><p class="docent">Docent3</p>
-                </div> 
-                <div style="clear:left;"></div>
+                <p>Docenten</p>
             </div>
             <div class="col-1"></div>
         </div>
     </body>
 </html>
+
+        
+        
+        
+

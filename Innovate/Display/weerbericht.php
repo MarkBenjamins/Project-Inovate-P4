@@ -26,3 +26,24 @@ $samenvatting =$current->samenv;
   }
 ?>
 
+<?php
+
+//time interval for deletion to occur...
+$x = 600;  //10 mins
+
+//timestamp
+$current_time = time();
+
+//the file you wish to delete
+$file_name = 'weatherdata.json';
+
+//timestamp
+$file_creation_time = filemtime($file_name);
+
+//extract difference
+$difference = $current_time - $file_creation_time;
+
+//if difference = $x...then delete file
+if ($difference >= $x) {
+unlink($file_name);
+}?>

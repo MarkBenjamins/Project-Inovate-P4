@@ -21,7 +21,8 @@
             Daniël Roosken,
             Storm Visser"
         >
-        <title>Project Innovate</title>
+
+        <title>Buienradar</title>
     </head>
 
     <body>
@@ -42,6 +43,22 @@
             <div class="col-1">
                 <button class="darkmode"><img src="" alt=""></button>
             </div>
+
+            <div class="col-2"></div>
+        </div>
+
+        <div class="row worksheet">
+            <div class="col-10 newsfeed">
+                <h1>BUIENRADAR</h1>
+            </div>
+            <div class="col-1 aanwezigheid">
+                <p>Docenten</p>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </body>
+</html>
+
         </div>
         <script src="../Display/js/getDateAndTime.js"></script>
         <!-- <script src="../Display/js/getTime.js"></script> -->
