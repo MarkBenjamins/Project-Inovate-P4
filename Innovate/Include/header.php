@@ -50,14 +50,16 @@
             <div class="col-10 newsfeed">
                 <h1>BUIENRADAR</h1>
             </div>
-            <div class="col-1 aanwezigheid">
+            <div class="col-2 aanwezigheid">
                 <p>Docenten</p>
+                <ul id="list">
+                <!--hier wordt met Js de list elementen aan toegevoegd-->
+                </ul>
             </div>
-            <div class="col-1"></div>
         </div>
     </body>
 </html>
 
-        <script src="../Display/js/getDateAndTime.js"></script>
+        <script type="module" src="../Display/js/main.js"></script>
         <!-- <script src="../Display/js/getTime.js"></script> -->
         <!-- <script src="../Display/js/getDate.js"></script> -->

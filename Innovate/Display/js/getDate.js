@@ -44,3 +44,4 @@ function getCurrentDate()
     element1.innerHTML = date;
     return date;
 }
+export { getCurrentDate }; 
