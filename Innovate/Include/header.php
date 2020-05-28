@@ -23,7 +23,6 @@
         >
 
         <title>Buienradar</title>
-
     </head>
 
     <body>
@@ -34,7 +33,7 @@
             </div>
             <div class="col-1 white">	
                 <p class="weather-icon">
-		<img src="<?php echo '../img/iconen-weerlive/' . $current->image . '.png';?>">
+					<img src="<?php echo "../img/iconen-weerlive/" . $current->image . ".png";?>">
                 </p>
                 <p><?php echo $temperatuur;?> °C</p>
             </div>
@@ -44,12 +43,10 @@
             <div class="col-1">
                 <button class="darkmode"><img src="" alt=""></button>
             </div>
+
             <div class="col-2"></div>
         </div>
-        <!-- <script src="../Display/js/getTime.js"></script> -->
-        <!-- <script src="../Display/js/getDate.js"></script> -->
-        <script src="../Display/js/getDateAndTime.js"></script>
-        
+
         <div class="row worksheet">
             <div class="col-10 newsfeed">
                 <h1>BUIENRADAR</h1>
@@ -62,7 +59,7 @@
     </body>
 </html>
 
-        
-        
-        
-
+        </div>
+        <script src="../Display/js/getDateAndTime.js"></script>
+        <!-- <script src="../Display/js/getTime.js"></script> -->
+        <!-- <script src="../Display/js/getDate.js"></script> -->
