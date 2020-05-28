@@ -26,3 +26,19 @@ $samenvatting =$current->samenv;
   }
 ?>
 
+<?php
+// PHP program to delete a file named gfg.txt  
+// using unlike() function  
+   
+$file_pointer = "weatherdata.json";  
+   
+// Use unlink() function to delete a file  
+if (!unlink($file_pointer)) {  
+      
+}  
+else {  
+    
+}  
+  
+
+?>
