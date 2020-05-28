@@ -9,6 +9,7 @@ function getCurrentDate()
     let today = new Date();
     let year = today.getFullYear();
     let month = today.getMonth();
+    month++;
     let day = today.getDate();
     let date = day +  "-" + month + "-" + year;
     //let date = year + "/" + month + "/" + day;
