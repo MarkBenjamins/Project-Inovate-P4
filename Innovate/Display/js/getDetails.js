@@ -1,16 +1,26 @@
 //een simpele json file die ik verwacht te krijgen
-const json = {
-    firstName: "Gerjan",
-    lastName: "Van Oenen",
-    status: 0,
-    Path : "http//:foto.com"
-}
+const JSON = [{
+    voornaam:"Gerjan",
+    achternaam:"Van Oenen",
+    status:2,
+    foto:"foto."},
+    {
+    voornaam:"Rob",
+    achternaam:"Smit",
+    status:1,
+    foto:"foto."}]
 //alles hieronder moet geloopt worden aan de hand van de json file
+let count = 0;
+for (let index = 1; index < JSON.length; index++) 
+{
+    this.getDetails()
+}
 //een functie om aan de hand van de status de kleur te returnen
 function getColour()
 {
+    
     let colour;
-    switch(json.status)
+    switch(JSON[count].status)
     {
         case 0:
             colour = "green"    //aanwezig en beschikbaar
@@ -26,19 +36,21 @@ function getColour()
     }
     return colour;
 }
-window.onload = getColour;
-
 //functie om de naam en foto path op te halen
 function getDetails()
 {
+    let colour = getColour();
     // voeg de voor en achternaam samen
-    let details = json.firstName + " "+ json.lastName + " " + json.Path;
-    //haal het element op van H1
-    let element = document.createElement("li");
-    //set de style van die header aan de hand van getColour()
-    element.style.color = getColour();
-    //zet de inoud van dat element aan de hand van de details
-    element.innerHTML = details;
+    let details = JSON[count].voornaam + " "+ JSON[count].achternaam + " " + JSON[count].foto;
+    //maak een nieuw element aan
+    var elem = document.createElement("LI");
+    //maak er tekst voor
+    var textElem = document.createTextNode(details);
+    elem.appendChild(textElem);
+    elem.style.color = colour;
+    document.getElementById("list").appendChild(elem);
+    console.log(details);
+    count++;
     return details;
 }
 window.onload = getDetails;
