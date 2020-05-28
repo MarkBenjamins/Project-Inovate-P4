@@ -633,8 +633,8 @@ pre code {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
-/*  margin-left: 10px;
-  margin-right: 10px;*/
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .col {
@@ -4346,7 +4346,7 @@ input[type="button"].btn-block {
   align-items: center;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0.5rem 1rem;
+  /*padding: 0.5rem 1rem;*/
 }
 
 .navbar .container,
