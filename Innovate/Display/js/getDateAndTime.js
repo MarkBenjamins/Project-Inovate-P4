@@ -8,9 +8,11 @@ function getCurrentDate()
 {
     let today = new Date();
     let year = today.getFullYear();
-    let month = today.getMonth();
-    month++;
+    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    let month = months[today.getMonth()];
     let day = today.getDate();
+    let weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let weekDay = weekDays[today.getDay()]
     if(month < 10)
     {
         month = "0" + month;
@@ -19,7 +21,7 @@ function getCurrentDate()
     {
        day = "0" + day;
     }
-    let date = day +  "-" + month + "-" + year;
+    let date = weekDay + " " + day +  "-" + month + "-" + year;
     //let date = year + "/" + month + "/" + day;
     let element1 = document.getElementById('date');
     element1.innerHTML = date;
