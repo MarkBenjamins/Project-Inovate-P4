@@ -43,7 +43,6 @@ function getDetails()
 //een functie om aan de hand van de status de kleur te returnen
 function getColour()
 {
-    
     let colour;
     switch(JSON[count].status)
     {
@@ -67,17 +66,24 @@ function makeDetails()
     let colour = getColour();
     // voeg de voor en achternaam samen
     let details = JSON[count].voornaam + " "+ JSON[count].achternaam + " " + JSON[count].foto;
-    //maak een nieuw element aan
-    var elem = document.createElement("LI");
-    //maak er tekst voor dat nieuwe element
-    var textElem = document.createTextNode(details);
-    //koppel de tekst aan het element
+    //maak een nieuw list element aan
+    let elem = document.createElement("li");
+    //maak een nieuw span element aan
+    let statusElem = document.createElement("span");
+    //maak er tekst voor dat nieuwe list element
+    let textElem = document.createTextNode(details);
+    //maak iets(nu tekst) voor dat nieuwe span element
+    let blockElem = document.createTextNode("o ")
+    //koppel het block element met iets(nu tekst) aan het statuselement
+    statusElem.appendChild(blockElem);
+    //koppel het statuselement aan het list element
+    elem.appendChild(statusElem);
+    //koppel het textelement aan het listelement
     elem.appendChild(textElem);
-    //zet de stijl aanhankelijk van de status
-    elem.style.color = colour;
-    //plak de gemaakte list onder het element van de UL
+    //zet de stijl van het statuselement aanhankelijk van de status
+    statusElem.style.color = colour;
+    //plak het gemaakte listelement onder het element van de UL
     document.getElementById("list").appendChild(elem);
-    //@todo fotos er in maken
     //een counter voor de array
     count++;
     return details;

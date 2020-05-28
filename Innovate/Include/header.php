@@ -51,10 +51,12 @@
                 <h1>BUIENRADAR</h1>
             </div>
             <div class="col-2 aanwezigheid">
-                <p>Docenten</p>
-                <ul id="list">
-                <!--hier wordt met Js de list elementen aan toegevoegd-->
-                </ul>
+                <div class="row">
+                    <p>Docenten</p>
+                    <ul id="list">
+                    <!--hier wordt met Js de list elementen aan toegevoegd-->
+                    </ul>
+                </div>
             </div>
         </div>
     </body>
