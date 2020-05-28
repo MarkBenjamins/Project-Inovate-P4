@@ -23,3 +23,4 @@ function getTime()
     element.innerHTML = time;
     return time;
 }
+export { getTime }; 

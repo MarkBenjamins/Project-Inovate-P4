@@ -1,19 +1,44 @@
 //een simpele json file die ik verwacht te krijgen
-const JSON = [{
+const JSON = [
+    {
+    voornaam:"Albert",
+    achternaam:"De Jonge",
+    status:0,
+    foto:"foto."
+    },
+    {
     voornaam:"Gerjan",
     achternaam:"Van Oenen",
     status:2,
-    foto:"foto."},
+    foto:"foto."
+    },
+    {
+    voornaam:"Elleke",
+    achternaam:"Jagersma",
+    status:0,
+    foto:"foto."
+    },
     {
     voornaam:"Rob",
     achternaam:"Smit",
     status:1,
-    foto:"foto."}]
+    foto:"foto."
+    },
+    {
+    voornaam:"Jan",
+    achternaam:"Doornbos",
+    status:0,
+    foto:"foto."
+    }
+]
 //alles hieronder moet geloopt worden aan de hand van de json file
 let count = 0;
-for (let index = 1; index < JSON.length; index++) 
+function getDetails()
 {
-    this.getDetails()
+    for (let index = 0; index < JSON.length; index++) 
+    {
+        MakeDetails()
+    }
 }
 //een functie om aan de hand van de status de kleur te returnen
 function getColour()
@@ -37,7 +62,7 @@ function getColour()
     return colour;
 }
 //functie om de naam en foto path op te halen
-function getDetails()
+function MakeDetails()
 {
     let colour = getColour();
     // voeg de voor en achternaam samen
@@ -52,8 +77,9 @@ function getDetails()
     elem.style.color = colour;
     //plak de gemaakte list onder het element van de UL
     document.getElementById("list").appendChild(elem);
+    //@todo fotos er in maken
     //een counter voor de array
     count++;
     return details;
 }
-window.onload = getDetails;
+export { getDetails }; 
