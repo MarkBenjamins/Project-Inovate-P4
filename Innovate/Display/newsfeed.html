@@ -21,41 +21,54 @@
     </head>
 
     <body>
-        
+        <div class="container-fluid">
         <div class="row header">
             <div class="col-2 white">
-                <h2>10:00</h2>
+            <h2><span id="time"></span></h2>
             </div>
-            <div class="col-1 white">
-                <h2>zon</h2>
+            <div class="col-1 white">	
+                <p class="weather-icon">
+		<img src="<?php echo '../img/iconen-weerlive/' . $current->image . '.png';?>">
+                </p>
+                <p><?php echo $temperatuur;?> °C</p>
             </div>
-            <div class="col-6 white">
-                <h2>Maandag 25 juni, weeknr. 23</h2>
+            <div class="col-5 white">
+                <h2><span id="date"></span></h2>
             </div>
-            <div class="col-1">
+            <div class="col-3">
                 <button class="darkmode"> <img src="../img/icons-scherm/darkmode_icon.png" alt="Dark Mode" class='image'></button>
-            </div>
-            <div class='col-1'>
-                <button class="login"> <img src="../img/icons-scherm/docent.png" alt="Login" class='image'> </button>
+                <div class="buttonlogin "> <img src="../img/icons-scherm/docent.png" alt="Login" class='image'> </div>
+                <!--  Alleen als er ingelogd is:  -->
+                <div class="buttonlogin "> <img src="../img/icons-scherm/aanwezigheid.png" alt="Aanwezigheid" class='image'> </div>
+                <div class="buttonlogin "> <img src="../img/icons-scherm/addmessage.png" alt="Add Message" class='image'> </div>
+                <div class="buttonlogin "> <img src="../img/icons-scherm/logo.png" alt="Logo" class='image'> </div>
             </div>
             <div class='col-1'></div>
         </div>
 
         <div class="row worksheet">
-            <div class="col-10 newsfeed">
+            <div class="col-9 newsfeed">
                 <h1>NEWSFEED</h1>
             </div>
-            <div class="col-1">
+            <div class="col-2">
                 <div class="teacher">
-                <div class="color"></div><p class="docent">Docent1</p>
+                <div class="color"></div><img src="" alt=""><p class="docent">Docent 1</p>
                 </div>
                 <div style="clear:left;"></div>
                 <div class="teacher">
-                <div class="color"></div><p class="docent">Docent2</p>
+                    <div class="color"></div><img src="" alt=""><p class="docent">Docent 2</p>
                 </div>
                 <div style="clear:left;"></div>
                 <div class="teacher">
-                <div class="color"></div><p class="docent">Docent3</p>
+                <div class="color"></div><img src="" alt=""><p class="docent">Docent 3</p>
+                </div> 
+                <div style="clear:left;"></div>
+                <div class="teacher">
+                <div class="color"></div><img src="" alt=""><p class="docent">Docent 4</p>
+                </div> 
+                <div style="clear:left;"></div>
+                <div class="teacher">
+                <div class="color"></div><img src="" alt=""><p class="docent">Docent 5</p>
                 </div> 
                 <div style="clear:left;"></div>
             </div>
@@ -63,6 +76,6 @@
         </div>
         
         <script src="../Display/js/getDateAndTime.js"></script>
-        
+        </div>
     </body>
 </html>
