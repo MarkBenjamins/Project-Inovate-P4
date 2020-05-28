@@ -26,7 +26,6 @@
     </head>
 
     <body>
-        
         <div class="row header">
             <div class="col-2 white">
             <h2><span id="time"></span></h2>
@@ -59,7 +58,6 @@
     </body>
 </html>
 
-        </div>
         <script src="../Display/js/getDateAndTime.js"></script>
         <!-- <script src="../Display/js/getTime.js"></script> -->
         <!-- <script src="../Display/js/getDate.js"></script> -->

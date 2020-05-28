@@ -26,6 +26,20 @@ body
     text-align: center;
 }
 
+.login
+{
+    height: 100%;
+    width: 55%;
+    margin-right: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+.image
+{
+    width: 100%;
+}
+
 .darkmode
 {
     height: 70px;
@@ -33,6 +47,7 @@ body
     background-color: grey;
     margin-left: 10px;
     float: right;
+    padding: 0;
 }
 
 .worksheet
@@ -46,12 +61,6 @@ body
     background-color: white;
     margin-left: 10px;
 }
-
-.aanwezigheid
-{
-    
-}
-
 
 .teacher
 {
