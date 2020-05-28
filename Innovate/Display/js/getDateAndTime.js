@@ -11,6 +11,14 @@ function getCurrentDate()
     let month = today.getMonth();
     month++;
     let day = today.getDate();
+    if(month < 10)
+    {
+        month = "0" + month;
+    }
+    if(day < 10)
+    {
+       day = "0" + day;
+    }
     let date = day +  "-" + month + "-" + year;
     //let date = year + "/" + month + "/" + day;
     let element1 = document.getElementById('date');
@@ -29,6 +37,14 @@ function getTime()
     let today = new Date();
     let hr = today.getHours();
     let min = today.getMinutes();
+    if(hr < 10)
+    {
+        hr = "0" + hr;
+    }
+    if(min < 10)
+    {
+        min = "0" + min;
+    }
     //let sec = today.getSeconds();
     //let time = hr + ":" + min + ":" + sec;
     let time = hr + ":" + min;
