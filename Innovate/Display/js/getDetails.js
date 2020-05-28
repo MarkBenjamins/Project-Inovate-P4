@@ -44,12 +44,15 @@ function getDetails()
     let details = JSON[count].voornaam + " "+ JSON[count].achternaam + " " + JSON[count].foto;
     //maak een nieuw element aan
     var elem = document.createElement("LI");
-    //maak er tekst voor
+    //maak er tekst voor dat nieuwe element
     var textElem = document.createTextNode(details);
+    //koppel de tekst aan het element
     elem.appendChild(textElem);
+    //zet de stijl aanhankelijk van de status
     elem.style.color = colour;
+    //plak de gemaakte list onder het element van de UL
     document.getElementById("list").appendChild(elem);
-    console.log(details);
+    //een counter voor de array
     count++;
     return details;
 }

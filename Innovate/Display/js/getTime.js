@@ -8,11 +8,18 @@ function getTime()
 {
     let hr = TODAY.getHours();
     let min = TODAY.getMinutes();
-    //let sec = today.getSeconds();
+    if(hr < 10)
+    {
+        hr = "0" + hr;
+    }
+    if(min < 10)
+    {
+        min = "0" + min;
+    }
+    //let sec = TODAY.getSeconds();
     //let time = hr + ":" + min + ":" + sec;
     let time = hr + ":" + min;
     let element = document.getElementById('time');
     element.innerHTML = time;
     return time;
 }
-window.onload = getTime;

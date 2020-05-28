@@ -1,3 +1,4 @@
+//haal het aantal miliseconden na 1 jan 1970 op
 const TODAY = new Date();
 /**
  * Functie om het weeknummer op te halen.
@@ -18,6 +19,7 @@ function getWeek()
     let pastWeeks = Math.ceil((pastDaysOfYear + 1) / 7);
     return pastWeeks;
 }
+
 /**
  * Functie om de datum van het device op te halen.
  * Note: Dit gebreurd bij elke refresh.
