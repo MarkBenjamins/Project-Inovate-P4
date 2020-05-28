@@ -37,7 +37,7 @@ function getDetails()
 {
     for (let index = 0; index < JSON.length; index++) 
     {
-        MakeDetails()
+        makeDetails()
     }
 }
 //een functie om aan de hand van de status de kleur te returnen
@@ -48,21 +48,21 @@ function getColour()
     switch(JSON[count].status)
     {
         case 0:
-            colour = "green"    //aanwezig en beschikbaar
+            colour = "green"    //groen, aanwezig en beschikbaar
             break;
         case 1:
-            colour = "red"      //afwezig
+            colour = "red"      //rood, afwezig
             break;
         case 2:
             colour = "#ffe066"  //geel, aanwezig maar niet beschikbaar
             break;
         default:
-            colour = "grey"     //default als het onbekend is
+            colour = "grey"     //grijs, default als het onbekend is
     }
     return colour;
 }
 //functie om de naam en foto path op te halen
-function MakeDetails()
+function makeDetails()
 {
     let colour = getColour();
     // voeg de voor en achternaam samen

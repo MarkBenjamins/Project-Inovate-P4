@@ -87,9 +87,9 @@ body
 
 .docent
 {
-    float:left; 
+    /*float:left; 
     width: 80%;
-    margin-left: 10%;
+    *margin-left: 10%;*/
     font-size: 20pt;
 }
 
