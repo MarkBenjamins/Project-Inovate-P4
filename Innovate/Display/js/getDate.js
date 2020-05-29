@@ -1,6 +1,10 @@
+//haal het aantal miliseconden na 1 jan 1970 op
 const TODAY = new Date();
-//@todo javadox comment
 
+/**
+ * Functie om huidige week op te hallen.
+ * @return {pastWeeks} De het nummer van de huidige week.
+ */
 function getWeek()
 {
     //haal de eerste dag van het jaar op
@@ -17,9 +21,8 @@ function getWeek()
 }
 
 /**
- * Functie om de datum van het device op te halen.
- * Note: Dit gebreurd bij elke refresh.
- * @return {date} De huidige datum van het device.
+ * Functie om de huidige datum in het gewenste format op te halen.
+ * @example Friday 29 May WeekNr. 22.
  */
 function getCurrentDate()
 {
@@ -40,8 +43,24 @@ function getCurrentDate()
     }
     let date = weekDay + " " + day +  " " + month + " WeekNr. " + week;
     //let date = year + "/" + month + "/" + day;
-    let element1 = document.getElementById('date');
-    element1.innerHTML = date;
-    return date;
+
+        document.getElementById('date').innerHTML = date;
+    /**
+     * @deprecated 
+     * let element1 = document.getElementById('date');
+     * element1.innerHTML = date;
+     * return date;
+     */
 }
+// dit is een auto refresher van een uur.
+// Tussen 23:00 en 01:00 zal de pagina herladen worden en de datum veranderen.
+setInterval(getCurrentDate, 3600000);
+
+// function getCurrentDate() 
+// {
+//     var time = new Date();
+//     document.getElementById("date").innerHTML = time.toDateString();
+// }
+//setInterval(getCurrentDate, 3600000);
+
 export { getCurrentDate }; 
