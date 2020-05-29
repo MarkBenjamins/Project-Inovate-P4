@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Get data as JSON from a PHP file, and convert it into a JavaScript array.</h2>
+
+<p id="demo"></p>
+<div style=" height:75px; width:200px; background-color:blue;">
+    <img id="photo" style="width:25px; height:25px">
+</div>
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+
+var photo;
+
+xmlhttp.open("GET", "DBFunction.php", true);
+xmlhttp.send();
+
+xmlhttp.onreadystatechange = function() 
+{
+    if (this.readyState == 4 && this.status == 200) 
+    {
+        myObj = JSON.parse(this.responseText);
+        document.getElementById("demo").innerHTML = myObj[1].voornaam + " " + myObj[0].achternaam;
+        photo = "../profilePictures/" + myObj[0].foto;
+        document.getElementById("photo").src = photo;
+    }
+}
+
+
+{
+
+  var foo = "Foo";
+  let bar = "Bar";
+  let baz = "test";
+
+
+  console.log(foo, bar);
+
+  {
+    baz = "Bazz";
+    console.log(baz);
+  }
+
+  console.log(baz); // ReferenceError
+
+}
+
+</script>
+</body>
+</html>
