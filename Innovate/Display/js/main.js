@@ -1,4 +1,5 @@
 //hier worden alle functies aangeroepen
+
 //zet hier je import neer in het volgende formaat:
 //import { functieNaam } from 'fileLocatie';
 import { getTime } from './getTime.js';
