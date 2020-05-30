@@ -18,7 +18,7 @@
             Storm Visser"
         >
 
-        <title>logoff</title>
+        <title>Wijzig Beschikbaarheid</title>
 
     </head>
 
@@ -41,18 +41,20 @@
                 <div class="col-3">
                     <button class="darkmode" id="1" value="ONN" style="color:blue" onclick="javascript:toggle(this);"> 
                         <img src="../img/icons-scherm/darkmode_icon.png" alt="Dark Mode" class='image'>
-                    </button>                    
+                    </button>
                     <nav class="navbar navbar-expand-lg height">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+
                             <div class="buttonlogin "> <img onclick="toLogoffPage()" src="../img/icons-scherm/docent.png" alt="Login" class='image'></div>
 
                             <!--  Alleen als er ingelogd is:  -->
                             <div class="buttonlogin "> <img onclick="toWijzigBeschikbaarheid()" src="../img/icons-scherm/aanwezigheid.png" alt="Aanwezigheid" class='image'> </div>
                             <div class="buttonlogin "> <img onclick="" src="../img/icons-scherm/addmessage.png" alt="Add Message" class='image'> </div>
                             <div class="buttonlogin "> <img onclick="toNewsfeedLogin()" src="../img/icons-scherm/logo.png" alt="Logo" class='image'> </div>
+
                         </div>
                     </nav>
                 </div>
@@ -61,34 +63,17 @@
 
             <div class="row worksheet">
                 <div class="col-9 newsfeed">
-                    <h1>Logoff</h1>
-                    <form>
-                        <p> Do you want to logout?</p>
-                        <button type="button" onclick="toNewsfeed()">logoff</button>
-                        <br>
-                        <br>
-                        <br>
-                        <h1>Change password</h1>
-                        <p> Do you want to change your password</p>
-                        Username<br>
-                        <input type="text" id="username" placeholer="Username">
-                        <br>
-                        <br>
-                        Old password<br>
-                        <input type="password" id="oldPassword" placeholer="Old password">
-                        <br>
-                        <br>
-                        New password<br>
-                        <input type="password" id="newPassword" placeholer="New password">
-                        <br>
-                        <br>
-                        <button type="button" onclick="
-                        /**
-                         * @note Hier zou een functie moeten komen voor het wijzigen van je wachtwoord.
-                         * Met daarna een alarm (melding dat het gewijzigd is.)
-                        */
-                        ">ChangePassword</button>
-                    </form>
+                    <h1>Wijzig Beschikbaarheid</h1>
+                    Klik op een knop om je status te wijzigen:
+                    <br>
+                    <br>
+                    <butten style="background-color: red;">Maak het rood</butten>
+                    <br>
+                    <br>
+                    <butten style="background-color: yellow;"> Maak het geel</butten>
+                    <br>
+                    <br>
+                    <butten style="background-color: green;">Maak het green</butten>
                 </div>
                 <div class="col-3">
                     <ul id="list">
@@ -120,7 +105,6 @@
         </div>
         <script src="../Display/js/darkMode.js"></script>
         <script src="../Display/js/getNavigation.js"></script>
-        <script src="../Display/js/getUsernamAndPassword.js"></script>
         <script type = "module" src="../Display/js/main.js"></script>
     </body>
     

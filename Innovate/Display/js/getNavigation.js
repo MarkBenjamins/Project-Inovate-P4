@@ -45,3 +45,11 @@ function toBuienradarLogin()
 {
     window.location.href = "Test_buienradarLogin.html";
 }
+
+/**
+ * Functie om naar de Test_wijzigBeschikbaarheid.html pagina te gaan.
+ */
+function toWijzigBeschikbaarheid()
+{
+    window.location.href = "Test_wijzigBeschikbaarheid.html";
+}
