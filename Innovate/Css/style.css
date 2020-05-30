@@ -22,7 +22,7 @@ body
     height: 100%;
     background-color: white;
     margin-right: 5px;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     text-align: center;
 }
 
@@ -68,7 +68,7 @@ body
 {
     height: 755px;
     background-color: white;
-    margin-left: 10px;
+    /* margin-left: 10px; */
 }
 
 .teacher
@@ -93,9 +93,9 @@ body
 
 .docent
 {
-    float:left; 
+    /* float:left; 
     width: 80%;
-    margin-left: 10%;
+    margin-left: 10%; */
     font-size: 20pt;
 }
 

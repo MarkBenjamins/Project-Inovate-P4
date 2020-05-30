@@ -16,7 +16,7 @@
  */
 import { getTime } from './getTime.js';
 import { getCurrentDate } from './getDate.js';
-
+import { getDetails } from './getDetails.js';
 /**
  * @note deze werkt niet
  * @Storm_Visser kun jij dit oplossen?
@@ -26,6 +26,8 @@ import { getCurrentDate } from './getDate.js';
 getTime();
 
 getCurrentDate();
+
+getDetails();
 
 /**
  * @note deze werkt niet

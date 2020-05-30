@@ -16,6 +16,7 @@ function getWeek()
      */
     let pastDaysOfYear = (TODAY - firstDayOfYear) / 86400000;
     //als je het aantal dagen van dit jaar hebt, moet je een toevoegen om de eerste dag (1 januari) mee te rekenen
+    //math.ceil zorgt dat het naar boven wordt afgerond
     let pastWeeks = Math.ceil((pastDaysOfYear + 1) / 7);
     return pastWeeks;
 }
