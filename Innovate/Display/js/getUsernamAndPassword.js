@@ -35,9 +35,10 @@ function getInfo()
         {
 			alert(username + " is logged in!!!")
             // stop de functie als je ingelogd bent
-            window.location.href = toNewsfeedLogin();
+            window.location.href = "Test_newsfeedLogin.html";
 			return
 		}
 	}
 	alert("Incorrect username or password.")
 }
+
