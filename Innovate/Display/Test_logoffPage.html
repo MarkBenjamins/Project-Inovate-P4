@@ -51,7 +51,7 @@
 
                             <!--  Alleen als er ingelogd is:  -->
                             <div class="buttonlogin "> <img onclick="toWijzigBeschikbaarheid()" src="../img/icons-scherm/aanwezigheid.png" alt="Aanwezigheid" class='image'> </div>
-                            <div class="buttonlogin "> <img onclick="" src="../img/icons-scherm/addmessage.png" alt="Add Message" class='image'> </div>
+                            <div class="buttonlogin "> <img onclick="toMessage()" src="../img/icons-scherm/addmessage.png" alt="Add Message" class='image'> </div>
                             <div class="buttonlogin "> <img onclick="toNewsfeedLogin()" src="../img/icons-scherm/logo.png" alt="Logo" class='image'> </div>
                         </div>
                     </nav>
@@ -88,6 +88,19 @@
                          * Met daarna een alarm (melding dat het gewijzigd is.)
                         */
                         ">ChangePassword</button>
+                        <br>
+                        <br>
+                        <br>
+                        <h1>Change user Avatar</h1><br>
+                        <form action="#">
+                            <div>
+                                <input type="hidden" id="user_id" value="75" />
+                                <input type="file" id="avatar_img" accept="image/x-png" multiple />
+                            </div>
+                            <div>
+                                <button id="btnSubmit">Upload Avatar</button>
+                            </div>
+                        </form>
                     </form>
                 </div>
                 <div class="col-3">

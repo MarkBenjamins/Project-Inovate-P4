@@ -53,3 +53,11 @@ function toWijzigBeschikbaarheid()
 {
     window.location.href = "Test_wijzigBeschikbaarheid.html";
 }
+
+/**
+ * Functie om naar de Test_message.html pagina te gaan.
+ */
+function toMessage()
+{
+    window.location.href = "Test_message.html";
+}
