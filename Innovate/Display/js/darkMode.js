@@ -30,3 +30,8 @@ function toggle(button)
                 break;
     }
 }
+
+/**
+ * @Bug Neemt darkmode niet mee naar volgende pagina, 
+ * misschien kun je de set pagestyle die in de main style.css link staat overschrijven door de gewenste.
+ */
