@@ -68,39 +68,37 @@
                         <br>
                         <br>
                         <br>
-                        <h1>Change password</h1>
-                        <p> Do you want to change your password</p>
+                    </form>
+
+                    <h1>Change password</h1>
+                    <div id="error"></div>
+                    <form id="form">
                         Username<br>
-                        <input type="text" id="username" placeholer="Username">
+                        <input type="text" id="name" name="name" placeholder="Username">
                         <br>
                         <br>
                         Old password<br>
-                        <input type="password" id="oldPassword" placeholer="Old password">
+                        <input type="password" id="password" name="password" placeholder="Current password">
                         <br>
                         <br>
                         New password<br>
-                        <input type="password" id="newPassword" placeholer="New password">
+                        <input type="text" id="newPassword" name="newPassword" placeholder="New password">
                         <br>
                         <br>
-                        <button type="button" onclick="
-                        /**
-                         * @note Hier zou een functie moeten komen voor het wijzigen van je wachtwoord.
-                         * Met daarna een alarm (melding dat het gewijzigd is.)
-                        */
-                        ">ChangePassword</button>
+                        <button onclick="changePassword()" type="submit">ChangePassword</button>
                         <br>
                         <br>
-                        <br>
-                        <h1>Change user Avatar</h1><br>
-                        <form action="#">
-                            <div>
-                                <input type="hidden" id="user_id" value="75" />
-                                <input type="file" id="avatar_img" accept="image/x-png" multiple />
-                            </div>
-                            <div>
-                                <button id="btnSubmit">Upload Avatar</button>
-                            </div>
-                        </form>
+                    </form>
+
+                    <h1>Change user Avatar</h1><br>
+                    <form action="#">
+                        <div>
+                            <input type="hidden" id="user_id" value="75" />
+                            <input type="file" id="avatar_img" accept="image/x-png" multiple />
+                        </div>
+                        <div>
+                            <button id="btnSubmit" onclick="">Upload Avatar</button>
+                        </div>
                     </form>
                 </div>
                 <div class="col-3">
@@ -131,9 +129,9 @@
                 <div class="col-1"></div>
             </div>
         </div>
+        <script src="../Display/js/getChangePassword.js"></script>
         <script src="../Display/js/darkMode.js"></script>
         <script src="../Display/js/getNavigation.js"></script>
-        <script src="../Display/js/getUsernamAndPassword.js"></script>
         <script type = "module" src="../Display/js/main.js"></script>
     </body>
     
