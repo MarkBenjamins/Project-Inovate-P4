@@ -5,15 +5,15 @@ var user =
 [
 	{ // user @ 0 index
 		username: "mark",
-		password: "mark"
+		password: "mark1"
 	},
 	{ // user @ 1 index
 		username: "storm",
-		password: "storm"
+		password: "storm1"
 	},
 	{ // user @ 2 index
 		username: "jenny",
-		password: "jenny"
+		password: "jenny1"
 	}
 ]
 
@@ -28,6 +28,14 @@ const errorElement = document.getElementById('error')
 /**
  * Functie om de user input voor username en password te valideren.
  * Na de validate met de array user wordt de gebruiker doorgestuurd en stopt de code. 
+ * 
+ * Validatie lijst:
+ * - Alle input velden moeten ingelvuld zijn.
+ * - Alle input moet meer dan 3 karakters bevatten.
+ * - Alle input moet minder dan 20 karakters bevatten.
+ * - Wachtwoorden mogen niet wachtwoord of password zijn.
+ * - Username cannot be te password.
+ * - Check of username en password bij elkaar horen.
  */
 function checkUsernameAndPassword()
 {
@@ -38,15 +46,27 @@ function checkUsernameAndPassword()
 			let messages = []
 
 			// if input username is leeg error.
-			if (username.value === '' || username == null || username.value === ' ') 
+			if (username.value === '' || username.value == null || username.value === ' ') 
 			{
 				messages.push('Username is required')
 			}
 
 			// if input password is leeg error.
-			else if (password.value === '' || password.value == null) 
+			else if (password.value === '' || password.value == null || password.value === ' ') 
 			{
 				messages.push('Password is required')
+			}
+
+			// if password bestaat uit minder dan 3 karakters error.
+			else if (username.value.length <= 3) 
+			{
+				messages.push('Password must be longer than 3 characters')
+			}
+
+			// if password beaat uit meer dan 19 karakters error.
+			else if (username.value.length >= 20) 
+			{
+				messages.push('Password must be less than 20 characters')
 			}
 
 			// if password bestaat uit minder dan 3 karakters error.
@@ -66,6 +86,12 @@ function checkUsernameAndPassword()
 					|| password.value === 'Password'|| password.value === 'Wachtwoord') 
 			{
 				messages.push('Password cannot be password or wachtwoord')
+			}
+
+			// if username is password error.
+			else if(username.value === password.value)
+			{
+				messages.push('The username cannot be used as password')
 			}
 
 			// if input username en input password gelijk zijn aan username en password uit array user.
@@ -100,6 +126,7 @@ function checkUsernameAndPassword()
 		}
 	)
 }
+
 
 /**
  * @note na de validatie zou je een get kunnen maken waarin je de username in de url balk zet.
