@@ -102,6 +102,12 @@ function checkUsernameAndPassword()
 }
 
 /**
+ * @note na de validatie zou je een get kunnen maken waarin je de username in de url balk zet.
+ * op die manier kun je kijken of de gebruiker op een pagina mag komen, en of de gebruiker een gebruiker is.
+ */
+
+
+/**
  * @deprecated {getInfo()} validate is ingebouwd bij de checkUsernameAndPassword functie.
  * Waardoor de check al gedaan wordt in de functie en is aangepast aan de eisen van het systeem.
  * Functie om de user input te valideren met de array.
