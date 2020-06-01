@@ -22,14 +22,49 @@ function toggle(button)
         switch (button.value) {
             case "ONN":
                 swapStyleSheet('../Css/Darkstyle.css')
+                document.getElementById("docentLogoColorChange").src = "../img/icons-scherm/docent_wit.png";
+                document.getElementById("aanwezigheidLogoColorChange").src = "../img/icons-scherm/aanwezigheid_wit.png";
+                document.getElementById("addMessageLogoColorChange").src = "../img/icons-scherm/addmessage_wit.png";
                 button.value = "OFF";
+
                 break;
             case "OFF":
                 swapStyleSheet('../Css/lightstyle.css')
+                document.getElementById("docentLogoColorChange").src = "../img/icons-scherm/docent.png";
+                document.getElementById("aanwezigheidLogoColorChange").src = "../img/icons-scherm/aanwezigheid.png";
+                document.getElementById("addMessageLogoColorChange").src = "../img/icons-scherm/addmessage.png";
                 button.value = "ONN";
                 break;
     }
 }
+
+function toggleBasic(button) 
+{
+        switch (button.value) {
+            case "ONN":
+                swapStyleSheet('../Css/Darkstyle.css')
+                document.getElementById("docentLogoColorChange").src = "../img/icons-scherm/docent_wit.png";
+                button.value = "OFF";
+
+                break;
+            case "OFF":
+                swapStyleSheet('../Css/lightstyle.css')
+                document.getElementById("docentLogoColorChange").src = "../img/icons-scherm/docent.png";
+                button.value = "ONN";
+                break;
+    }
+}
+
+
+// function iconsDark()
+// {
+//     document.getElementById("imgClickAndChange").src = "../img/icons-scherm/docent_wit.png";
+// }
+
+// function iconsLight()
+// {
+//     document.getElementById("imgClickAndChange").src = "../img/icons-scherm/docent.png";
+// }
 
 /**
  * @Bug Neemt darkmode niet mee naar volgende pagina, 
