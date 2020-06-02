@@ -73,6 +73,21 @@ body
     /* margin-left: 10px; */
 }
 
+.loginScreen
+{
+    text-align: center;
+}
+
+.loginForm #name
+{
+    margin-bottom: 8px;
+}
+
+.loginForm #password
+{
+    margin-bottom: 8px;
+}
+
 .teacher
 {
     height: 60px;
