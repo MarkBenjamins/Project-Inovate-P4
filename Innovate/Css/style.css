@@ -21,15 +21,22 @@ body
 {
     height: 100%;
     background-color: white;
-    margin-right: 5px;
+    margin-right: 10px;
     /* margin-left: 10px; */
     text-align: center;
+}
+
+.white h2 
+{
+    position: relative;
+    top: 25%;
 }
 
 .buttonlogin
 {
     height: 90px;
     width: 85px;
+    vertical-align: middle;
     text-align: center;
     float: left;
     padding: 10px;
@@ -52,7 +59,7 @@ body
     height: 100%;
     width: 90px;
     background-color: grey;
-    float: left;
+    /*float: left;*/
     margin-left: -15px;
     margin-right: 35px;
     padding: 0;
@@ -88,7 +95,7 @@ body
     width: 5%;
     height: 100%;
     margin-bottom: 20px;
-    float: left;
+    /*float: left;*/
 }
 
 .docent
