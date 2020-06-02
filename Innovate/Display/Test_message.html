@@ -65,16 +65,28 @@
                 <div class="col-9 newsfeed">
                     <h1>Message</h1>
                     <br>
-                    <form>
-                        <div>
-                            <input type="hidden" id="user_id" value="75" />
-                            <input type="file" id="avatar_img" accept="image/x-png" multiple />
-                        </div>
-                        <br>
-                        <div>
-                            <button id="btnSubmit">Upload Avatar</button>
-                        </div>
-                    </form>
+                        <form id="form" enctype="multipart/form-data" method="POST">
+                            <div class="form-group">
+                                <input type="file" name="fileUpload" accept=".jpg, .jpeg, .png" class="form-control" id="image" onchange="validate_fileupload(this.value);">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit"> Uploaden </button>
+                            </div>
+                        </form>
+                        <button onclick="remove()"> Remove all picture's </button>
+                        <div id="result" class="result">
+
+                            <!--Dit is style voor de foto die geupload word-->
+                            <style>
+                                div.result>img
+                                {
+                                    height: 250px;
+                                    
+                                    border-radius: 10px;
+                                }
+                            </style>
+
+                    </div>
                 </div>
                 <div class="col-3">
                     <ul id="list">
@@ -104,6 +116,7 @@
                 <div class="col-1"></div>
             </div>
         </div>
+        <script src="../Display/js/getFileUploader.js"></script>
         <script src="../Display/js/darkMode.js"></script>
         <script src="../Display/js/getNavigation.js"></script>
         <script type = "module" src="../Display/js/main.js"></script>
