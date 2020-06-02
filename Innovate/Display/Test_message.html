@@ -65,26 +65,31 @@
                 <div class="col-9 newsfeed">
                     <h1>Message</h1>
                     <br>
-                        <form id="form" enctype="multipart/form-data" method="POST">
-                            <div class="form-group">
-                                <input type="file" name="fileUpload" accept=".jpg, .jpeg, .png" class="form-control" id="image" onchange="validate_fileupload(this.value);">
-                            </div>
-                            <div class="form-group">
-                                <button type="submit"> Uploaden </button>
-                            </div>
-                        </form>
-                        <button onclick="remove()"> Remove all picture's </button>
-                        <div id="result" class="result">
+                    <p>Upload your file here with the following extension : .jpg, .jpeg, png.</p>
 
-                            <!--Dit is style voor de foto die geupload word-->
-                            <style>
-                                div.result>img
-                                {
-                                    height: 250px;
-                                    
-                                    border-radius: 10px;
-                                }
-                            </style>
+                    <form id="form" enctype="multipart/form-data" method="POST">
+                        <div class="form-group">
+                            <input type="file" name="fileUpload" accept=".jpg, .jpeg, .png" class="form-control" id="image" onchange="validate_fileupload(this.value);">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit"> Uploaden </button>
+                        </div>
+                    </form>
+
+                    <br>
+                    <button onclick="remove()"> Remove all picture's </button>
+                    <br>
+                    <div id="result" class="result">
+
+                        <!--Dit is style voor de foto die geupload word-->
+                        <style>
+                            div.result>img
+                            {
+                                height: 250px;
+                                
+                                border-radius: 10px;
+                            }
+                        </style>
 
                     </div>
                 </div>
