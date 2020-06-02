@@ -26,18 +26,19 @@ const addMessageWit = "../img/icons-scherm/addmessage_wit.png"
  */
 function toggleBasic(button) 
 {
-        switch (button.value) {
-            case "ONN":
-                swapStyleSheet('../Css/Darkstyle.css')
-                document.getElementById("docentLogoColorChange").src = docentWit;
-                button.value = "OFF";
+    switch (button.value) 
+    {
+        case "ONN":
+            swapStyleSheet('../Css/Darkstyle.css')
+            document.getElementById("docentLogoColorChange").src = docentWit;
+            button.value = "OFF";
 
-                break;
-            case "OFF":
-                swapStyleSheet('../Css/style.css')
-                document.getElementById("docentLogoColorChange").src = docent;
-                button.value = "ONN";
-                break;
+            break;
+        case "OFF":
+            swapStyleSheet('../Css/style.css')
+            document.getElementById("docentLogoColorChange").src = docent;
+            button.value = "ONN";
+            break;
     }
 }
 
