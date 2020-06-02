@@ -22,7 +22,7 @@ var user =
  */
 const username = document.getElementById('name')
 const password = document.getElementById('password')
-const form = document.getElementById('form')
+const formLogin = document.getElementById('form')
 const errorElement = document.getElementById('error')
 
 /**
@@ -39,7 +39,7 @@ const errorElement = document.getElementById('error')
  */
 function checkUsernameAndPassword()
 {
-	form.addEventListener
+	formLogin.addEventListener
 	('submit', (e) => 
 		{
 			// array voor de error meldingen.
