@@ -10,6 +10,16 @@ function swapStyleSheet(sheet)
 }
 
 /**
+ * Constanten om de afbeeldingen aan te roepen.
+ */
+const docent = "../img/icons-scherm/docent.png";
+const docentWit = "../img/icons-scherm/docent_wit.png";
+const aanwezigheid = "../img/icons-scherm/aanwezigheid.png";
+const aanwezigheidWit = "../img/icons-scherm/aanwezigheid_wit.png";
+const addMessage = "../img/icons-scherm/addmessage.png";
+const addMessageWit = "../img/icons-scherm/addmessage_wit.png"
+
+/**
  * Functie om de inlog afbeelding te wijzigen
  * @note Deze apparte functie is nodig voor de niet ingelogde pagina buienrader en newsfeed.
  * @param {*} button De knop waar op gedrukt wordt om te wisselen van afbeelding.
@@ -19,13 +29,13 @@ function toggleBasic(button)
         switch (button.value) {
             case "ONN":
                 swapStyleSheet('../Css/Darkstyle.css')
-                document.getElementById("docentLogoColorChange").src = "../img/icons-scherm/docent_wit.png";
+                document.getElementById("docentLogoColorChange").src = docentWit;
                 button.value = "OFF";
 
                 break;
             case "OFF":
                 swapStyleSheet('../Css/style.css')
-                document.getElementById("docentLogoColorChange").src = "../img/icons-scherm/docent.png";
+                document.getElementById("docentLogoColorChange").src = docent;
                 button.value = "ONN";
                 break;
     }
@@ -45,17 +55,17 @@ function toggle(button)
         switch (button.value) {
             case "ONN":
                 swapStyleSheet('../Css/Darkstyle.css')
-                toggleBasic(button)
-                document.getElementById("aanwezigheidLogoColorChange").src = "../img/icons-scherm/aanwezigheid_wit.png";
-                document.getElementById("addMessageLogoColorChange").src = "../img/icons-scherm/addmessage_wit.png";
+                document.getElementById("docentLogoColorChange").src = docentWit;
+                document.getElementById("aanwezigheidLogoColorChange").src = aanwezigheidWit;
+                document.getElementById("addMessageLogoColorChange").src = addMessageWit;
                 button.value = "OFF";
 
                 break;
             case "OFF":
                 swapStyleSheet('../Css/style.css')
-                toggleBasic(button)
-                document.getElementById("aanwezigheidLogoColorChange").src = "../img/icons-scherm/aanwezigheid.png";
-                document.getElementById("addMessageLogoColorChange").src = "../img/icons-scherm/addmessage.png";
+                document.getElementById("docentLogoColorChange").src = docent;
+                document.getElementById("aanwezigheidLogoColorChange").src = aanwezigheid;
+                document.getElementById("addMessageLogoColorChange").src = addMessage;
                 button.value = "ONN";
                 break;
     }
@@ -75,3 +85,28 @@ function toggle(button)
  * @Bug Neemt darkmode niet mee naar volgende pagina, 
  * misschien kun je de set pagestyle die in de main style.css link staat overschrijven door de gewenste.
  */
+
+ // potensele bugfix
+ // bron: https://stackoverflow.com/questions/6764961/change-an-image-with-onclick
+ // mogelijke andere oplossing bron https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
+// optie om waardes te versturen in  javascript bron: https://www.youtube.com/watch?v=GNZg1KRsWuU
+// $(".plus").click(function(){
+//     $(this).toggleClass("minus")  ; 
+//    })
+
+//    .plus{
+//     background-image: url("https://cdn0.iconfinder.com/data/icons/ie_Bright/128/plus_add_blue.png");
+//     width:130px;
+//     height:130px;
+//     background-repeat:no-repeat;
+// }
+
+// .plus.minus{
+//     background-image: url("https://cdn0.iconfinder.com/data/icons/ie_Bright/128/plus_add_minus.png");
+//     width:130px;
+//     height:130px;
+//     background-repeat:no-repeat;
+// }
+
+// <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+// <a href="#"><div class="plus">CHANGE</div></a>
