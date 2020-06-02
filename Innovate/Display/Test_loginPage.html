@@ -61,17 +61,17 @@
             </div>
 
             <div class="row worksheet">
-                <div class="col-9 newsfeed">
+                <div class="col-9 newsfeed loginScreen">
                     <h1>Login</h1>
                     <br>
                     <div id="error"></div>
                     <form id="form" method="GET">
-                        <div>
-                            <label for="name">Name</label>
+                        <div class="loginForm">
+                            <label for="name">Name</label><br>
                             <input id="name" name="name" type="text" placeholder="Username">
                         </div>
-                        <div>
-                            <label for="password">Password</label>
+                        <div class="loginForm">
+                            <label for="password">Password</label><br>
                             <input id="password" name="password" type="password" placeholder="Password">
                         </div>
                         <button onclick="checkUsernameAndPassword()" type="submit">Login</button>
