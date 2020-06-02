@@ -54,8 +54,8 @@ function getCurrentDate()
      */
 }
 // dit is een auto refresher van een uur.
-// Tussen 23:00 en 01:00 zal de pagina herladen worden en de datum veranderen.
-setInterval(getCurrentDate, 3600000);
+// Tussen 23:59 en 00:01 zal de de date updaten.
+setInterval(getCurrentDate, 3600);
 
 // function getCurrentDate() 
 // {
