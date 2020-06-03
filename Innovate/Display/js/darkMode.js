@@ -72,42 +72,5 @@ function toggle(button)
     }
 }
 
-// function iconsDark()
-// {
-//     document.getElementById("imgClickAndChange").src = "../img/icons-scherm/docent_wit.png";
-// }
-
-// function iconsLight()
-// {
-//     document.getElementById("imgClickAndChange").src = "../img/icons-scherm/docent.png";
-// }
-
-/**
- * @Bug Neemt darkmode niet mee naar volgende pagina, 
- * misschien kun je de set pagestyle die in de main style.css link staat overschrijven door de gewenste.
- */
-
- // potensele bugfix
- // bron: https://stackoverflow.com/questions/6764961/change-an-image-with-onclick
- // mogelijke andere oplossing bron https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
-// optie om waardes te versturen in  javascript bron: https://www.youtube.com/watch?v=GNZg1KRsWuU
-// $(".plus").click(function(){
-//     $(this).toggleClass("minus")  ; 
-//    })
-
-//    .plus{
-//     background-image: url("https://cdn0.iconfinder.com/data/icons/ie_Bright/128/plus_add_blue.png");
-//     width:130px;
-//     height:130px;
-//     background-repeat:no-repeat;
-// }
-
-// .plus.minus{
-//     background-image: url("https://cdn0.iconfinder.com/data/icons/ie_Bright/128/plus_add_minus.png");
-//     width:130px;
-//     height:130px;
-//     background-repeat:no-repeat;
-// }
-
 // <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 // <a href="#"><div class="plus">CHANGE</div></a>

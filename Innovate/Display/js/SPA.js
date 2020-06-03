@@ -168,9 +168,6 @@ function showMessage()
     '<style>div.result>img{height: 250px;border-radius: 10px;}</style>');
 }
 
-
-
-
 /**
  * Functie om je uit te loggen en alle data te wissen
  * @note Het verwijderd ook de afbeeldingen die je in de fileuploader hbet staan.
@@ -212,7 +209,7 @@ function enabelAllButtons()
         '<img onclick="showMessage()" id="addMessageLogoColorChange" src="../img/icons-scherm/addmessage.png" alt="Add Message" class="image"></img>');
 
         locateElement("newsfeedLogo",
-        '<img onclick="showNewsfeedLogin()" src="../img/icons-scherm/logo.png" alt="Logo" class="image"></img>');
+        '<img onclick="showNewsfeed()" src="../img/icons-scherm/logo.png" alt="Logo" class="image"></img>');
     }
 }
 
