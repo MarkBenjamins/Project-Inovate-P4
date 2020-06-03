@@ -153,7 +153,6 @@ function showWijzigBeschikbaarheid()
 function showMessage()
 {
     clearAllData()
-    ShowNewsfeedLogin()
     locateElement("showTheMessage",
     '<h1>Message</h1><br>'+
     '<p>Upload your file here with the following extension : .jpg, .jpeg, png.</p>'+
