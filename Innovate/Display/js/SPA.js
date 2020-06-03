@@ -24,7 +24,11 @@ function clearAllData()
     locateElement("aanwezigheidCheck", '');
     locateElement("showTheMessage", '');
 }
-
+/**
+ * Functie die de inhoud van de buienradar pagina laat zien.
+ * @note Om dit te doen moet de pagina eerst leeg gemaakt worden door de clearAllData() functie.
+ * @note Daarna word er gekeken of er is ingelogd, zodat de extra optie knoppen er bij komen.
+ */
 function showBuienradar()
 {
     clearAllData()
@@ -36,6 +40,11 @@ function showBuienradar()
     locateElement("toNewsfeed", '<button type="button" onclick="showNewsfeed()">Back to newsfeed</button>');
 }
 
+/**
+ * Functie die de inhoud van de news-feed pagina laat zien.
+ * @note Om dit te doen moet de pagina eerst leeg gemaakt worden door de clearAllData() functie.
+ * @note Daarna word er gekeken of er is ingelogd, zodat de extra optie knoppen er bij komen.
+ */
 function showNewsfeed()
 {
     clearAllData()
@@ -44,7 +53,11 @@ function showNewsfeed()
 }
 
 /**
- * BUGGGGGGGGG form al gedefineerd
+ * Functie die de inhoud van de login pagina laat zien.
+ * @note Om dit te doen moet de pagina eerst leeg gemaakt worden door de clearAllData() functie.
+ * @note Daarna word er gekeken of er is ingelogd, zodat de extra optie knoppen er bij komen.
+ * @bug form is al gedefineerd 
+ * @todo fix de bug
  */
 function showLogonPage()
 {
@@ -63,7 +76,7 @@ function showLogonPage()
             '<input id="password" name="password" type="password" placeholder="Password">'+
         '</div>'+
         '<div>'+
-            '<button onclick="/*!!!!!!!!!!!!!!!!!!!Hier is een bug*/showLogoffPage()" type="submit">Login</button>'+
+            '<button onclick="/*!!!!!!!!!!!!!!!!!!!Hier is een bug*/tussenLogin()" type="submit">Login</button>'+
         '</div><br><br>'+
         '<p><a href="mailto:someone@example.com">Forgot your password?</a></p>'+
     '</form>'+
@@ -73,10 +86,26 @@ function showLogonPage()
 }
 
 
+
+
+
+function tussenLogin()
+{
+    loguitkill()
+    ingelogdtest()
+    checkIngelogd()
+}
+
+
+
+/**
+ * Functie die de inhoud van de logoff pagina laat zien.
+ * @note Om dit te doen moet de pagina eerst leeg gemaakt worden door de clearAllData() functie.
+ * @note Daarna word er gekeken of er is ingelogd, zodat de extra optie knoppen er bij komen.
+ */
 function showLogoffPage()
 {
     clearAllData()
-    ingelogdtest()
     checkIngelogd()
     ShowNewsfeedLogin()
 
@@ -131,7 +160,6 @@ function checkIngelogd()
 {
     if (window.localStorage.length > 0)
     {
-        clearAllData()
 
         locateElement("aanwezigheidLogo",
         '<img onclick="showWijzigBeschikbaarheid()" id="aanwezigheidLogoColorChange" src="../img/icons-scherm/aanwezigheid.png" alt="Aanwezigheid" class="image"></img>');
