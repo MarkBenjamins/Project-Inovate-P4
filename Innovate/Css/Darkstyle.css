@@ -97,6 +97,31 @@ body
     margin-bottom: 8px;
 }
 
+.logoffScreen
+{
+    text-align: center;
+}
+
+.logoffScreen #name
+{
+    margin-bottom: 8px;
+}
+
+.logoffScreen #password
+{
+    margin-bottom: 8px;
+}
+
+.logoffScreen #newPassword
+{
+    margin-bottom: 8px;
+}
+
+.changeAvatarButton #btnSubmit
+{
+    margin-top: 8px;
+}
+
 .teacher
 {
     height: 60px;
