@@ -87,24 +87,17 @@ function showLogoffPage()
         '<button type="button" onclick="loguitkill()">logoff</button>'+
         '<br>'+
         '<br>'+
-        '<br>'+
     '</form>'+
 
     '<h1>Change password</h1>'+
     '<div id="error"></div>'+
-    '<form id="formChange">'+
-        'Username<br>'+
-        '<input type="text" id="name" name="name" placeholder="Username">'+
-        '<br>'+
-        '<br>'+
-        'Old password<br>'+
-        '<input type="password" id="password" name="password" placeholder="Current password">'+
-        '<br>'+
-        '<br>'+
-        'New password<br>'+
-        '<input type="text" id="newPassword" name="newPassword" placeholder="New password">'+
-        '<br>'+
-        '<br>'+
+    '<form id="formChange" class="formPassword">'+
+        '<label>Username</label><br>'+
+        '<input type="text" id="name" name="name" placeholder="Username"><br>'+
+        '<label>Old password</label><br>'+
+        '<input type="password" id="password" name="password" placeholder="Current password"><br>'+
+        '<label>New password</label><br>'+
+        '<input type="text" id="newPassword" name="newPassword" placeholder="New password"><br>'+
         '<button onclick="changePassword()" type="submit">ChangePassword</button>'+
         '<br>'+
         '<br>'+
@@ -116,7 +109,7 @@ function showLogoffPage()
             '<input type="hidden" id="user_id" value="75" />'+
             '<input type="file" id="avatar_img" accept="image/x-png" multiple />'+
         '</div>'+
-        '<div>'+
+        '<div class="changeAvatarButton">'+
             '<button id="btnSubmit" onclick="">Upload Avatar</button>'+
         '</div>'+
     '</form>'
