@@ -44,7 +44,16 @@ function getDetails()
         makeDetails()
     }
 }
-
+/**
+ * functie om de kleur te wisselen als het naar darkmode gaat
+ */
+function switchColour()
+{
+    if(BgC == "#585656")
+    {
+        BgC = "white"
+    }
+}
 /**
  * Functie om de status van de JSON file uit te lezen en aan de hand daarvan de kleur te bepalen.
  * @return {colour} De kleur die gelijk staat aan de status.
@@ -116,7 +125,7 @@ function makeDetails()
     divElem.style.marginBottom = "10px";
     divElem.style.paddingTop = "10px";
     divElem.style.paddingLeft = "10px";
-    divElem.style.backgroundColor = "white";
+    divElem.style.backgroundColor = BgC;
     divElem.style.color = "black";
 
 

@@ -28,7 +28,7 @@ getTime();
 
 getCurrentDate();
 
-getDetails();
+getDetails("#737373");
 
 
 
