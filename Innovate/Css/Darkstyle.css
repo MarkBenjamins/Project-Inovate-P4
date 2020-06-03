@@ -60,6 +60,15 @@ body
     padding: 0;
 }
 
+.weerknop
+{
+    height:100%;
+    margin-left: -15px;
+    margin-right: -15px;
+    background-color: var( --gray-dark-color);
+    color:white;
+}
+
 .worksheet
 {
     padding-left: 30px;
