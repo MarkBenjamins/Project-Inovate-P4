@@ -79,6 +79,7 @@ function showLogoffPage()
     ingelogdtest()
     checkIngelogd()
     ShowNewsfeedLogin()
+
     locateElement("logOFF",
     '<h1>Logoff</h1>'+
     '<form>'+
@@ -118,8 +119,8 @@ function showLogoffPage()
         '<div>'+
             '<button id="btnSubmit" onclick="">Upload Avatar</button>'+
         '</div>'+
-    '</form>';
-    )
+    '</form>'
+    );
 }
 
 function ShowNewsfeedLogin()
@@ -196,8 +197,8 @@ function showMessage()
     '<style>div.result>img{height: 250px;border-radius: 10px;}</style>');
 }
 
-function weerAPI()
-{
-    locateElement('weerAPI', 'hallo there')
-}
-weerAPI()
+// function weerAPI()
+// {
+//     locateElement('weerAPI', 'hallo there')
+// }
+// weerAPI()
