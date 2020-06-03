@@ -32,7 +32,6 @@ function clearAllData()
 function showBuienradar()
 {
     clearAllData()
-    checkIngelogd()
     locateElement("koptekst", 'Buienradar');
     locateElement("paginaInhoud", 
     '<iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.77917&lng=6.90694&overname=2&zoom=8&naam=Emmen&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no>'+
@@ -48,7 +47,6 @@ function showBuienradar()
 function showNewsfeed()
 {
     clearAllData()
-    checkIngelogd()
     locateElement("koptekst",'NEWSFEED');
 }
 
@@ -62,7 +60,6 @@ function showNewsfeed()
 function showLogonPage()
 {
     clearAllData()
-    checkIngelogd()
     locateElement("loginScreen",
     '<h1>Login</h1><br>'+
     '<div id="error"></div>'+
@@ -85,19 +82,6 @@ function showLogonPage()
     )
 }
 
-
-
-
-
-function tussenLogin()
-{
-    loguitkill()
-    ingelogdtest()
-    checkIngelogd()
-}
-
-
-
 /**
  * Functie die de inhoud van de logoff pagina laat zien.
  * @note Om dit te doen moet de pagina eerst leeg gemaakt worden door de clearAllData() functie.
@@ -106,9 +90,6 @@ function tussenLogin()
 function showLogoffPage()
 {
     clearAllData()
-    checkIngelogd()
-    ShowNewsfeedLogin()
-
     locateElement("logOFF",
     '<h1>Logoff</h1>'+
     '<form>'+
@@ -145,6 +126,58 @@ function showLogoffPage()
     );
 }
 
+/**
+ * Functie die de inhoud van de beschikbaarheid pagina laat zien.
+ * @note Om dit te doen moet de pagina eerst leeg gemaakt worden door de clearAllData() functie.
+ * @note Daarna word er gekeken of er is ingelogd, zodat de extra optie knoppen er bij komen.
+ */
+function showWijzigBeschikbaarheid()
+{
+    clearAllData()
+    locateElement("aanwezigheidCheck",
+    '<h1>Wijzig Beschikbaarheid</h1>'+
+    'Klik op een knop om je status te wijzigen:'+
+    '<br><br>'+
+    '<butten style="background-color: red;">Maak het rood</butten>'+
+    '<br><br>'+
+    '<butten style="background-color: yellow;"> Maak het geel</butten>'+
+    '<br><br>'+
+    '<butten style="background-color: green;">Maak het green</butten>');
+}
+
+/**
+ * Functie die de inhoud van de message pagina laat zien.
+ * @note Om dit te doen moet de pagina eerst leeg gemaakt worden door de clearAllData() functie.
+ * @note Daarna word er gekeken of er is ingelogd, zodat de extra optie knoppen er bij komen.
+ */
+function showMessage()
+{
+    clearAllData()
+    ShowNewsfeedLogin()
+    locateElement("showTheMessage",
+    '<h1>Message</h1><br>'+
+    '<p>Upload your file here with the following extension : .jpg, .jpeg, png.</p>'+
+
+    '<form id="form" enctype="multipart/form-data" method="POST">'+
+        '<div class="form-group">'+
+            '<input type="file" name="fileUpload" accept=".jpg, .jpeg, .png" class="form-control" id="image" onchange="validate_fileupload(this.value);">'+
+        '</div>'+
+        '<div class="form-group">'+
+            '<button type="submit"> Uploaden </button>'+
+        '</div>'+
+    '</form><br>'+
+
+    '<button onclick="remove()"> Remove all picture s </button><br>'+
+    '<div id="result" class="result">'+
+    '<style>div.result>img{height: 250px;border-radius: 10px;}</style>');
+}
+
+
+
+
+
+
+
 function ShowNewsfeedLogin()
 {
     clearAllData()
@@ -179,47 +212,16 @@ function loguitkill()
     showNewsfeed()
 }
 
-function showWijzigBeschikbaarheid()
-{
-    clearAllData()
-
-    ShowNewsfeedLogin()
-
-    locateElement("aanwezigheidCheck",
-    '<h1>Wijzig Beschikbaarheid</h1>'+
-    'Klik op een knop om je status te wijzigen:'+
-    '<br><br>'+
-    '<butten style="background-color: red;">Maak het rood</butten>'+
-    '<br><br>'+
-    '<butten style="background-color: yellow;"> Maak het geel</butten>'+
-    '<br><br>'+
-    '<butten style="background-color: green;">Maak het green</butten>');
-}
-
-function showMessage()
-{
-    clearAllData()
-    ShowNewsfeedLogin()
-    locateElement("showTheMessage",
-    '<h1>Message</h1><br>'+
-    '<p>Upload your file here with the following extension : .jpg, .jpeg, png.</p>'+
-
-    '<form id="form" enctype="multipart/form-data" method="POST">'+
-        '<div class="form-group">'+
-            '<input type="file" name="fileUpload" accept=".jpg, .jpeg, .png" class="form-control" id="image" onchange="validate_fileupload(this.value);">'+
-        '</div>'+
-        '<div class="form-group">'+
-            '<button type="submit"> Uploaden </button>'+
-        '</div>'+
-    '</form><br>'+
-
-    '<button onclick="remove()"> Remove all picture s </button><br>'+
-    '<div id="result" class="result">'+
-    '<style>div.result>img{height: 250px;border-radius: 10px;}</style>');
-}
 
 // function weerAPI()
 // {
 //     locateElement('weerAPI', 'hallo there')
 // }
 // weerAPI()
+
+function tussenLogin()
+{
+    loguitkill()
+    ingelogdtest()
+    checkIngelogd()
+}
