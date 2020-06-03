@@ -177,19 +177,48 @@ function showMessage()
 
 
 
-function ShowNewsfeedLogin()
+// function ShowNewsfeedLogin()
+// {
+//     clearAllData()
+//     checkIngelogd()
+// }
+
+// function ingelogdtest()
+// {
+//     window.localStorage.setItem('user','user')
+// }
+
+// function checkIngelogd()
+// {
+//     if (window.localStorage.length > 0)
+//     {
+
+//         locateElement("aanwezigheidLogo",
+//         '<img onclick="showWijzigBeschikbaarheid()" id="aanwezigheidLogoColorChange" src="../img/icons-scherm/aanwezigheid.png" alt="Aanwezigheid" class="image"></img>');
+
+//         locateElement("addMessageLogo",
+//         '<img onclick="showMessage()" id="addMessageLogoColorChange" src="../img/icons-scherm/addmessage.png" alt="Add Message" class="image"></img>');
+
+//         locateElement("newsfeedLogo",
+//         '<img onclick="showNewsfeedLogin()" src="../img/icons-scherm/logo.png" alt="Logo" class="image"></img>');
+//     }
+// }
+
+function loguitkill()
 {
+    window.localStorage.clear()
     clearAllData()
-    checkIngelogd()
+    showNewsfeed()
+    document.getElementById('docentLogoColorChange').setAttribute ("onClick", "showLogonPage()");
 }
 
-function ingelogdtest()
+
+
+function tussenLogin()
 {
+    showNewsfeed()
     window.localStorage.setItem('user','user')
-}
 
-function checkIngelogd()
-{
     if (window.localStorage.length > 0)
     {
 
@@ -201,26 +230,7 @@ function checkIngelogd()
 
         locateElement("newsfeedLogo",
         '<img onclick="showNewsfeedLogin()" src="../img/icons-scherm/logo.png" alt="Logo" class="image"></img>');
+
+        document.getElementById('docentLogoColorChange').setAttribute ("onClick", "showLogoffPage()");
     }
-}
-
-function loguitkill()
-{
-    window.localStorage.clear()
-    clearAllData()
-    showNewsfeed()
-}
-
-
-// function weerAPI()
-// {
-//     locateElement('weerAPI', 'hallo there')
-// }
-// weerAPI()
-
-function tussenLogin()
-{
-    loguitkill()
-    ingelogdtest()
-    checkIngelogd()
 }
