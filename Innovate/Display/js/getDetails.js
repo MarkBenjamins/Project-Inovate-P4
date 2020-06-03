@@ -117,6 +117,7 @@ function makeDetails()
     divElem.style.paddingTop = "10px";
     divElem.style.paddingLeft = "10px";
     divElem.style.backgroundColor = "white";
+    divElem.style.color = "black";
 
 
     //plak het gemaakte listelement onder het element van de UL
