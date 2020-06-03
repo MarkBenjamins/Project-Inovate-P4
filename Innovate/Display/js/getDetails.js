@@ -4,31 +4,31 @@ const JSON = [
     voornaam:"Albert",
     achternaam:"De Jonge",
     status:0,
-    foto:"."
+    foto:" "
     },
     {
     voornaam:"Gerjan",
     achternaam:"Van Oenen",
     status:2,
-    foto:"."
+    foto:" "
     },
     {
     voornaam:"Elleke",
     achternaam:"Jagersma",
     status:0,
-    foto:"."
+    foto:" "
     },
     {
     voornaam:"Rob",
     achternaam:"Smit",
     status:1,
-    foto:"."
+    foto:" "
     },
     {
     voornaam:"Jan",
     achternaam:"Doornbos",
     status:2,
-    foto:"."
+    foto:" "
     }
 ]
 
@@ -78,32 +78,54 @@ function makeDetails()
     let colour = getColour();
     // voeg de voor en achternaam samen
     let details = JSON[count].foto + " " + JSON[count].voornaam + " "+ JSON[count].achternaam;
+    console.log(details);
 
+    //maak een div aan waar de list elementen in kunnen
+    let divElem = document.createElement("div");
     //maak een nieuw list element aan
-    let elem = document.createElement("li");
-    //maak een nieuw span element aan
-    let statusElem = document.createElement("span");
+    let listElem = document.createElement("li");
+    //maak een nieuw div element aan
+    let statusElem = document.createElement("div");
+    //maak een span aan om de div in te zetten
+    let statusSpanElem = document.createElement("span");
+
 
     //maak er tekst voor dat nieuwe list element
     let textElem = document.createTextNode(details);
-    //maak iets(nu tekst) voor dat nieuwe span element
-    let blockElem = document.createTextNode("Status ")
+    
 
-    //koppel het block element met iets(nu tekst) aan het statuselement
-    statusElem.appendChild(blockElem);
+    statusSpanElem.appendChild(statusElem)
     //koppel het statuselement aan het list element
-    elem.appendChild(statusElem);
+    listElem.appendChild(statusSpanElem);
     //koppel het textelement aan het listelement
-    elem.appendChild(textElem);
+    listElem.appendChild(textElem);
+    //koppel het list element aan het div element
+    divElem.appendChild(listElem);
+
 
     //zet de stijl van het statuselement aanhankelijk van de status
-    statusElem.style.color = colour;
+    statusElem.style.backgroundColor = colour;
+    statusElem.style.width = "5px";
+    statusElem.style.height = "30px";
+    statusElem.style.float = "left"
+    statusElem.style.marginRight = "5px"
+    statusElem.style.marginTop = "-5px"
+    //set de stijl van het divElement
+    divElem.style.height = "40px";
+    divElem.style.width = "110%";
+    divElem.style.marginBottom = "10px";
+    divElem.style.paddingTop = "10px";
+    divElem.style.paddingLeft = "10px";
+    divElem.style.backgroundColor = "white";
+
 
     //plak het gemaakte listelement onder het element van de UL
-    document.getElementById("list").appendChild(elem);
+    document.getElementById("list").appendChild(divElem);
+
 
     //een counter voor de array
     count++;
     return details;
 }
+//window.onload(getDetails());
 export { getDetails };
