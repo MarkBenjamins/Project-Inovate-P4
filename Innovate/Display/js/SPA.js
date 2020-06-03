@@ -18,9 +18,6 @@ function clearAllData()
     locateElement("toNewsfeed", '');
     locateElement("loginScreen", '');
     locateElement("logOFF", '');
-    locateElement("aanwezigheidLogo", '');
-    locateElement("addMessageLogo", '');
-    locateElement("newsfeedLogo", '');
     locateElement("aanwezigheidCheck", '');
     locateElement("showTheMessage", '');
 }
@@ -174,46 +171,21 @@ function showMessage()
 
 
 
-
-
-
-// function ShowNewsfeedLogin()
-// {
-//     clearAllData()
-//     checkIngelogd()
-// }
-
-// function ingelogdtest()
-// {
-//     window.localStorage.setItem('user','user')
-// }
-
-// function checkIngelogd()
-// {
-//     if (window.localStorage.length > 0)
-//     {
-
-//         locateElement("aanwezigheidLogo",
-//         '<img onclick="showWijzigBeschikbaarheid()" id="aanwezigheidLogoColorChange" src="../img/icons-scherm/aanwezigheid.png" alt="Aanwezigheid" class="image"></img>');
-
-//         locateElement("addMessageLogo",
-//         '<img onclick="showMessage()" id="addMessageLogoColorChange" src="../img/icons-scherm/addmessage.png" alt="Add Message" class="image"></img>');
-
-//         locateElement("newsfeedLogo",
-//         '<img onclick="showNewsfeedLogin()" src="../img/icons-scherm/logo.png" alt="Logo" class="image"></img>');
-//     }
-// }
-
+/**
+ * Functie om je uit te loggen en alle data te wissen
+ * @note Het verwijderd ook de afbeeldingen die je in de fileuploader hbet staan.
+ */
 function loguitkill()
 {
-    window.localStorage.clear()
     clearAllData()
+    disableAllButtons()
     showNewsfeed()
     document.getElementById('docentLogoColorChange').setAttribute ("onClick", "showLogonPage()");
 }
 
-
-
+/**
+ * Functie om de button voor login om te zetten naar loguit
+ */
 function tussenLogin()
 {
     showNewsfeed()
@@ -221,7 +193,18 @@ function tussenLogin()
 
     if (window.localStorage.length > 0)
     {
+        enabelAllButtons()
+        document.getElementById('docentLogoColorChange').setAttribute ("onClick", "showLogoffPage()");
+    }
+}
 
+/**
+ * Functie om alle buttens WEL weer te geven.
+ */
+function enabelAllButtons()
+{
+    if (window.localStorage.length > 0)
+    {
         locateElement("aanwezigheidLogo",
         '<img onclick="showWijzigBeschikbaarheid()" id="aanwezigheidLogoColorChange" src="../img/icons-scherm/aanwezigheid.png" alt="Aanwezigheid" class="image"></img>');
 
@@ -230,7 +213,16 @@ function tussenLogin()
 
         locateElement("newsfeedLogo",
         '<img onclick="showNewsfeedLogin()" src="../img/icons-scherm/logo.png" alt="Logo" class="image"></img>');
-
-        document.getElementById('docentLogoColorChange').setAttribute ("onClick", "showLogoffPage()");
     }
+}
+
+/**
+ * Functie om alle buttens NIET weet te geven.
+ */
+function disableAllButtons()
+{
+    window.localStorage.clear()
+    locateElement("aanwezigheidLogo",'');
+    locateElement("addMessageLogo",'');
+    locateElement("newsfeedLogo",'');
 }
