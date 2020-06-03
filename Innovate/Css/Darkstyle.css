@@ -155,13 +155,6 @@ body
     padding: 0;
     margin: 0;
 }
-
-button
-{
-    background-color: #3d6b83;
-    color:white;
-}
-
 #list
 {
     list-style-type: none;
