@@ -160,3 +160,21 @@ body
     list-style-type: none;
     padding-left: 20px;
 }
+
+.TeacherStatus
+{
+    width: 5px;
+    height: 30px;
+    margin-right: 5px;
+    margin-top: -5px;
+    float: left;
+}
+
+.TeacherBlock
+{
+    height: 40px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: var( --gray-dark-color);
+}
