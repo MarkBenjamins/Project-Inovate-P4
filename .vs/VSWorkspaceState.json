@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\Innovate",
-    "\\Innovate\\include"
+    "\\Innovate\\Css",
+    "\\Innovate\\Include",
+    "\\Innovate\\nbproject",
+    "\\Innovate\\profilePictures"
   ],
-  "SelectedNode": "\\Innovate\\include\\DBConnect.php",
+  "SelectedNode": "\\Innovate\\Include\\test.html",
   "PreviewInSolutionExplorer": false
 }
