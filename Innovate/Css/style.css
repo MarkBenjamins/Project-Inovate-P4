@@ -13,35 +13,33 @@ body
 
 .header
 {
-    height: 150px;
     padding: 30px;
 }
 
 .white
 {
-    height: 100%;
+    height: 90px;
     background-color: white;
     margin-right: 5px;
-    /* margin-left: 10px; */
     text-align: center;
 }
 
-/* .white h2 
+ .white h2 
 {
     position: relative;
     top: 25%;
-} */
+} 
 
 .buttonlogin
 {
     height: 90px;
     width: 85px;
-    /* vertical-align: middle; */
     text-align: center;
     float: left;
     padding: 10px;
     background-color: white;
     cursor: pointer;
+    
 }
 
 .height
@@ -56,12 +54,12 @@ body
 
 .darkmode
 {
-    height: 100%;
+    height: 90px;
     width: 90px;
     background-color: grey;
-    float: left;
-    margin-left: -15px;
-    margin-right: 35px;
+    float: right;
+    margin-right: 20px;
+    margin-left: 5px;
     padding: 0;
 }
 
@@ -81,9 +79,8 @@ body
 
 .newsfeed 
 {
-    height: 755px;
+    height: 680px;
     background-color: white;
-    /* margin-left: 10px; */
 }
 
 .loginScreen
@@ -138,8 +135,6 @@ body
 .color
 {
     background-color: red;
-/*    background-color: yellow;
-    background-color: green;*/
     width: 5%;
     height: 100%;
     margin-bottom: 20px;
@@ -148,9 +143,6 @@ body
 
 .docent
 {
-    /* float:left; 
-    width: 80%;
-    margin-left: 10%; */
     font-size: 20pt;
 }
 
@@ -168,4 +160,22 @@ button
 {
     list-style-type: none;
     padding-left: 20px;
+}
+
+.TeacherStatus
+{
+    width: 5px;
+    height: 30px;
+    margin-right: 5px;
+    margin-top: -5px;
+    float: left;
+}
+
+.TeacherBlock
+{
+    height: 40px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: white;
 }
