@@ -15,18 +15,23 @@ body
 
 .header
 {
-    height: 150px;
     padding: 30px;
 }
 
 .white
 {
-    height: 100%;
+    height: 90px;
     background-color: var( --gray-dark-color);
     margin-right: 5px;
     /* margin-left: 10px; */
     text-align: center;
 }
+
+ .white h2 
+{
+    position: relative;
+    top: 25%;
+} 
 
 .buttonlogin
 {
@@ -51,12 +56,12 @@ body
 
 .darkmode
 {
-    height: 100%;
+    height: 90px;
     width: 90px;
     background-color: grey;
-    float: left;
-    margin-left: -15px;
-    margin-right: 35px;
+    float: right;
+    margin-right: 20px;
+    margin-left: 5px;
     padding: 0;
 }
 
@@ -68,9 +73,8 @@ body
 
 .newsfeed 
 {
-    height: 755px;
+    height: 680px;
     background-color: var( --gray-dark-color);
-    /* margin-left: 10px; */
 }
 
 .loginScreen
