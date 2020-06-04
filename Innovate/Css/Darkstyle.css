@@ -65,6 +65,15 @@ body
     padding: 0;
 }
 
+.weerknop
+{
+    height:100%;
+    margin-left: -15px;
+    margin-right: -15px;
+    background-color: var( --gray-dark-color);
+    color:white;
+}
+
 .worksheet
 {
     padding-left: 30px;
@@ -90,6 +99,31 @@ body
 .loginForm #password
 {
     margin-bottom: 8px;
+}
+
+.logoffScreen
+{
+    text-align: center;
+}
+
+.logoffScreen #name
+{
+    margin-bottom: 8px;
+}
+
+.logoffScreen #password
+{
+    margin-bottom: 8px;
+}
+
+.logoffScreen #newPassword
+{
+    margin-bottom: 8px;
+}
+
+.changeAvatarButton #btnSubmit
+{
+    margin-top: 8px;
 }
 
 .teacher
@@ -129,4 +163,22 @@ body
 {
     list-style-type: none;
     padding-left: 20px;
+}
+
+.TeacherStatus
+{
+    width: 5px;
+    height: 30px;
+    margin-right: 5px;
+    margin-top: -5px;
+    float: left;
+}
+
+.TeacherBlock
+{
+    height: 40px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: var( --gray-dark-color);
 }

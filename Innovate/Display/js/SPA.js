@@ -18,17 +18,17 @@ function clearAllData()
     locateElement("toNewsfeed", '');
     locateElement("loginScreen", '');
     locateElement("logOFF", '');
-    locateElement("aanwezigheidLogo", '');
-    locateElement("addMessageLogo", '');
-    locateElement("newsfeedLogo", '');
     locateElement("aanwezigheidCheck", '');
     locateElement("showTheMessage", '');
 }
-
+/**
+ * Functie die de inhoud van de buienradar pagina laat zien.
+ * @note Om dit te doen moet de pagina eerst leeg gemaakt worden door de clearAllData() functie.
+ * @note Daarna word er gekeken of er is ingelogd, zodat de extra optie knoppen er bij komen.
+ */
 function showBuienradar()
 {
     clearAllData()
-    checkIngelogd()
     locateElement("koptekst", 'Buienradar');
     locateElement("paginaInhoud", 
     '<iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.77917&lng=6.90694&overname=2&zoom=8&naam=Emmen&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no>'+
@@ -36,20 +36,27 @@ function showBuienradar()
     locateElement("toNewsfeed", '<button type="button" onclick="showNewsfeed()">Back to newsfeed</button>');
 }
 
+/**
+ * Functie die de inhoud van de news-feed pagina laat zien.
+ * @note Om dit te doen moet de pagina eerst leeg gemaakt worden door de clearAllData() functie.
+ * @note Daarna word er gekeken of er is ingelogd, zodat de extra optie knoppen er bij komen.
+ */
 function showNewsfeed()
 {
     clearAllData()
-    checkIngelogd()
     locateElement("koptekst",'NEWSFEED');
 }
 
 /**
- * BUGGGGGGGGG form al gedefineerd
+ * Functie die de inhoud van de login pagina laat zien.
+ * @note Om dit te doen moet de pagina eerst leeg gemaakt worden door de clearAllData() functie.
+ * @note Daarna word er gekeken of er is ingelogd, zodat de extra optie knoppen er bij komen.
+ * @bug form is al gedefineerd 
+ * @todo fix de bug
  */
 function showLogonPage()
 {
     clearAllData()
-    checkIngelogd()
     locateElement("loginScreen",
     '<h1>Login</h1><br>'+
     '<div id="error"></div>'+
@@ -63,7 +70,7 @@ function showLogonPage()
             '<input id="password" name="password" type="password" placeholder="Password">'+
         '</div>'+
         '<div>'+
-            '<button onclick="/*!!!!!!!!!!!!!!!!!!!Hier is een bug*/showLogoffPage()" type="submit">Login</button>'+
+            '<button onclick="/*!!!!!!!!!!!!!!!!!!!Hier is een bug*/tussenLogin()" type="submit">Login</button>'+
         '</div><br><br>'+
         '<p><a href="mailto:someone@example.com">Forgot your password?</a></p>'+
     '</form>'+
@@ -72,14 +79,14 @@ function showLogonPage()
     )
 }
 
-
+/**
+ * Functie die de inhoud van de logoff pagina laat zien.
+ * @note Om dit te doen moet de pagina eerst leeg gemaakt worden door de clearAllData() functie.
+ * @note Daarna word er gekeken of er is ingelogd, zodat de extra optie knoppen er bij komen.
+ */
 function showLogoffPage()
 {
     clearAllData()
-    ingelogdtest()
-    checkIngelogd()
-    ShowNewsfeedLogin()
-
     locateElement("logOFF",
     '<h1>Logoff</h1>'+
     '<form>'+
@@ -87,24 +94,17 @@ function showLogoffPage()
         '<button type="button" onclick="loguitkill()">logoff</button>'+
         '<br>'+
         '<br>'+
-        '<br>'+
     '</form>'+
 
     '<h1>Change password</h1>'+
     '<div id="error"></div>'+
-    '<form id="formChange">'+
-        'Username<br>'+
-        '<input type="text" id="name" name="name" placeholder="Username">'+
-        '<br>'+
-        '<br>'+
-        'Old password<br>'+
-        '<input type="password" id="password" name="password" placeholder="Current password">'+
-        '<br>'+
-        '<br>'+
-        'New password<br>'+
-        '<input type="text" id="newPassword" name="newPassword" placeholder="New password">'+
-        '<br>'+
-        '<br>'+
+    '<form id="formChange" class="formPassword">'+
+        '<label>Username</label><br>'+
+        '<input type="text" id="name" name="name" placeholder="Username"><br>'+
+        '<label>Old password</label><br>'+
+        '<input type="password" id="password" name="password" placeholder="Current password"><br>'+
+        '<label>New password</label><br>'+
+        '<input type="text" id="newPassword" name="newPassword" placeholder="New password"><br>'+
         '<button onclick="changePassword()" type="submit">ChangePassword</button>'+
         '<br>'+
         '<br>'+
@@ -116,54 +116,21 @@ function showLogoffPage()
             '<input type="hidden" id="user_id" value="75" />'+
             '<input type="file" id="avatar_img" accept="image/x-png" multiple />'+
         '</div>'+
-        '<div>'+
+        '<div class="changeAvatarButton">'+
             '<button id="btnSubmit" onclick="">Upload Avatar</button>'+
         '</div>'+
     '</form>'
     );
 }
 
-function ShowNewsfeedLogin()
-{
-    clearAllData()
-    checkIngelogd()
-}
-
-function ingelogdtest()
-{
-    window.localStorage.setItem('user','user')
-}
-
-function checkIngelogd()
-{
-    if (window.localStorage.length > 0)
-    {
-        clearAllData()
-
-        locateElement("aanwezigheidLogo",
-        '<img onclick="showWijzigBeschikbaarheid()" id="aanwezigheidLogoColorChange" src="../img/icons-scherm/aanwezigheid.png" alt="Aanwezigheid" class="image"></img>');
-
-        locateElement("addMessageLogo",
-        '<img onclick="showMessage()" id="addMessageLogoColorChange" src="../img/icons-scherm/addmessage.png" alt="Add Message" class="image"></img>');
-
-        locateElement("newsfeedLogo",
-        '<img onclick="showNewsfeedLogin()" src="../img/icons-scherm/logo.png" alt="Logo" class="image"></img>');
-    }
-}
-
-function loguitkill()
-{
-    window.localStorage.clear()
-    clearAllData()
-    showNewsfeed()
-}
-
+/**
+ * Functie die de inhoud van de beschikbaarheid pagina laat zien.
+ * @note Om dit te doen moet de pagina eerst leeg gemaakt worden door de clearAllData() functie.
+ * @note Daarna word er gekeken of er is ingelogd, zodat de extra optie knoppen er bij komen.
+ */
 function showWijzigBeschikbaarheid()
 {
     clearAllData()
-
-    ShowNewsfeedLogin()
-
     locateElement("aanwezigheidCheck",
     '<h1>Wijzig Beschikbaarheid</h1>'+
     'Klik op een knop om je status te wijzigen:'+
@@ -175,10 +142,14 @@ function showWijzigBeschikbaarheid()
     '<butten style="background-color: green;">Maak het green</butten>');
 }
 
+/**
+ * Functie die de inhoud van de message pagina laat zien.
+ * @note Om dit te doen moet de pagina eerst leeg gemaakt worden door de clearAllData() functie.
+ * @note Daarna word er gekeken of er is ingelogd, zodat de extra optie knoppen er bij komen.
+ */
 function showMessage()
 {
     clearAllData()
-    ShowNewsfeedLogin()
     locateElement("showTheMessage",
     '<h1>Message</h1><br>'+
     '<p>Upload your file here with the following extension : .jpg, .jpeg, png.</p>'+
@@ -197,8 +168,58 @@ function showMessage()
     '<style>div.result>img{height: 250px;border-radius: 10px;}</style>');
 }
 
-// function weerAPI()
-// {
-//     locateElement('weerAPI', 'hallo there')
-// }
-// weerAPI()
+/**
+ * Functie om je uit te loggen en alle data te wissen
+ * @note Het verwijderd ook de afbeeldingen die je in de fileuploader hbet staan.
+ */
+function loguitkill()
+{
+    clearAllData()
+    disableAllButtons()
+    showNewsfeed()
+    document.getElementById('docentLogoColorChange').setAttribute ("onClick", "showLogonPage()");
+}
+
+/**
+ * Functie om de button voor login om te zetten naar loguit
+ */
+function tussenLogin()
+{
+    showNewsfeed()
+    window.localStorage.setItem('user','user')
+
+    if (window.localStorage.length > 0)
+    {
+        enabelAllButtons()
+        document.getElementById('docentLogoColorChange').setAttribute ("onClick", "showLogoffPage()");
+    }
+}
+
+/**
+ * Functie om alle buttens WEL weer te geven.
+ */
+function enabelAllButtons()
+{
+    if (window.localStorage.length > 0)
+    {
+        locateElement("aanwezigheidLogo",
+        '<img onclick="showWijzigBeschikbaarheid()" id="aanwezigheidLogoColorChange" src="../img/icons-scherm/aanwezigheid.png" alt="Aanwezigheid" class="image"></img>');
+
+        locateElement("addMessageLogo",
+        '<img onclick="showMessage()" id="addMessageLogoColorChange" src="../img/icons-scherm/addmessage.png" alt="Add Message" class="image"></img>');
+
+        locateElement("newsfeedLogo",
+        '<img onclick="showNewsfeed()" src="../img/icons-scherm/logo.png" alt="Logo" class="image"></img>');
+    }
+}
+
+/**
+ * Functie om alle buttens NIET weet te geven.
+ */
+function disableAllButtons()
+{
+    window.localStorage.clear()
+    locateElement("aanwezigheidLogo",'');
+    locateElement("addMessageLogo",'');
+    locateElement("newsfeedLogo",'');
+}

@@ -103,21 +103,23 @@ function makeDetails()
     divElem.appendChild(listElem);
 
 
-    //zet de stijl van het statuselement aanhankelijk van de status
+    //zet de stijl en de class van het statuselement aanhankelijk van de status
     statusElem.style.backgroundColor = colour;
-    statusElem.style.width = "5px";
-    statusElem.style.height = "30px";
-    statusElem.style.float = "left"
-    statusElem.style.marginRight = "5px"
-    statusElem.style.marginTop = "-5px"
-    //set de stijl van het divElement
-    divElem.style.height = "40px";
-    divElem.style.width = "110%";
-    divElem.style.marginBottom = "10px";
-    divElem.style.paddingTop = "10px";
-    divElem.style.paddingLeft = "10px";
-    divElem.style.backgroundColor = "white";
-    divElem.style.color = "black";
+    statusElem.setAttribute("class", "TeacherStatus");
+    // statusElem.style.width = "5px";
+    // statusElem.style.height = "30px";
+    // statusElem.style.float = "left"
+    // statusElem.style.marginRight = "5px"
+    // statusElem.style.marginTop = "-5px"
+    //set de class van het divElement
+    divElem.setAttribute("class", "TeacherBlock");
+    // divElem.style.height = "40px";
+    // divElem.style.width = "110%";
+    // divElem.style.marginBottom = "10px";
+    // divElem.style.paddingTop = "10px";
+    // divElem.style.paddingLeft = "10px";
+    // divElem.style.backgroundColor = "white";
+    // divElem.style.color = "black";
 
 
     //plak het gemaakte listelement onder het element van de UL

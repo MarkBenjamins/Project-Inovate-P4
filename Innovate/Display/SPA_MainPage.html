@@ -3,10 +3,8 @@
     <head>
         <link rel="stylesheet" href="../Css/bootstrap.css" type="text/css">
         <link id="pagestyle" rel="stylesheet" href="../Css/style.css" type="text/css">
-
         <link rel="icon" type="image/x-icon" href="../img/logo.ico" /> 
         <meta charset="UTF-8">
-        <!-- <meta http-equiv="refresh" content="30"> -->
         <meta name="description" content="Project innovate INF1C">
         <meta name="author" content=
             "Tessa Ramaker,
@@ -34,13 +32,15 @@
                     <!-- <img src="<?php echo '../img/iconen-weerlive/' . $current->image . '.png';?>"> -->
                     </p>
                     <!-- <p><?php echo $temperatuur;?> °C</p> -->
-                    <p onclick="showBuienradar()" id="weerAPI">Click op mij voor het Weer</p>
+                    <button class="weerknop" id="1" value="ONN" onclick="showBuienradar();">
+                        <p>Click op mij voor het weer</p>
+                    </button>
                 </div>
                 <div class="col-sm-10 col-md-8 col-lg-5 col-xl-5 white">
                     <h2><span id="date"></span></h2>
                 </div>
                 <div class="col-sm-2 col-md-1 col-lg-1 col-xl-1">
-                    <button class="darkmode" id="1" value="ONN" style="color:blue" onclick="javascript:toggleBasic(this);"> 
+                    <button class="darkmode" id="1" value="ONN" onclick="javascript:toggle(this);"> 
                         <img src="../img/icons-scherm/darkmode_icon.png" alt="Dark Mode" class='image'>
                     </button>
                 </div>
@@ -80,7 +80,7 @@
                     <div id="loginScreen" class="loginScreen"></div>
 
                     <!--LogOffPage-->
-                    <div id="logOFF"></div>
+                    <div id="logOFF" class="logoffScreen"></div>
 
                     <!--Newsfeed, buienradar-->
                     <h1 id="koptekst">NEWSFEED</h1>
@@ -103,10 +103,9 @@
         </div>
         <script src="../Display/js/SPA.js"></script>
         <script src="../Display/js/darkMode.js"></script>
-        <script src="../Display/js/getNavigation.js"></script>
         <!-- <script src="../Display/js/getFileUploader.js"></script> -->
         <!-- <script src="../Display/js/getChangePassword.js"></script> -->
-        <script src="../Display/js/getUsernamAndPassword.js"></script>
+        <!-- <script src="../Display/js/getUsernamAndPassword.js"></script> -->
         <script type = "module" src="../Display/js/main.js"></script>
     </body>
 </html>
