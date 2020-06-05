@@ -112,7 +112,15 @@ function makeDetails()
     // statusElem.style.marginRight = "5px"
     // statusElem.style.marginTop = "-5px"
     //set de class van het divElement
-    divElem.setAttribute("class", "TeacherBlock");
+    if(count%2 == 0)
+    {
+        divElem.setAttribute("class", "TeacherBlock1");
+    }
+    else
+    {
+        divElem.setAttribute("class", "TeacherBlock2");
+    }
+    
     // divElem.style.height = "40px";
     // divElem.style.width = "110%";
     // divElem.style.marginBottom = "10px";
