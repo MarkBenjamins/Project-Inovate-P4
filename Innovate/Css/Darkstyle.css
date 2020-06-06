@@ -15,7 +15,8 @@ body
 
 .header
 {
-    padding: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .white
@@ -84,6 +85,11 @@ body
 {
     height: 680px;
     background-color: var( --gray-dark-color);
+}
+
+.margintop
+{
+    margin-top: 30px;
 }
 
 .loginScreen
