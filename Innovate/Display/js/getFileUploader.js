@@ -25,7 +25,6 @@ function validate_fileupload(fileName)
             form.addEventListener
                 ('submit', function (event)
                 {
-                    
                     event.preventDefault()
 
                     var reader = new FileReader()
@@ -44,7 +43,7 @@ function validate_fileupload(fileName)
                             type: "POST",
                             url: "fileupload.php",
                             data: { value: reader.result },
-                            success: function (data) {alert(data);}
+                            success: function (data) {alert("File uploaded to the database.");}
                             }
                         );
                     };
@@ -89,7 +88,6 @@ function showImage()
 {
     for (let i = 0; i < window.localStorage.length; i++) 
     {
-
         let res = window.localStorage.getItem(window.localStorage.key(i))
         var image = new Image()
         image.src = res;
@@ -108,4 +106,3 @@ function remove()
     window.localStorage.clear()
     parentDiv.innerHTML = ''
 }
-
