@@ -63,6 +63,7 @@ function validate_fileupload(fileName)
                             else 
                             {
                                 alert("Somthing went wrong please try again.")
+                                //return false
                             }
                         })
                 })
@@ -86,6 +87,8 @@ function validate_fileupload(fileName)
  */
 function showImage() 
 {
+    // bug met uploaden 
+    // als je de remove functie drukt ziet hij geen gebruiker meer
     for (let i = 0; i < window.localStorage.length; i++) 
     {
         let res = window.localStorage.getItem(window.localStorage.key(i))
