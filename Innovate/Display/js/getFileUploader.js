@@ -29,6 +29,30 @@ function validate_fileupload(fileName)
                     var reader = new FileReader()
                     var name = document.getElementById("image").files[0].name
 
+                    let file = $("#image").prop('files')[0];
+                    let formData = new FormData();
+
+                    formData.append("Image", file);
+
+                    console.log(formData);
+
+                    $.ajax
+                        (             
+                            {
+                                url : "fileupload.php", 
+                                data : formData, 
+                                success: function(data){console.log(data)},
+                                error : function(){console.log('not succesvol updated')}, 
+                                processData : false,
+                                contenttype : false,
+                                cache : false,
+                                type : "POST"
+                            }
+                        )
+                    
+
+
+
                     reader.addEventListener
                     ('load', function()
                         {

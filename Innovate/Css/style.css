@@ -13,7 +13,8 @@ body
 
 .header
 {
-    padding: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .white
@@ -39,7 +40,6 @@ body
     padding: 10px;
     background-color: white;
     cursor: pointer;
-    
 }
 
 .height
@@ -75,12 +75,19 @@ body
 {
     padding-left: 30px;
     margin-right: 40px;
+    margin-bottom: 30px;
+    height: 670px;
 }
 
 .newsfeed 
 {
-    height: 680px;
+    height: 100%;
     background-color: white;
+}
+
+.margintop
+{
+    margin-top: 30px;
 }
 
 .loginScreen
@@ -171,11 +178,20 @@ button
     float: left;
 }
 
-.TeacherBlock
+.TeacherBlock1
 {
     height: 40px;
     margin-bottom: 10px;
     padding-top: 10px;
     padding-left: 10px;
     background-color: white;
+}
+
+.TeacherBlock2
+{
+    height: 40px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: #C2E0F0;
 }
