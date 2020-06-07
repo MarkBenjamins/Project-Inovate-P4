@@ -22,7 +22,8 @@ $data = (explode(',', $_POST['value']))[1];
 $mysqli = new mysqli("localhost", "root", "", "innovate");
 
 /* check connection */
-if (mysqli_connect_errno()) {
+if (mysqli_connect_errno()) 
+{
     printf("Connect failed: %s\n", mysqli_connect_error());
     exit();
 }
@@ -30,8 +31,8 @@ if (mysqli_connect_errno()) {
 
 // It is in OOP but made sure i made it as readable as possible for you guys.
 /* create a prepared statement */
-if ($stmt = $mysqli->prepare("INSERT INTO `bericht`(`UserID`, `Link`, `ShowBericht`, `Foto`) VALUES (?, ?, ?, ?)")) {
-
+if ($stmt = $mysqli->prepare("INSERT INTO `bericht`(`UserID`, `Link`, `ShowBericht`, `Foto`) VALUES (?, ?, ?, ?)")) 
+{
     /* bind parameters for markers */
     $stmt->bind_param("isis", $userId, $link, $showBericht, $foto);
     $userId = 1;
