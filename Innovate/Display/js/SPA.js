@@ -89,10 +89,10 @@ function showLogoffPage()
 {
     clearAllData()
     locateElement("logOFF",
-    '<h1>Logoff</h1>'+
+    '<h1>Logout</h1>'+
     '<form>'+
         '<p> Do you want to logout?</p>'+
-        '<button type="button" onclick="loguitkill()">logoff</button>'+
+        '<button type="button" onclick="loguitkill()">Logout</button>'+
         '<br>'+
         '<hr class="logoffHr">'+
     '</form>'+
