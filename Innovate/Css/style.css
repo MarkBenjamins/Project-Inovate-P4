@@ -116,6 +116,18 @@ body
     margin-bottom: 8px;
 }
 
+.loginHr
+{
+    height: 2.5px;
+    background-color: black;
+}
+
+.logoffHr
+{
+    height: 2.5px;
+    background-color: black;
+}
+
 .logoffScreen
 {
     text-align: center;
