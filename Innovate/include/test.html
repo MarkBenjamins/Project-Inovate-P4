@@ -1,67 +1,72 @@
 <!DOCTYPE html>
 <html>
-<body>
-    <div style=" height:75px; width:200px; background-color:blue;">
-        <img id="photo0" style="width:25px; height:25px">
-        <p id="demo0" style="color: white"></p>
-    </div>
-    <button id="1" onclick="sendData(1, 1)" style="color:green; background-color: black">1</button>
-    <button id="2" onclick="sendData(1, 2)" style="color:yellow; background-color: black">2</button>
-    <button id="3" onclick="sendData(1, 3)" style="color:red; background-color: black">3</button>
-    <div style=" height:75px; width:200px; background-color:blue;">
-        <img id="photo1" style="width:25px; height:25px">
-        <p id="demo1" style="color: white"></p>
-    </div>
-    <button id="1" onclick="sendData(2, 1)" style="color:green; background-color: black">1</button>
-    <button id="2" onclick="sendData(2, 2)" style="color:yellow; background-color: black">2</button>
-    <button id="3" onclick="sendData(2, 3)" style="color:red; background-color: black">3</button>
-    <br />
-    <br />
-    <p id="SEND"></p>
-    <br />
-    <p id="text"></p>
-
+    <body>
+        <div>
+            <div style=" height:75px; width:200px; background-color:blue;">
+                <img id="photo0" style="width:25px; height:25px">
+                <p id="demo0" style="color: white"></p>
+            </div>
+        
+            <button id="1" onclick="sendData(1, 1)" style="color:green; background-color: black">1</button>
+            <button id="2" onclick="sendData(1, 2)" style="color:yellow; background-color: black">2</button>
+            <button id="3" onclick="sendData(1, 3)" style="color:red; background-color: black">3</button>
+        
+            <div style=" height:75px; width:200px; background-color:blue;">
+                <img id="photo1" style="width:25px; height:25px">
+                <p id="demo1" style="color: white"></p>
+            </div>
+        
+            <button id="1" onclick="sendData(2, 1)" style="color:green; background-color: black">1</button>
+            <button id="2" onclick="sendData(2, 2)" style="color:yellow; background-color: black">2</button>
+            <button id="3" onclick="sendData(2, 3)" style="color:red; background-color: black">3</button>
+        
+            <br />
+            <br />
+            <p id="SEND"></p>
+            <br />
+            <p id="text"></p>
+        </div>
     <script>
 
-        let photo;
-        let xmlhttp = new XMLHttpRequest();
-        let teacher = [];
-        xmlhttp.open("GET", "teacher.json", true);
+    let photo;
+    let xmlhttp = new XMLHttpRequest();
+    let teacher = [];
+    xmlhttp.open("GET", "teacher.json", true);
 
-        xmlhttp.onload = function () {
-            myObj = JSON.parse(xmlhttp.responseText);
+    xmlhttp.onload = function () {
+        myObj = JSON.parse(xmlhttp.responseText);
 
-            for (x = 0; x <= 1; x++) {
-                console.log(x);
-                teacher[x] = { id: myObj[x].id, firstname: myObj[x].voornaam, lastname: myObj[x].achternaam, status: myObj[x].status, foto: myObj[x].foto };
+        for (x = 0; x <= 1; x++) {
+            teacher[x] = { id: myObj[x].id, firstname: myObj[x].voornaam, lastname: myObj[x].achternaam, status: myObj[x].status, foto: myObj[x].foto };
 
-                document.getElementById("demo" + x).innerHTML = myObj[x].voornaam + " " + teacher[x].lastname;
-                photo = "../profilePictures/" + teacher[x].foto;
-                document.getElementById("photo" + x).src = photo;
+            document.getElementById("demo" + x).innerHTML = myObj[x].voornaam + " " + teacher[x].lastname;
+            photo = "../profilePictures/" + teacher[x].foto;
+            document.getElementById("photo" + x).src = photo;
+        }
+    }
+
+    xmlhttp.send(null);
+
+
+    function sendData(id, status)
+    {
+
+        let data =id + "=" + status;
+        let request = new XMLHttpRequest();
+
+        request.open("POST", "DBFunction.php", true);
+        request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+        request.onreadystatechange = function ()
+        {
+            if (this.readyState == 4 && this.status == 200)
+            {
+            document.getElementById("SEND").innerHTML = this.responseText;
             }
         }
-        xmlhttp.send(null);
+        request.send(data);
 
-
-        function sendData(id, status) {
-
-            let d =id + "=" + status;
-           /* let obj = "teacher=>" + id;
-            let obj2 = "status =>" + status;*/
-            let request = new XMLHttpRequest();
-
-            request.open("POST", "DBFunction.php", true);
-
-            request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-            /*request.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("SEND").innerHTML = this.responseText;
-                }
-            }*/
-            request.send(d);
-
-        }
+    }
     </script>
 </body>
 </html>
