@@ -4,19 +4,11 @@
 */
 GetDocent();
 GetData();
-GetJson();
 
 /*
 ******************************
-******************************
 */
 
-function GetJson()
-{
-    //header("Content-Type: application/json");
-    $json = file_get_contents('teacher.json');
-    $data =  json_decode($json);
-}
 
 function GetData()
 {
