@@ -7,22 +7,23 @@
 var form = document.getElementById('form')
 var parentDiv = document.getElementById('result')
 
-function validate_fileupload(fileName)
+function validate_fileupload(fileName) 
 {
+    console.log(fileName);
     // input waardes die toegestaan zijn.
-    var allowed_extensions = new Array("jpg","jpeg","png");
+    var allowed_extensions = new Array("jpg", "jpeg", "png");
 
     // split function split op de(.)
     // pop function geeft het laatste element en geeft hierdoor de extentie
     // toLower functie maak de waarde naar kleine letters voor de validatie
-    var file_extension = fileName.split('.').pop().toLowerCase(); 
+    var file_extension = fileName.split('.').pop().toLowerCase();
 
-    for(var i = 0; i <= allowed_extensions.length; i++)
+    for (var i = 0; i <= allowed_extensions.length; i++) 
     {
-        if(allowed_extensions[i]==file_extension)
+        if (allowed_extensions[i] == file_extension) 
         {
             form.addEventListener
-            ('submit', function (event)
+                ('submit', function (event)
                 {
                     event.preventDefault()
 
@@ -30,54 +31,48 @@ function validate_fileupload(fileName)
                     var name = document.getElementById("image").files[0].name
 
                     let file = $("#image").prop('files')[0];
+                    console.log(file);
+
+                    reader.readAsDataURL(document.getElementById("image").files[0])
+
+                    reader.onload = function ()
+                    {
+                        $.ajax
+                        (
+                            {
+                            type: "POST",
+                            url: "fileupload.php",
+                            data: { value: reader.result },
+                            success: function (data) {alert("File uploaded to the database.");}
+                            }
+                        );
+                    };
                     let formData = new FormData();
 
                     formData.append("Image", file);
 
-                    console.log(formData);
-
-                    $.ajax
-                        (             
-                            {
-                                url : "fileupload.php", 
-                                data : formData, 
-                                success: function(data){console.log(data)},
-                                error : function(){console.log('not succesvol updated')}, 
-                                processData : false,
-                                contenttype : false,
-                                cache : false,
-                                type : "POST"
-                            }
-                        )
-                    
-
-
-
                     reader.addEventListener
-                    ('load', function()
+                        ('load', function () 
                         {
-                            if (this.result && localStorage)
+                            if (this.result && localStorage) 
                             {
                                 window.localStorage.setItem(name, this.result)
                                 alert("Image is saved locally.")
                                 showImage()
                             }
-                            else
+                            else 
                             {
                                 alert("Somthing went wrong please try again.")
+                                //return false
                             }
-                        }
-                    )
-                    reader.readAsDataURL(document.getElementById("image").files[0])
-                    console.log(name)
-                }
-            )
+                        })
+                })
 
             // return om de functie te stoppen
             return true;
         }
     }
-    alert('File upload went wrong pleas try again.'); 
+    alert('File upload went wrong pleas try again.');
 
     // haald de input weg uit de uploader, zodat je niks upload.
     fileInput.value = '';
@@ -90,14 +85,15 @@ function validate_fileupload(fileName)
  * Functie om de files weer te geven
  * @note het is een loop, en er kunnen meerdere foto's in gezet worden.
  */
-function showImage()
+function showImage() 
 {
-    for(let i = 0; i < window.localStorage.length; i++)
+    // bug met uploaden 
+    // als je de remove functie drukt ziet hij geen gebruiker meer
+    for (let i = 0; i < window.localStorage.length; i++) 
     {
         let res = window.localStorage.getItem(window.localStorage.key(i))
         var image = new Image()
         image.src = res;
-
         parentDiv.appendChild(image)
     }
 }
@@ -108,9 +104,8 @@ showImage()
  * Verwijderd alle locale data.
  * @note Verwijderd dus ook ander data die bewaard wordt.
  */
-function remove()
+function remove() 
 {
     window.localStorage.clear()
     parentDiv.innerHTML = ''
 }
-
