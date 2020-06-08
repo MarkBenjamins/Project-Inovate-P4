@@ -57,16 +57,22 @@ function toggle(button)
             case "ONN":
                 swapStyleSheet('../Css/Darkstyle.css')
                 document.getElementById("docentLogoColorChange").src = docentWit;
-                document.getElementById("aanwezigheidLogoColorChange").src = aanwezigheidWit;
-                document.getElementById("addMessageLogoColorChange").src = addMessageWit;
+                if(document.getElementById("aanwezigheidLogoColorChange") != null) 
+                {
+                    document.getElementById("aanwezigheidLogoColorChange").src = aanwezigheidWit;
+                    document.getElementById("addMessageLogoColorChange").src = addMessageWit;
+                }
                 button.value = "OFF";
 
                 break;
             case "OFF":
                 swapStyleSheet('../Css/style.css')
                 document.getElementById("docentLogoColorChange").src = docent;
-                document.getElementById("aanwezigheidLogoColorChange").src = aanwezigheid;
-                document.getElementById("addMessageLogoColorChange").src = addMessage;
+                if(document.getElementById("aanwezigheidLogoColorChange") != null) 
+                {
+                    document.getElementById("aanwezigheidLogoColorChange").src = aanwezigheid;
+                    document.getElementById("addMessageLogoColorChange").src = addMessage;
+                }
                 button.value = "ONN";
                 break;
     }
