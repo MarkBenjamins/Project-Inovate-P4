@@ -33,7 +33,7 @@ function GetData()
     }
     else
     {
-            echo("<br>Komt geen get/post binnen <br>");
+        echo("<br>Komt geen get/post binnen <br>");
 	}
     
 }
