@@ -72,10 +72,10 @@ function showLogonPage()
         '</div>'+
         '<div>'+
             '<button onclick="/*!!!!!!!!!!!!!!!!!!!Hier is een bug*/tussenLogin()" type="submit">Login</button>'+
-        '</div><br><br>'+
+        '</div><br>'+
         '<p><a href="mailto:someone@example.com">Forgot your password?</a></p>'+
     '</form>'+
-    '<br>'+
+    '<hr class="loginHr">'+
     '<button type="button" onclick="showNewsfeed()">Back to newsfeed</button>'
     )
 }
@@ -94,7 +94,7 @@ function showLogoffPage()
         '<p> Do you want to logout?</p>'+
         '<button type="button" onclick="loguitkill()">logoff</button>'+
         '<br>'+
-        '<br>'+
+        '<hr class="logoffHr">'+
     '</form>'+
 
     '<h1>Change password</h1>'+
@@ -108,7 +108,7 @@ function showLogoffPage()
         '<input type="text" id="newPassword" name="newPassword" placeholder="New password"><br>'+
         '<button onclick="changePassword()" type="submit">ChangePassword</button>'+
         '<br>'+
-        '<br>'+
+        '<hr class="logoffHr">'+
     '</form>'+
 
     '<h1>Change user Avatar</h1><br>'+

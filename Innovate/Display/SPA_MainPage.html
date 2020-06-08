@@ -17,7 +17,7 @@
             Storm Visser"
         >
 
-        <title>Newsfeed</title>
+        <title>Project Innovate</title>
 
     </head>
 
@@ -25,7 +25,7 @@
         <div class="container-fluid">
             <div class="row header">
                 <div class="col-sm-8 col-md-8 col-lg-2 col-xl-2 white margintop">
-                <h2><span id="clock"></span></h2>
+                <h2 class="clock"><span id="clock"></span></h2>
                 </div>
                 <div class="col-sm-4 col-md-3 col-lg-1 col-xl-1 white margintop">	
                     <p class="weather-icon">
@@ -101,11 +101,13 @@
                 </div>
             </div>
         </div>
-        <script src="../Display/js/SPA.js"></script>
-        <script src="../Display/js/darkMode.js"></script>
-        <!-- <script src="../Display/js/getFileUploader.js"></script> -->
+        <script src="../Display/js/getFileUploader.js"></script>
+        <script src="../Display/js/darkMode.js" defer></script>
+        <script src="../Display/js/SPA.js"defer></script>
+        <script type = "module" src="../Display/js/main.js" defer></script>
         <!-- <script src="../Display/js/getChangePassword.js"></script> -->
         <!-- <script src="../Display/js/getUsernamAndPassword.js"></script> -->
-        <script type = "module" src="../Display/js/main.js"></script>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
     </body>
 </html>

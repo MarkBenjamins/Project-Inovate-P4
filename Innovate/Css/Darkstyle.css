@@ -107,6 +107,18 @@ body
     margin-bottom: 8px;
 }
 
+.loginHr
+{
+    height: 2.5px;
+    background-color: #737373;
+}
+
+.logoffHr
+{
+    height: 2.5px;
+    background-color: #737373;
+}
+
 .logoffScreen
 {
     text-align: center;
@@ -165,6 +177,13 @@ body
     padding: 0;
     margin: 0;
 }
+
+button
+{
+    background-color: #3d6b83;
+    color:white;
+}
+
 #list
 {
     list-style-type: none;
