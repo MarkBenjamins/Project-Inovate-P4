@@ -1,4 +1,4 @@
-// let photo;
+let photo;
 let xmlhttp = new XMLHttpRequest();
 let teacher = [];
 xmlhttp.open("GET", "teacher.json", true);
@@ -11,15 +11,15 @@ xmlhttp.onload = function ()
     {
         teacher[x] = 
         { 
-            id: myObj[x].id, 
-            firstname: myObj[x].voornaam, 
-            lastname: myObj[x].achternaam, 
-            status: myObj[x].status, 
+            id: myObj[x].id,
+            firstname: myObj[x].voornaam,
+            lastname: myObj[x].achternaam,
+            status: myObj[x].status,
             foto: myObj[x].foto
         };
         //document.getElementById("demo" + x).innerHTML = myObj[x].voornaam + " " + teacher[x].lastname;
-        // photo = "../profilePictures/" + teacher[x].foto;
-        // document.getElementById("photo" + x).src = photo;
+        //photo = "../profilePictures/" + teacher[x].foto;
+        //document.getElementById("photo" + x).src = photo;
     }
 }
 

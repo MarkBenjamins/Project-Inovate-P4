@@ -45,7 +45,7 @@ function showBuienradar()
 function showNewsfeed()
 {
     clearAllData()
-    locateElement("koptekst",'NEWSFEED');
+    locateElement("koptekst",'Newsfeed');
 }
 
 /**
@@ -141,14 +141,7 @@ function showWijzigBeschikbaarheid()
     '<button id="yellow2" onclick="sendData(1, 2)" style="background-color: yellow;"> Maak het geel</button>'+
     '<br><br>'+
     '<button id="red3" onclick="sendData(1, 3)" style="background-color: red;">Maak het red</button>'+
-    
-    '<br />'+
-    '<br />'+
-    '<p id="SEND"></p>'+
-    '<br />'+
-    '<p id="text"></p>'
-    
-    );
+    '<br /><p id="SEND"></p>');
 }
 
 /**
