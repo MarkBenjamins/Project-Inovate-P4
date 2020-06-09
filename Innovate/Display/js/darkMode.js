@@ -17,28 +17,28 @@ const docentWit = "../img/icons-scherm/docent_wit.png";
 const aanwezigheid = "../img/icons-scherm/aanwezigheid.png";
 const aanwezigheidWit = "../img/icons-scherm/aanwezigheid_wit.png";
 const addMessage = "../img/icons-scherm/addmessage.png";
-const addMessageWit = "../img/icons-scherm/addmessage_wit.png"
+const addMessageWit = "../img/icons-scherm/addmessage_wit.png";
 
 /**
  * Functie om de inlog afbeelding te wijzigen
  * @deprecated vervangen door een if statment in een eigebreidere versie de toggle functie.
  * @note Deze apparte functie is nodig voor de niet ingelogde pagina buienrader en newsfeed.
- * @param {*} button De knop waar op gedrukt wordt om te wisselen van afbeelding.
  */
-// function toggleBasic(button) 
+// function toggleBasic() 
 // {
-//     switch (button.value) 
+//     let DmBt = document.getElementById("DarkModeKnop");
+//     switch (DmBt.value) 
 //     {
 //     case "ONN":
 //         swapStyleSheet('../Css/Darkstyle.css')
 //         document.getElementById("docentLogoColorChange").src = docentWit;
-//         button.value = "OFF";
+//         DmBt.value = "OFF";
 
 //         break;
 //     case "OFF":
 //         swapStyleSheet('../Css/style.css')
 //         document.getElementById("docentLogoColorChange").src = docent;
-//         button.value = "ONN";
+//         DmBt.value = "ONN";
 //         break;
 //     }
 // }
@@ -51,15 +51,15 @@ const addMessageWit = "../img/icons-scherm/addmessage_wit.png"
  * Zorgt ook dat de afbeeldingen gewisseld worden tussen donker en wit.
  * Waardoor de styling van de pagina verandert wordt.
  * De if statment kijkt of er al een afbeelding staat zo niet dan word dit NIET aangepast.
- * @param {*} button De knop waar op gedrukt wordt om te wisselen van style.
  */
-function toggle(button) 
+function toggle() 
 {
-    switch (button.value) 
+    let DmBt = document.getElementById("DarkModeKnop");
+    switch (DmBt.value) 
     {
     case "ONN":
         // wisseld tussen style sheet.
-        swapStyleSheet('../Css/Darkstyle.css')
+        swapStyleSheet('../Css/Darkstyle.css');
         // set de kleur van de afbeelding
         document.getElementById("docentLogoColorChange").src = docentWit;
         // als er een afbeelding is verander dan de kleur ook
@@ -68,12 +68,12 @@ function toggle(button)
             document.getElementById("aanwezigheidLogoColorChange").src = aanwezigheidWit;
             document.getElementById("addMessageLogoColorChange").src = addMessageWit;
         }
-        button.value = "OFF";
+        DmBt.value = "OFF";
         break;
 
     case "OFF":
         // wisseld tussen style sheet.
-        swapStyleSheet('../Css/style.css')
+        swapStyleSheet('../Css/style.css');
         // set de kleur van de afbeelding
         document.getElementById("docentLogoColorChange").src = docent;
         // als er een afbeelding is verander dan de kleur ook
@@ -82,7 +82,7 @@ function toggle(button)
             document.getElementById("aanwezigheidLogoColorChange").src = aanwezigheid;
             document.getElementById("addMessageLogoColorChange").src = addMessage;
         }
-        button.value = "ONN";
+        DmBt.value = "ONN";
         break;
     }
 }
