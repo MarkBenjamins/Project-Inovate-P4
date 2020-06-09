@@ -11,7 +11,7 @@ GetData();
 
 function GetData()
 {
-    require "DBConnect.php";
+    require "../Include/DBConnect.php";
     
     if($_POST)
     {
@@ -29,6 +29,20 @@ function GetData()
             mysqli_stmt_bind_param($stmt, 'is', $status , $teacher);
             mysqli_stmt_execute($stmt);
         }
+
+        echo ('Status is changed to ');
+        switch ($status)
+        {
+            case 1:
+                echo "green";
+                break;
+            case 2:
+                echo "yellow";
+                break;
+            case 3:
+                echo "red";
+                break;
+        }
     }
     else
     {
@@ -38,7 +52,7 @@ function GetData()
 
 function GetDocent()
 {
-    require "DBConnect.php";
+    require "../Include/DBConnect.php";
     $sql = "SELECT d.id, voornaam, achternaam, status, foto FROM docent d
         JOIN user u ON u.id = d.id WHERE Statusdisplay = 0";
 
