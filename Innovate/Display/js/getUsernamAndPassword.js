@@ -63,7 +63,7 @@ function checkUsernameAndPassword()
 				messages.push('Password must be longer than 3 characters')
 			}
 
-			// if password beaat uit meer dan 19 karakters error.
+			// if password bestaat uit meer dan 19 karakters error.
 			else if (username.value.length >= 20) 
 			{
 				messages.push('Password must be less than 20 characters')
@@ -108,6 +108,7 @@ function checkUsernameAndPassword()
 					{
 						// stuur de gebruiker na validatie door naar de volgende pagina.
 						e.preventDefault()
+						checkLoginAgainstDatabase(inputUsername, inputPassword);
 						alert(inputUsername + " is logged in!!!")
 						window.location.href = "Test_newsfeedLogin.html";
 						return
@@ -162,3 +163,10 @@ function checkUsernameAndPassword()
 // 	}
 // 	alert("Incorrect username or password.")
 //}
+
+function checkLoginAgainstDatabase(username, password)
+{
+
+
+
+}
