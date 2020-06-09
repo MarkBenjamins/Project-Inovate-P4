@@ -13,15 +13,15 @@ body
 
 .header
 {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .white
 {
     height: 90px;
     background-color: white;
-    margin-right: 5px;
+    border-right: 5px solid #6298bc;
     text-align: center;
 }
 
@@ -34,12 +34,17 @@ body
 .buttonlogin
 {
     height: 90px;
-    width: 85px;
     text-align: center;
     float: left;
-    padding: 10px;
+    padding: 5px;
     background-color: white;
     cursor: pointer;
+}
+
+.padding
+{
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 @font-face
@@ -60,7 +65,7 @@ body
 
 .image
 {
-    width: 100%;
+    height: 100%;
 }
 
 .darkmode
@@ -69,8 +74,6 @@ body
     width: 90px;
     background-color: grey;
     float: right;
-    margin-right: 20px;
-    margin-left: 5px;
     padding: 0;
 }
 
@@ -84,9 +87,8 @@ body
 
 .worksheet
 {
-    padding-left: 30px;
-    margin-right: 40px;
-    margin-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
     height: 670px;
 }
 
@@ -94,11 +96,12 @@ body
 {
     height: 100%;
     background-color: white;
+    border-right: 15px solid #6298bc;
 }
 
 .margintop
 {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .loginScreen
@@ -153,29 +156,6 @@ body
     margin-top: 8px;
 }
 
-.teacher
-{
-    height: 60px;
-    width: 123%;
-    background-color: white;
-    padding: 5px;
-    padding-left: 10px;
-}
-
-.color
-{
-    background-color: red;
-    width: 5%;
-    height: 100%;
-    margin-bottom: 20px;
-    float: left;
-}
-
-.docent
-{
-    font-size: 20pt;
-}
-
 .weather-icon
 {
     padding: 0;
@@ -186,10 +166,11 @@ button
 {
     background-color: #6298bc;
 }
+
 #list
 {
     list-style-type: none;
-    padding-left: 20px;
+    padding-left: 0px;
 }
 
 .TeacherStatus
