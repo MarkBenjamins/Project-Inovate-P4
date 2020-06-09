@@ -74,14 +74,6 @@ body
     padding: 0;
 }
 
-.weerknop
-{
-    height:100%;
-    margin-left: -15px;
-    margin-right: -15px;
-    background-color: white;
-}
-
 .worksheet
 {
     padding-left: 30px;
@@ -182,7 +174,7 @@ body
     margin: 0;
 }
 
-button
+.hhbutton
 {
     background-color: #6298bc;
 }
@@ -217,4 +209,82 @@ button
     padding-top: 10px;
     padding-left: 10px;
     background-color: #C2E0F0;
+}
+
+
+
+button
+{
+  background-color: white; 
+  border: 2px solid #6298bc;
+  color: black; 
+  height: 50px;
+  padding: 7px;
+}
+
+button:focus
+{
+  box-shadow: inset 4px 4px 16px rgba(0, 0, 0, 0.2);
+  outline: none; 
+}
+
+button:hover
+{ 
+  box-shadow: none;
+  background-color: #6298bc;
+}
+
+button:active
+{
+  box-shadow: inset 8px 8px 16px rgba(0, 0, 0, 0.4);
+  border: none;
+  padding-left: 13px;
+  padding-top: 13px;
+  padding-right: 5px;
+}
+
+
+.beschikbaar
+{
+    border: 2px solid green;
+}
+
+.beschikbaar:hover
+{
+    background-color: green;
+    color: white; 
+}
+
+.aanwezig
+{
+    border: 2px solid orange;
+}
+
+.aanwezig:hover
+{
+    background-color: orange;
+}
+
+.afwezig
+{
+    border: 2px solid red;
+}
+
+.afwezig:hover
+{
+    background-color: red;
+    color: white;
+}
+
+.weatherbutton
+{
+    border: 2px solid white;
+    height:100%;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.weatherbutton:focus
+{
+    border: 2px solid white;
 }

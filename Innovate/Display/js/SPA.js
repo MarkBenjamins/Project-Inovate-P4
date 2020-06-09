@@ -136,11 +136,11 @@ function showWijzigBeschikbaarheid()
     '<h1>Wijzig Beschikbaarheid</h1>'+
     'Klik op een knop om je status te wijzigen:'+
     '<br><br>'+
-    '<butten style="background-color: red;">Maak het rood</butten>'+
+    '<button class="mijnbutton beschikbaar">Beschikbaar</button>'+
     '<br><br>'+
-    '<butten style="background-color: yellow;"> Maak het geel</butten>'+
+    '<button class="mijnbutton aanwezig">Aanwezig</button>'+
     '<br><br>'+
-    '<butten style="background-color: green;">Maak het green</butten>');
+    '<button class="mijnbutton afwezig">Afwezig</button>');
 }
 
 /**
@@ -208,6 +208,7 @@ function enabelAllButtons()
         let DmBt = document.getElementById("DarkModeKnop");
         if (DmBt.value == "OFF")
         {
+            docent = "../img/icons-scherm/docent_wit.png";
             aanwezigheid = "../img/icons-scherm/aanwezigheid_wit.png";
             message = "../img/icons-scherm/addmessage_wit.png";
         }
