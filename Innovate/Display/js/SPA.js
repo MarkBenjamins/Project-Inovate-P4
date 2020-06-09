@@ -203,11 +203,21 @@ function enabelAllButtons()
 {
     if (window.localStorage.length > 0)
     {
+        let aanwezigheid = "../img/icons-scherm/aanwezigheid.png";
+        let message = "../img/icons-scherm/addmessage.png";
+        let DmBt = document.getElementById("DarkModeKnop");
+        if (DmBt.value == "OFF")
+        {
+            docent = "../img/icons-scherm/docent_wit.png";
+            aanwezigheid = "../img/icons-scherm/aanwezigheid_wit.png";
+            message = "../img/icons-scherm/addmessage_wit.png";
+        }
+
         locateElement("aanwezigheidLogo",
-        '<img onclick="showWijzigBeschikbaarheid()" id="aanwezigheidLogoColorChange" src="../img/icons-scherm/aanwezigheid.png" alt="Aanwezigheid" class="image"></img>');
+        '<img onclick="showWijzigBeschikbaarheid()" id="aanwezigheidLogoColorChange" src="' + aanwezigheid + '" alt="Aanwezigheid" class="image"></img>');
 
         locateElement("addMessageLogo",
-        '<img onclick="showMessage()" id="addMessageLogoColorChange" src="../img/icons-scherm/addmessage.png" alt="Add Message" class="image"></img>');
+        '<img onclick="showMessage()" id="addMessageLogoColorChange" src="' + message + '" alt="Add Message" class="image"></img>');
 
         locateElement("newsfeedLogo",
         '<img onclick="showNewsfeed()" src="../img/icons-scherm/logo.png" alt="Logo" class="image"></img>');
