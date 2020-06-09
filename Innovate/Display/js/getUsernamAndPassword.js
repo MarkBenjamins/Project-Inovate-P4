@@ -110,7 +110,7 @@ function checkUsernameAndPassword()
 						e.preventDefault()
 						checkLoginAgainstDatabase(inputUsername, inputPassword);
 						alert(inputUsername + " is logged in!!!")
-						window.location.href = "Test_newsfeedLogin.html";
+						//window.location.href = "Test_newsfeedLogin.html";
 						return
 					}
 				}
@@ -166,7 +166,26 @@ function checkUsernameAndPassword()
 
 function checkLoginAgainstDatabase(username, password)
 {
+	
+	let data = { username: username, password: password };
+	let request = new XMLHttpRequest();
+	console.log(typeof data);
+	console.log(data);
 
+	request.open("POST", "../Display/testdatabase.php", true);
+	request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+	request.onreadystatechange = function ()
+    {
+		if (this.readyState == 4 && this.status == 200)
+		{
+			document.getElementById("SEND").innerHTML = this.responseText;
+			document.getElementById("DENS").innerHTML = username;
+			console.log(username);
+        }
+    }
+
+	request.send(data);
 
 
 }
