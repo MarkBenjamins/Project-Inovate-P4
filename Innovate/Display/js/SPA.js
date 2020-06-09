@@ -15,7 +15,6 @@ function clearAllData()
 {
     locateElement("koptekst", '');
     locateElement("paginaInhoud", '');
-    locateElement("weatherBox",'');
     locateElement("toNewsfeed", '');
     locateElement("loginScreen", '');
     locateElement("logOFF", '');
@@ -33,9 +32,9 @@ function showBuienradar()
     locateElement("koptekst", 'Buienradar');
     locateElement("toNewsfeed", '<button class="buttonToNewsfeed" type="button" onclick="showNewsfeed()">Back to newsfeed</button>');
     locateElement("paginaInhoud", 
-    '<iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.77917&lng=6.90694&overname=2&zoom=8&naam=Emmen&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no>'+
-    '</iframe>');
-    locateElement("weatherBox",'<IFRAME SRC="//gadgets.buienradar.nl/gadget/forecastandstation/6260" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=300 HEIGHT=190></IFRAME>')
+    '<iframe class="buienradarFeed" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.77917&lng=6.90694&overname=2&zoom=8&naam=Emmen&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no>'+
+    '</iframe>' +
+    '<IFRAME class="buienradarInfo" SRC="https://gadgets.buienradar.nl/gadget/radarfivedays" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=256 HEIGHT=406></IFRAME>');
 }
 
 /**

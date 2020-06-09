@@ -104,9 +104,23 @@ body
     margin-top: 30px;
 }
 
+.buienradarFeed
+{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.buienradarInfo
+{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .iframeBuienradar
 {
     text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .loginScreen
