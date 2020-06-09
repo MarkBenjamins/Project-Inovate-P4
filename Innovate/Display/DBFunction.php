@@ -1,13 +1,9 @@
 <?php
 /*
-    Space to call Functions    
+    Execute Functions    
 */
 GetDocent();
 GetData();
-
-/*
-******************************
-*/
 
 function GetData()
 {
@@ -34,13 +30,13 @@ function GetData()
         switch ($status)
         {
             case 1:
-                echo "green";
+                echo "green.";
                 break;
             case 2:
-                echo "yellow";
+                echo "yellow.";
                 break;
             case 3:
-                echo "red";
+                echo "red.";
                 break;
         }
     }
@@ -69,10 +65,9 @@ function GetDocent()
         {
             $obj[] = $row;        
 		}	
-        
+
         $myJSON = json_encode($obj, JSON_FORCE_OBJECT);
         file_put_contents('teacher.json',$myJSON);
     }      
     mysqli_stmt_close($stmt);
 }
-
