@@ -130,10 +130,8 @@ function makeDetails()
     //maak een span aan om de div in te zetten
     let statusSpanElem = document.createElement("span");
 
-
     //maak er tekst voor dat nieuwe list element
     let textElem = document.createTextNode(details);
-    
 
     statusSpanElem.appendChild(statusElem)
     //koppel het statuselement aan het list element
@@ -142,7 +140,6 @@ function makeDetails()
     listElem.appendChild(textElem);
     //koppel het list element aan het div element
     divElem.appendChild(listElem);
-
 
     //zet de stijl en de class van het statuselement aanhankelijk van de status
     statusElem.style.backgroundColor = colour;
@@ -161,7 +158,7 @@ function makeDetails()
     {
         divElem.setAttribute("class", "TeacherBlock2");
     }
-    
+
     // divElem.style.height = "40px";
     // divElem.style.width = "110%";
     // divElem.style.marginBottom = "10px";
@@ -170,10 +167,8 @@ function makeDetails()
     // divElem.style.backgroundColor = "white";
     // divElem.style.color = "black";
 
-
     //plak het gemaakte listelement onder het element van de UL
     document.getElementById("list").appendChild(divElem);
-
 
     //een counter voor de array
     count++;
