@@ -14,8 +14,8 @@ function GetData()
 {
     require "DBConnect.php";
     
-    if($_POST){
-    
+    if($_POST)
+    {
         $data = $_POST;
         $teacher= array_keys($data)[0];
         $status = $data[$teacher];
@@ -23,11 +23,11 @@ function GetData()
     
         if(!$stmt = mysqli_prepare($conn, $sql))
         {
-           die("Could not prepare the given statment");
+            die("Could not prepare the given statment");
         }
         else 
         {
-	        mysqli_stmt_bind_param($stmt, 'is', $status , $teacher);
+            mysqli_stmt_bind_param($stmt, 'is', $status , $teacher);
             mysqli_stmt_execute($stmt);
         }
     }
@@ -35,7 +35,6 @@ function GetData()
     {
         echo("<br>Komt geen get/post binnen <br>");
 	}
-    
 }
 
 function GetDocent()
@@ -46,11 +45,11 @@ function GetDocent()
 
     if(!$stmt = mysqli_prepare($conn, $sql))
     {
-       die("Could not prepare the given statment");
+        die("Could not prepare the given statment");
     }
     else 
     {
-	    mysqli_stmt_execute($stmt);
+        mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
 
         foreach($result as $row)
