@@ -49,3 +49,5 @@ if ($stmt = $mysqli->prepare("INSERT INTO `bericht`(`UserID`, `Link`, `ShowBeric
 
 /* close connection */
 $mysqli->close();
+
+?>

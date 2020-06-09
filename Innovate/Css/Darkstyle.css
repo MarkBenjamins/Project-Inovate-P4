@@ -45,6 +45,17 @@ body
     cursor: pointer;
 }
 
+@font-face
+{
+    font-family: helveticaMono;
+    src: url("../Css/font/Helvetica_Monospaced_Pro.ttf");
+}
+
+.clock
+{
+    font-family: helveticaMono, monospace;
+}
+
 .height
 {
     height: 90px;
