@@ -15,6 +15,7 @@ function clearAllData()
 {
     locateElement("koptekst", '');
     locateElement("paginaInhoud", '');
+    locateElement("weatherBox",'');
     locateElement("toNewsfeed", '');
     locateElement("loginScreen", '');
     locateElement("logOFF", '');
@@ -30,11 +31,11 @@ function showBuienradar()
 {
     clearAllData()
     locateElement("koptekst", 'Buienradar');
+    locateElement("toNewsfeed", '<button class="buttonToNewsfeed" type="button" onclick="showNewsfeed()">Back to newsfeed</button>');
     locateElement("paginaInhoud", 
     '<iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.77917&lng=6.90694&overname=2&zoom=8&naam=Emmen&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no>'+
-    '</iframe>'+
-    '<IFRAME SRC="//gadgets.buienradar.nl/gadget/forecastandstation/6260" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=300 HEIGHT=190></IFRAME>');
-    locateElement("toNewsfeed", '<button type="button" onclick="showNewsfeed()">Back to newsfeed</button>');
+    '</iframe>');
+    locateElement("weatherBox",'<IFRAME SRC="//gadgets.buienradar.nl/gadget/forecastandstation/6260" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=300 HEIGHT=190></IFRAME>')
 }
 
 /**
@@ -203,11 +204,20 @@ function enabelAllButtons()
 {
     if (window.localStorage.length > 0)
     {
+        let aanwezigheid = "../img/icons-scherm/aanwezigheid.png";
+        let message = "../img/icons-scherm/addmessage.png";
+        let DmBt = document.getElementById("DarkModeKnop");
+        if (DmBt.value == "OFF")
+        {
+            aanwezigheid = "../img/icons-scherm/aanwezigheid_wit.png";
+            message = "../img/icons-scherm/addmessage_wit.png";
+        }
+
         locateElement("aanwezigheidLogo",
-        '<img onclick="showWijzigBeschikbaarheid()" id="aanwezigheidLogoColorChange" src="../img/icons-scherm/aanwezigheid.png" alt="Aanwezigheid" class="image"></img>');
+        '<img onclick="showWijzigBeschikbaarheid()" id="aanwezigheidLogoColorChange" src="' + aanwezigheid + '" alt="Aanwezigheid" class="image"></img>');
 
         locateElement("addMessageLogo",
-        '<img onclick="showMessage()" id="addMessageLogoColorChange" src="../img/icons-scherm/addmessage.png" alt="Add Message" class="image"></img>');
+        '<img onclick="showMessage()" id="addMessageLogoColorChange" src="' + message + '" alt="Add Message" class="image"></img>');
 
         locateElement("newsfeedLogo",
         '<img onclick="showNewsfeed()" src="../img/icons-scherm/logo.png" alt="Logo" class="image"></img>');
