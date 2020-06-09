@@ -25,9 +25,51 @@ const JSON = [
     foto:" "
     },
     {
+    voornaam:"Jeroen",
+    achternaam:"Pijpker",
+    status:2,
+    foto:" "
+    },
+    {
+    voornaam:"Winnie",
+    achternaam:"van Schilt",
+    status:0,
+    foto:" "
+    },
+    {
+    voornaam:"Willemijn",
+    achternaam:"Meester",
+    status:1,
+    foto:" "
+    },
+    {
+    voornaam:"Rob",
+    achternaam:"Smit",
+    status:2,
+    foto:" "
+    },
+    {
+    voornaam:"Thijs",
+    achternaam:"Smegen",
+    status:1,
+    foto:" "
+    },
+    {
+    voornaam:"Martijn",
+    achternaam:"Pomp",
+    status:2,
+    foto:" "
+    },
+    {
+    voornaam:"Niels",
+    achternaam:"Doorn",
+    status:1,
+    foto:" "
+    },
+    {
     voornaam:"Jan",
     achternaam:"Doornbos",
-    status:2,
+    status:0,
     foto:" "
     }
 ]
