@@ -203,7 +203,6 @@ function enabelAllButtons()
 {
     if (window.localStorage.length > 0)
     {
-        let docent = "../img/icons-scherm/docent.png";
         let aanwezigheid = "../img/icons-scherm/aanwezigheid.png";
         let message = "../img/icons-scherm/addmessage.png";
         let DmBt = document.getElementById("DarkModeKnop");
