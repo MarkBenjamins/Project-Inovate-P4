@@ -89,12 +89,14 @@ body
 {
     padding-left: 20px;
     padding-right: 20px;
-    height: 670px;
+    max-height: 100%;
+    min-height: 670px;
 }
 
 .newsfeed 
 {
     height: 100%;
+    min-height: 670px;
     background-color: white;
     border-right: 15px solid #6298bc;
 }
@@ -102,6 +104,28 @@ body
 .margintop
 {
     margin-top: 20px;
+}
+
+.buienradarFeed
+{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.buienradarInfo
+{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.iframeBuienradar
+{
+    text-align: center;
+}
+
+.buttonToNewsfeed
+{
+    margin-bottom: 10px;
 }
 
 .loginScreen

@@ -92,7 +92,7 @@ body
 {
     padding-left: 20px;
     padding-right: 20px;
-    height: 680px;
+    min-height: 670px;
 }
 
 .newsfeed 
@@ -105,6 +105,25 @@ body
 .margintop
 {
     margin-top: 20px;
+}
+
+.buienradarFeed
+{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.buienradarInfo
+{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.iframeBuienradar
+{
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .loginScreen
