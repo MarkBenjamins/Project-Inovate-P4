@@ -298,3 +298,9 @@ button:active
 {
     border: 2px solid white;
 }
+
+.darkmode:active
+{
+    box-shadow: none;
+    padding: 0px;
+}
