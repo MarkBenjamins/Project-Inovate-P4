@@ -77,7 +77,8 @@ body
 {
     height: 90px;
     width: 90px;
-    background-color: grey;
+    border-style: none;
+    background-color: black;
     float: right;
     padding: 0;
 }
