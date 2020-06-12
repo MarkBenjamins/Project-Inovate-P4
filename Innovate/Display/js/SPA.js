@@ -30,11 +30,11 @@ function showBuienradar()
 {
     clearAllData()
     locateElement("koptekst", 'Buienradar');
-    locateElement("toNewsfeed", '<button class="buttonToNewsfeed" type="button" onclick="showNewsfeed()">Back to newsfeed</button>');
     locateElement("paginaInhoud", 
-    '<iframe class="buienradarFeed" src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.77917&lng=6.90694&overname=2&zoom=8&naam=Emmen&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no>'+
-    '</iframe>' +
-    '<IFRAME class="buienradarInfo" SRC="https://gadgets.buienradar.nl/gadget/radarfivedays" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=256 HEIGHT=406></IFRAME>');
+    '<iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.77917&lng=6.90694&overname=2&zoom=8&naam=Emmen&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no>'+
+    '</iframe>'+
+    '<IFRAME SRC="//gadgets.buienradar.nl/gadget/forecastandstation/6260" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=300 HEIGHT=190></IFRAME>');
+    locateElement("toNewsfeed", '<button type="button" onclick="showNewsfeed()">Back to newsfeed</button>');
 }
 
 /**
@@ -45,7 +45,7 @@ function showBuienradar()
 function showNewsfeed()
 {
     clearAllData()
-    locateElement("koptekst",'NEWSFEED');
+    locateElement("koptekst",'Newsfeed');
 }
 
 /**
@@ -133,14 +133,26 @@ function showWijzigBeschikbaarheid()
 {
     clearAllData()
     locateElement("aanwezigheidCheck",
-    '<h1>Wijzig Beschikbaarheid</h1>'+
+    '<div class="row">'+
+        '<h1>Wijzig Beschikbaarheid</h1>'+
+    '</div>'+
     'Klik op een knop om je status te wijzigen:'+
-    '<br><br>'+
-    '<butten style="background-color: red;">Maak het rood</butten>'+
-    '<br><br>'+
-    '<butten style="background-color: yellow;"> Maak het geel</butten>'+
-    '<br><br>'+
-    '<butten style="background-color: green;">Maak het green</butten>');
+    '<div class="row">'+   
+        '<div class="col-md-2 col-lg-1"><br>'+
+            '<button class="mijnbutton beschikbaar" id="1" onclick="sendData(1, 1)" style="background-color: green;">Beschikbaar</butten>'+
+        '</div>'+
+        '<div class="col-md-2 col-lg-1"><br>'+
+            '<button class="mijnbutton aanwezig id="2" onclick="sendData(1, 2)" style="background-color: yellow;">Aanwezig</butten>'+
+        '</div>'+
+        '<div class="col-md-2 col-lg-1"><br>'+
+            '<button class="mijnbutton afwezig id="3" onclick="sendData(1, 3)" style="background-color: red;">Afwezig</butten>'+
+        '</div>'+
+        '<br />'+
+        '<br />'+
+        '<p id="SEND"></p>'+
+        '<br />'+
+        '<p id="text"></p>'+
+    '</div>');
 }
 
 /**
@@ -208,6 +220,7 @@ function enabelAllButtons()
         let DmBt = document.getElementById("DarkModeKnop");
         if (DmBt.value == "OFF")
         {
+            docent = "../img/icons-scherm/docent_wit.png";
             aanwezigheid = "../img/icons-scherm/aanwezigheid_wit.png";
             message = "../img/icons-scherm/addmessage_wit.png";
         }

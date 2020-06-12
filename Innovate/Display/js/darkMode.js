@@ -20,30 +20,6 @@ const addMessage = "../img/icons-scherm/addmessage.png";
 const addMessageWit = "../img/icons-scherm/addmessage_wit.png";
 
 /**
- * Functie om de inlog afbeelding te wijzigen
- * @deprecated vervangen door een if statment in een eigebreidere versie de toggle functie.
- * @note Deze apparte functie is nodig voor de niet ingelogde pagina buienrader en newsfeed.
- */
-// function toggleBasic() 
-// {
-//     let DmBt = document.getElementById("DarkModeKnop");
-//     switch (DmBt.value) 
-//     {
-//     case "ONN":
-//         swapStyleSheet('../Css/Darkstyle.css')
-//         document.getElementById("docentLogoColorChange").src = docentWit;
-//         DmBt.value = "OFF";
-
-//         break;
-//     case "OFF":
-//         swapStyleSheet('../Css/style.css')
-//         document.getElementById("docentLogoColorChange").src = docent;
-//         DmBt.value = "ONN";
-//         break;
-//     }
-// }
-
-/**
  * Functie van de Dark mode knop.
  * Zorgt er voor dat er gewisseld kan worden tussen:
  * - Darkstyle.css
@@ -86,3 +62,27 @@ function toggle()
         break;
     }
 }
+
+/**
+ * Functie om de inlog afbeelding te wijzigen
+ * @deprecated vervangen door een if statment in een eigebreidere versie de toggle functie.
+ * @note Deze apparte functie is nodig voor de niet ingelogde pagina buienrader en newsfeed.
+ */
+// function toggleBasic() 
+// {
+//     let DmBt = document.getElementById("DarkModeKnop");
+//     switch (DmBt.value) 
+//     {
+//     case "ONN":
+//         swapStyleSheet('../Css/Darkstyle.css')
+//         document.getElementById("docentLogoColorChange").src = docentWit;
+//         DmBt.value = "OFF";
+
+//         break;
+//     case "OFF":
+//         swapStyleSheet('../Css/style.css')
+//         document.getElementById("docentLogoColorChange").src = docent;
+//         DmBt.value = "ONN";
+//         break;
+//     }
+// }

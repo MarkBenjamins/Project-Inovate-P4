@@ -15,16 +15,15 @@ body
 
 .header
 {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .white
 {
     height: 90px;
     background-color: var( --gray-dark-color);
-    margin-right: 5px;
-    /* margin-left: 10px; */
+    border-right: 5px solid var(--dark-blue-color);;
     text-align: center;
 }
 
@@ -37,12 +36,21 @@ body
 .buttonlogin
 {
     height: 90px;
-    width: 85px;
     text-align: center;
     float: left;
-    padding: 10px;
+    padding: 5px;
     background-color: var( --gray-dark-color);
     cursor: pointer;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.padding
+{
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 @font-face
@@ -63,17 +71,17 @@ body
 
 .image
 {
-    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .darkmode
 {
     height: 90px;
     width: 90px;
-    background-color: grey;
+    border-style: none;
+    background-color: black;
     float: right;
-    margin-right: 20px;
-    margin-left: 5px;
     padding: 0;
 }
 
@@ -88,8 +96,10 @@ body
 
 .worksheet
 {
-    padding-left: 30px;
-    margin-right: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-height: 100%;
+    min-height: 670px;
 }
 
 .newsfeed 
@@ -97,11 +107,12 @@ body
     height: 100%;
     min-height: 670px;
     background-color: var( --gray-dark-color);
+    border-right: 15px solid var( --dark-blue-color);
 }
 
 .margintop
 {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 .buienradarFeed
@@ -175,41 +186,13 @@ body
     margin-top: 8px;
 }
 
-.teacher
-{
-    height: 60px;
-    width: 123%;
-    background-color: var( --gray-dark-color);
-    padding: 5px;
-    padding-left: 10px;
-}
-
-.color
-{
-    background-color: red;
-/*    background-color: yellow;
-    background-color: green;*/
-    width: 5%;
-    height: 100%;
-    margin-bottom: 20px;
-    float: left;
-}
-
-.docent
-{
-    /* float:left; 
-    width: 80%;
-    margin-left: 10%; */
-    font-size: 20pt;
-}
-
 .weather-icon
 {
     padding: 0;
     margin: 0;
 }
 
-button
+.hhbutton
 {
     background-color: #3d6b83;
     color:white;
@@ -218,7 +201,7 @@ button
 #list
 {
     list-style-type: none;
-    padding-left: 20px;
+    padding-left: 0px;
 }
 
 .TeacherStatus
@@ -246,4 +229,83 @@ button
     padding-top: 10px;
     padding-left: 10px;
     background-color: #737373;
+}
+
+
+
+
+button
+{
+  background-color: #585656; 
+  border: 2px solid #3d6b83;
+  color: white; 
+  height: 50px;
+  padding: 7px;
+}
+
+button:focus
+{
+  box-shadow: inset 4px 4px 16px rgba(0, 0, 0, 0.2);
+  outline: none; 
+}
+
+button:hover
+{ 
+  box-shadow: none;
+  background-color: #3d6b83;
+}
+
+button:active
+{
+  box-shadow: inset 8px 8px 16px rgba(0, 0, 0, 0.4);
+  border: none;
+  padding-left: 13px;
+  padding-top: 13px;
+  padding-right: 5px;
+}
+
+
+.beschikbaar
+{
+    border: 2px solid green;
+}
+
+.beschikbaar:hover
+{
+    background-color: green;
+}
+
+.aanwezig
+{
+    border: 2px solid orange;
+}
+
+.aanwezig:hover
+{
+    background-color: orange;
+    color: black;
+}
+
+.afwezig
+{
+    border: 2px solid red;
+}
+
+.afwezig:hover
+{
+    background-color: red;
+
+}
+
+.weatherbutton
+{
+    border: 2px solid #585656;
+    height:100%;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.weatherbutton:focus
+{
+    border: 2px solid #585656;
 }

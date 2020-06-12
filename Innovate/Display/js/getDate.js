@@ -53,10 +53,15 @@ function getCurrentDate()
      * return date;
      */
 }
+
 // dit is een auto refresher van een uur.
 // Tussen 23:59 en 00:01 zal de de date updaten.
 setInterval(getCurrentDate, 3600);
 
+/**
+ * @deprecated
+ * voor de uitgebrijder versie getCurrentDate()
+ */
 // function getCurrentDate() 
 // {
 //     var time = new Date();
