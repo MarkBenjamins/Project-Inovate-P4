@@ -179,9 +179,11 @@ function checkLoginAgainstDatabase(username, password)
     {
 		if (this.readyState == 4 && this.status == 200)
 		{
-			document.getElementById("SEND").innerHTML = this.responseText;
-			document.getElementById("DENS").innerHTML = username;
+			document.getElementById("SEND").innerHTML = request.responseText;
+			console.log(request.responseText);
+			document.getElementById("DENS").innerHTML = request.response;
 			console.log(username);
+			console.log(password);
         }
     }
 

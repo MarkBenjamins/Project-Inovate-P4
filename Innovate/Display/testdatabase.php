@@ -1,9 +1,18 @@
 <?php
 
-if($_POST)
+getData();
+
+function getData()
 {
-	$data = $_POST;
-	print_r($_POST);
+    if($_POST)
+    {
+        $data = $_POST;
+        $teacher= array_keys($data)[0];
+        $status = $data[$teacher];
+    }
+    else {
+	    echo("<br>Komt geen get/post binnen <br>");
+    }
 }
 
 if($_GET)
