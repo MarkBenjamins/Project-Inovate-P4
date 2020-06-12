@@ -45,7 +45,7 @@ function showBuienradar()
 function showNewsfeed()
 {
     clearAllData()
-    locateElement("koptekst",'NEWSFEED');
+    locateElement("koptekst",'Newsfeed');
 }
 
 /**
@@ -139,14 +139,19 @@ function showWijzigBeschikbaarheid()
     'Klik op een knop om je status te wijzigen:'+
     '<div class="row">'+   
         '<div class="col-md-2 col-lg-1"><br>'+
-            '<button class="mijnbutton beschikbaar">Beschikbaar</button>'+
+            '<button class="mijnbutton beschikbaar" id="1" onclick="sendData(1, 1)" style="background-color: green;">Beschikbaar</butten>'+
         '</div>'+
         '<div class="col-md-2 col-lg-1"><br>'+
-            '<button class="mijnbutton aanwezig">Aanwezig</button>'+
+            '<button class="mijnbutton aanwezig id="2" onclick="sendData(1, 2)" style="background-color: yellow;">Aanwezig</butten>'+
         '</div>'+
         '<div class="col-md-2 col-lg-1"><br>'+
-            '<button class="mijnbutton afwezig">Afwezig</button>'+
+            '<button class="mijnbutton afwezig id="3" onclick="sendData(1, 3)" style="background-color: red;">Afwezig</butten>'+
         '</div>'+
+        '<br />'+
+        '<br />'+
+        '<p id="SEND"></p>'+
+        '<br />'+
+        '<p id="text"></p>'+
     '</div>');
 }
 

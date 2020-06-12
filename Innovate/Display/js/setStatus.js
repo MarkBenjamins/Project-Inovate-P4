@@ -1,4 +1,4 @@
-let photo;
+// let photo;
 let xmlhttp = new XMLHttpRequest();
 let teacher = [];
 xmlhttp.open("GET", "teacher.json", true);
@@ -35,10 +35,10 @@ function sendData(id, status)
 
     request.onreadystatechange = function ()
     {
-        if (this.readyState == 4 && this.status == 200)
-        {
-        document.getElementById("SEND").innerHTML = this.responseText;
-        }
+        // if (this.readyState == 4 && this.status == 200)
+        // {
+        // document.getElementById("SEND").innerHTML = this.responseText;
+        // }
     }
     request.send(data);
 }
