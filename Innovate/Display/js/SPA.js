@@ -108,6 +108,7 @@ function showLogoffPage()
         '<input type="text" id="newPassword" name="newPassword" placeholder="New password"><br>'+
         '<button onclick="changePassword()" type="submit">ChangePassword</button>'+
         '<br>'+
+        '<hr class="logoffHr">'+
     '</form>'
     );
 }
