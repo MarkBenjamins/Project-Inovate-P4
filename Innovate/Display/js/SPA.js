@@ -215,7 +215,6 @@ function enabelAllButtons()
         let DmBt = document.getElementById("DarkModeKnop");
         if (DmBt.value == "OFF")
         {
-            docent = "../img/icons-scherm/docent_wit.png";
             aanwezigheid = "../img/icons-scherm/aanwezigheid_wit.png";
             message = "../img/icons-scherm/addmessage_wit.png";
         }
