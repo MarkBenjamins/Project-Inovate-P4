@@ -72,6 +72,13 @@ const JSON = [
     status:0,
     foto:" "
     }
+    ,
+    {
+    voornaam:"Rene",
+    achternaam:"Laan",
+    status:1,
+    foto:" "
+    }
 ]
 
 /**
