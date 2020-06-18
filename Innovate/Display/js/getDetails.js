@@ -80,9 +80,6 @@ const JSON = [
     foto:" "
     }
 ]
-<<<<<<< Updated upstream
-
-=======
 var xmlhttp = new XMLHttpRequest();
 
 xmlhttp.open("GET", "DBFunction.php", true);
@@ -97,7 +94,6 @@ xmlhttp.onreadystatechange = function()
         
     }
 }
->>>>>>> Stashed changes
 /**
  * Functie om door de waardes van de JSON file heen te loopen.
  * @note Het aantal loops is afhankelijk van de grote van de JSON File
