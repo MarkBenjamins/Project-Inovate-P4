@@ -80,7 +80,24 @@ const JSON = [
     foto:" "
     }
 ]
+<<<<<<< Updated upstream
 
+=======
+var xmlhttp = new XMLHttpRequest();
+
+xmlhttp.open("GET", "DBFunction.php", true);
+xmlhttp.send();
+
+xmlhttp.onreadystatechange = function() 
+{
+    if (this.readyState == 4 && this.status == 200) 
+    {
+        myObj = JSON.parse(this.responseText);
+        myObj[1].voornaam + " " + myObj[0].achternaam;
+        
+    }
+}
+>>>>>>> Stashed changes
 /**
  * Functie om door de waardes van de JSON file heen te loopen.
  * @note Het aantal loops is afhankelijk van de grote van de JSON File
@@ -126,7 +143,11 @@ function makeDetails()
 {
     let colour = getColour();
     // voeg de voor en achternaam samen
+<<<<<<< Updated upstream
     let details = JSON[count].foto + " " + JSON[count].voornaam + " "+ JSON[count].achternaam;
+=======
+    let details = JSON[count].voornaam + " "+ JSON[count].achternaam;
+>>>>>>> Stashed changes
 
     //maak een div aan waar de list elementen in kunnen
     let divElem = document.createElement("div");
