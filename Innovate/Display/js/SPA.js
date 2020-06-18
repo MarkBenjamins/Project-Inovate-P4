@@ -45,7 +45,7 @@ function showBuienradar()
 function showNewsfeed()
 {
     clearAllData()
-    locateElement("koptekst",'NEWSFEED');
+    locateElement("koptekst",'Newsfeed');
 }
 
 /**
@@ -71,7 +71,7 @@ function showLogonPage()
             '<input id="password" name="password" type="password" placeholder="Password">'+
         '</div>'+
         '<div>'+
-            '<button onclick="/*!!!!!!!!!!!!!!!!!!!Hier is een bug*/tussenLogin()" type="submit">Login</button>'+
+            '<button onclick="tussenLogin()" type="submit">Login</button>'+
         '</div><br>'+
         '<p><a href="mailto:someone@example.com">Forgot your password?</a></p>'+
     '</form>'+
