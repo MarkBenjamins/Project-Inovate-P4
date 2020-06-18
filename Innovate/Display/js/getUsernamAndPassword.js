@@ -1,6 +1,6 @@
 /**
  * Array list die de JSON file moet voorstellen.
- */
+ 
 var user = 
 [
 	{ // user @ 0 index
@@ -16,7 +16,7 @@ var user =
 		password: "jenny1"
 	}
 ]
-
+*/
 /**
  * Constanten voor de {checkUsernameAndPassword()} functie.
  */
@@ -82,8 +82,7 @@ function checkUsernameAndPassword()
 			}
 
 			// if password is wachtwoord of password error.
-			else if (password.value === 'password'|| password.value === 'wachtwoord' 
-					|| password.value === 'Password'|| password.value === 'Wachtwoord') 
+			else if(password.value === 'password' || password.value === 'wachtwoord' || password.value === 'Password'|| password.value === 'Wachtwoord') 
 			{
 				messages.push('Password cannot be password or wachtwoord')
 			}
@@ -100,22 +99,10 @@ function checkUsernameAndPassword()
 			{
 				var inputUsername = username.value
 				var inputPassword = password.value
-				// loop door de array list en vergelijk met user input.
-				for(var i = 0; i < user.length; i++) 
-				{
-					// Checkt of user input overeenkomt met een waarde die in de user array staat.
-					if(inputUsername == user[i].username && inputPassword == user[i].password) 
-					{
-						// stuur de gebruiker na validatie door naar de volgende pagina.
-						e.preventDefault()
-						checkLoginAgainstDatabase(inputUsername, inputPassword);
-						alert(inputUsername + " is logged in!!!")
-						//window.location.href = "Test_newsfeedLogin.html";
-						return
-					}
-				}
+
 				e.preventDefault()
-				messages.push("Incorrect username or password.")
+				checkLoginAgainstDatabase(inputUsername, inputPassword);
+				return
 			}
 
 			// Als de input niet voldoet stuur dan de error naar het scherm
@@ -128,49 +115,11 @@ function checkUsernameAndPassword()
 	)
 }
 
-
-/**
- * @note na de validatie zou je een get kunnen maken waarin je de username in de url balk zet.
- * op die manier kun je kijken of de gebruiker op een pagina mag komen, en of de gebruiker een gebruiker is.
- */
-
-
-/**
- * @deprecated {getInfo()} validate is ingebouwd bij de checkUsernameAndPassword functie.
- * Waardoor de check al gedaan wordt in de functie en is aangepast aan de eisen van het systeem.
- * Functie om de user input te valideren met de array.
- * Validate {true} Ingelogd melding, waarna je wordt doorgelinkt naar de ingelogde pagina.
- * Validate {false} Error melding.
- * @param {username} De input die de user invuld.
- * @param {password} De input die de user invuld.
- */
-// function getInfo() 
-// {
-// 	// user input naar var 
-// 	var username = document.getElementById('username').value
-// 	var password = document.getElementById('password').value
-
-//     for(var i = 0; i < user.length; i++) 
-//     {
-//         // Checkt of user input overeenkomt met een waarde die in de objPeople array staat.
-//         if(username == user[i].username && password == user[i].password) 
-//         {
-// 			alert(inputUsername + " is logged in!!!")
-//             // stop de functie als je ingelogd bent
-//             window.location.href = "Test_newsfeedLogin.html";
-// 			return
-// 		}
-// 	}
-// 	alert("Incorrect username or password.")
-//}
-
 function checkLoginAgainstDatabase(username, password)
 {
-	
-	let data = { username: username, password: password };
+	 
+	let data = "username="+ username + "& password="+ password;
 	let request = new XMLHttpRequest();
-	console.log(typeof data);
-	console.log(data);
 
 	request.open("POST", "../Display/testdatabase.php", true);
 	request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -179,15 +128,9 @@ function checkLoginAgainstDatabase(username, password)
     {
 		if (this.readyState == 4 && this.status == 200)
 		{
-			document.getElementById("SEND").innerHTML = request.responseText;
-			console.log(request.responseText);
-			document.getElementById("DENS").innerHTML = request.response;
-			console.log(username);
-			console.log(password);
+			sessionStorage.id = request.responseText;
+			//console.log(sessionStorage.id);
         }
     }
-
 	request.send(data);
-
-
 }

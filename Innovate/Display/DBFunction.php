@@ -2,6 +2,10 @@
 /*
     Space to call Functions    
 */
+if($_POST["username"] && $_POST["password"])
+{
+
+}
 GetDocent();
 GetData();
 
