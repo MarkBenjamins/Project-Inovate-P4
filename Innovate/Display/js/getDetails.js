@@ -139,11 +139,9 @@ function makeDetails()
 {
     let colour = getColour();
     // voeg de voor en achternaam samen
-<<<<<<< Updated upstream
-    let details = JSON[count].foto + " " + JSON[count].voornaam + " "+ JSON[count].achternaam;
-=======
+
     let details = JSON[count].voornaam + " "+ JSON[count].achternaam;
->>>>>>> Stashed changes
+
 
     //maak een div aan waar de list elementen in kunnen
     let divElem = document.createElement("div");
