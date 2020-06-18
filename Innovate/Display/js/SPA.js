@@ -137,16 +137,12 @@ function showWijzigBeschikbaarheid()
         '<h1>Wijzig Beschikbaarheid</h1>'+
     '</div>'+
     'Klik op een knop om je status te wijzigen:'+
-    '<div class="row">'+   
-        '<div class="col-md-2 col-lg-1"><br>'+
-            '<button class="mijnbutton beschikbaar">Beschikbaar</button>'+
-        '</div>'+
-        '<div class="col-md-2 col-lg-1"><br>'+
-            '<button class="mijnbutton aanwezig">Aanwezig</button>'+
-        '</div>'+
-        '<div class="col-md-2 col-lg-1"><br>'+
-            '<button class="mijnbutton afwezig">Afwezig</button>'+
-        '</div>'+
+    '<div id="row" style="width: 100%;">'+  
+        '<div style="text-align:center;margin:0 auto">'+
+            '<button class="mijnbutton beschikbaar" style="margin: 20px;">Beschikbaar</button>'+
+            '<button class="mijnbutton aanwezig" style="margin: 20px;">Aanwezig</button>'+
+            '<button class="mijnbutton afwezig" style="margin: 20px;">Afwezig</button>'+
+        '</div> '+
     '</div>');
 }
 
