@@ -26,9 +26,9 @@
 		fwrite($fp, json_encode($posts));
 		fclose($fp);
 	}             
-	
+
 	echo "<br><br>nu.nl hieronder<br><br>";
-	
+
 	$feed2  = "https://www.nu.nl/rss";
 	$xml21 = simplexml_load_file($feed2);
 	$xml22 = simplexml_load_file($feed2);

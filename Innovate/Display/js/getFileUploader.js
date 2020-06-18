@@ -40,10 +40,10 @@ function validate_fileupload(fileName)
                         $.ajax
                         (
                             {
-                            type: "POST",
-                            url: "fileupload.php",
-                            data: { value: reader.result },
-                            success: function (data) {alert("File uploaded to the database.");}
+                                type: "POST",
+                                url: "fileupload.php",
+                                data: { value: reader.result },
+                                success: function (data) {alert("File uploaded to the database.");}
                             }
                         );
                     };
@@ -66,8 +66,8 @@ function validate_fileupload(fileName)
                                 //return false
                             }
                         })
-                })
-
+                    }
+                )
             // return om de functie te stoppen
             return true;
         }
