@@ -105,6 +105,7 @@ body
 .kopTekst
 {
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .buienradar
@@ -115,11 +116,6 @@ body
 .weerInfo
 {
     margin-left: 10px;
-}
-
-.buttonToNewsfeed
-{
-    text-align: right;
 }
 
 .loginScreen
