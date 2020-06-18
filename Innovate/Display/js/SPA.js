@@ -108,18 +108,6 @@ function showLogoffPage()
         '<input type="text" id="newPassword" name="newPassword" placeholder="New password"><br>'+
         '<button onclick="changePassword()" type="submit">ChangePassword</button>'+
         '<br>'+
-        //'<hr class="logoffHr">'+
-    //'</form>'+
-
-    // '<h1>Change user Avatar</h1><br>'+
-    // '<form action="#">'+
-    //     '<div>'+
-    //         '<input type="hidden" id="user_id" value="75" />'+
-    //         '<input type="file" id="avatar_img" accept="image/x-png" multiple />'+
-    //     '</div>'+
-    //     '<div class="changeAvatarButton">'+
-    //         '<button id="btnSubmit" onclick="">Upload Avatar</button>'+
-    //     '</div>'+
     '</form>'
     );
 }
@@ -143,7 +131,13 @@ function showWijzigBeschikbaarheid()
             '<button class="mijnbutton aanwezig" style="margin: 20px;" id="2" onclick="sendData(1, 2)">Aanwezig</button>'+
             '<button class="mijnbutton afwezig" style="margin: 20px;" id="3" onclick="sendData(1, 3)">Afwezig</button>'+
         '</div> '+
-    '</div>');
+    '</div>'+
+    '<br />'+
+    '<br />'+
+    '<p id="SEND"></p>'+
+    '<br />'+
+    '<p id="text"></p>'
+    );
 }
 
 /**
