@@ -45,7 +45,7 @@ function showBuienradar()
 function showNewsfeed()
 {
     clearAllData()
-    locateElement("koptekst",'NEWSFEED');
+    locateElement("koptekst",'Newsfeed');
 }
 
 /**
@@ -71,7 +71,7 @@ function showLogonPage()
             '<input id="password" name="password" type="password" placeholder="Password">'+
         '</div>'+
         '<div>'+
-            '<button onclick="/*!!!!!!!!!!!!!!!!!!!Hier is een bug*/tussenLogin()" type="submit">Login</button>'+
+            '<button onclick="tussenLogin()" type="submit">Login</button>'+
         '</div><br>'+
         '<p><a href="mailto:someone@example.com">Forgot your password?</a></p>'+
     '</form>'+
@@ -215,7 +215,6 @@ function enabelAllButtons()
         let DmBt = document.getElementById("DarkModeKnop");
         if (DmBt.value == "OFF")
         {
-            docent = "../img/icons-scherm/docent_wit.png";
             aanwezigheid = "../img/icons-scherm/aanwezigheid_wit.png";
             message = "../img/icons-scherm/addmessage_wit.png";
         }
