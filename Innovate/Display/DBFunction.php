@@ -26,17 +26,17 @@ function GetData()
             mysqli_stmt_execute($stmt);
         }
 
-        echo ('Status is changed to ');
+        echo ('Status is aangepast naar ');
         switch ($status)
         {
             case 1:
-                echo "green.";
+                echo "beschikbaar.";
                 break;
             case 2:
-                echo "yellow.";
+                echo "aanwezig.";
                 break;
             case 3:
-                echo "red.";
+                echo "afwezig.";
                 break;
         }
     }
