@@ -1,109 +1,32 @@
-//een simpele json file die ik verwacht te krijgen
-const docenten = [
-    {
-    voornaam:"Albert",
-    achternaam:"De Jonge",
-    status:0,
-    foto:" "
-    },
-    {
-    voornaam:"Gerjan",
-    achternaam:"Van Oenen",
-    status:2,
-    foto:" "
-    },
-    {
-    voornaam:"Elleke",
-    achternaam:"Jagersma",
-    status:0,
-    foto:" "
-    },
-    {
-    voornaam:"Rob",
-    achternaam:"Smit",
-    status:1,
-    foto:" "
-    },
-    {
-    voornaam:"Jeroen",
-    achternaam:"Pijpker",
-    status:2,
-    foto:" "
-    },
-    {
-    voornaam:"Winnie",
-    achternaam:"van Schilt",
-    status:0,
-    foto:" "
-    },
-    {
-    voornaam:"Willemijn",
-    achternaam:"Meester",
-    status:1,
-    foto:" "
-    },
-    {
-    voornaam:"Rob",
-    achternaam:"Smit",
-    status:2,
-    foto:" "
-    },
-    {
-    voornaam:"Thijs",
-    achternaam:"Smegen",
-    status:1,
-    foto:" "
-    },
-    {
-    voornaam:"Martijn",
-    achternaam:"Pomp",
-    status:2,
-    foto:" "
-    },
-    {
-    voornaam:"Niels",
-    achternaam:"Doorn",
-    status:1,
-    foto:" "
-    },
-    {
-    voornaam:"Jan",
-    achternaam:"Doornbos",
-    status:0,
-    foto:" "
-    }
-    ,
-    {
-    voornaam:"Rene",
-    achternaam:"Laan",
-    status:1,
-    foto:" "
-    }
-]
-    
 
-console.log(docenten)
 /**
  * Functie om door de waardes van de JSON file heen te loopen.
  * @note Het aantal loops is afhankelijk van de grote van de JSON File
  */
 let count = 0;
-function getDetails()
-{
+//let Alldocenten = "test";
+// function getJson()
+// {
     let xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", "teacher.json", true);
 
     xmlhttp.onload = function () {
         myObj = JSON.parse(xmlhttp.responseText);
-
-        docenten.unshift({voornaam: myObj[0].voornaam,achternaam: myObj[0].achternaam,status:myObj[0].status,foto: " "});
+        var Alldocenten = docenten.unshift({voornaam: myObj[0].voornaam,achternaam: myObj[0].achternaam,status: myObj[0].status,foto: " "});
     }
 
     xmlhttp.send(null);
 
-    for (let index = 0; index < docenten.length; index++) 
+function getDetails()
+{
+    //getJson();
+    console.log(Alldocenten)
+    for (let index = 0; index < Alldocenten.length; index++) 
     {
+        let details = Alldocenten[count].voornaam + " "+ Alldocenten[count].achternaam;
+        console.log(Alldocenten);
         makeDetails()
+        
     }
 }
 
@@ -114,7 +37,7 @@ function getDetails()
 function getColour()
 {
     let colour;
-    switch(docenten[count].status)
+    switch(Alldocenten[count].status)
     {
         case 0:
             colour = "green"    //groen, aanwezig en beschikbaar
@@ -137,11 +60,11 @@ function getColour()
  */
 function makeDetails()
 {
+    //haal de kleur op
     let colour = getColour();
+
     // voeg de voor en achternaam samen
-
-    let details = docenten[count].voornaam + " "+ docenten[count].achternaam;
-
+    let details = Alldocenten[count].voornaam + " "+ Alldocenten[count].achternaam;
 
     //maak een div aan waar de list elementen in kunnen
     let divElem = document.createElement("div");
