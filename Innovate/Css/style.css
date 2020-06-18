@@ -294,3 +294,20 @@ button:active
     box-shadow: none;
     padding: 0px;
 }
+
+.tweakersRSS
+{
+    width: 45%;
+    bottom: 0;
+    position: absolute;
+    float: left;
+}
+
+.nuRSS
+{
+    width: 45%;
+    left: 55%;
+    bottom: 0;
+    position: absolute;
+    float: right;
+}
