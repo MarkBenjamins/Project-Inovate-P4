@@ -114,23 +114,19 @@ body
     margin-top: 20px;
 }
 
-.buienradarFeed
-{
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.buienradarInfo
-{
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.iframeBuienradar
+.buienradar
 {
     text-align: center;
-    padding-bottom: 10px;
-    padding-top: 10px;
+}
+
+.weerInfo
+{
+    margin-left: 5px;
+}
+
+.buttonToNewsfeed
+{
+    text-align: right;
 }
 
 .loginScreen
