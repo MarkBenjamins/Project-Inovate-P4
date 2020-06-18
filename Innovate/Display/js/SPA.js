@@ -108,18 +108,18 @@ function showLogoffPage()
         '<input type="text" id="newPassword" name="newPassword" placeholder="New password"><br>'+
         '<button onclick="changePassword()" type="submit">ChangePassword</button>'+
         '<br>'+
-        '<hr class="logoffHr">'+
-    '</form>'+
+        //'<hr class="logoffHr">'+
+    //'</form>'+
 
-    '<h1>Change user Avatar</h1><br>'+
-    '<form action="#">'+
-        '<div>'+
-            '<input type="hidden" id="user_id" value="75" />'+
-            '<input type="file" id="avatar_img" accept="image/x-png" multiple />'+
-        '</div>'+
-        '<div class="changeAvatarButton">'+
-            '<button id="btnSubmit" onclick="">Upload Avatar</button>'+
-        '</div>'+
+    // '<h1>Change user Avatar</h1><br>'+
+    // '<form action="#">'+
+    //     '<div>'+
+    //         '<input type="hidden" id="user_id" value="75" />'+
+    //         '<input type="file" id="avatar_img" accept="image/x-png" multiple />'+
+    //     '</div>'+
+    //     '<div class="changeAvatarButton">'+
+    //         '<button id="btnSubmit" onclick="">Upload Avatar</button>'+
+    //     '</div>'+
     '</form>'
     );
 }
