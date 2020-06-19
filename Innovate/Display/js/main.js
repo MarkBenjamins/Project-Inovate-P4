@@ -26,6 +26,7 @@ getTime();
 getCurrentDate();
 
 getDetails();
+setInterval(getDetails, 10000);
 
 
 

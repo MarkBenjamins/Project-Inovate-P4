@@ -5,6 +5,7 @@ let count = 0;
  */
 function getDetails()
 {
+    localStorage.clear();
     let xmlhttp = new XMLHttpRequest();
     let teacher = [];
     let myObj = null;
@@ -18,7 +19,6 @@ function getDetails()
             makeDetails(teacher[x].fname, teacher[x].lname, teacher[x].status);
         }
     }
-    console.log(teacher);
     xmlhttp.send(null);
 }
 /**
@@ -34,7 +34,7 @@ function getColour(status)
             colour = "green"    //groen, aanwezig en beschikbaar
             break;
         case 2:
-            colour = "#ffe066"  //geel, aanwezig maar niet beschikbaar
+            colour = "yellow"  //geel, aanwezig maar niet beschikbaar
             break;
         case 3:
             colour = "red"      //rood, afwezig
@@ -110,5 +110,6 @@ function makeDetails(Fname, Lname, Status)
     count++;
     return details;
 }
-//window.onload(getDetails());
+//roep elke 10 seconden de functie aan
+
 export { getDetails };
