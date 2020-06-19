@@ -113,6 +113,11 @@ body
     margin-top: 20px;
 }
 
+.kopTekst
+{
+    text-align: center;
+    margin-bottom: 10px;
+}
 .buienradar
 {
     text-align: center;
@@ -121,11 +126,6 @@ body
 .weerInfo
 {
     margin-left: 10px;
-}
-
-.buttonToNewsfeed
-{
-    text-align: right;
 }
 
 .loginScreen
@@ -304,4 +304,21 @@ button:active
 {
     box-shadow: none;
     padding: 0px;
+}
+
+.tweakersRSS
+{
+    width: 45%;
+    bottom: 0;
+    position: absolute;
+    float: left;
+}
+
+.nuRSS
+{
+    width: 45%;
+    left: 55%;
+    bottom: 0;
+    position: absolute;
+    float: right;
 }

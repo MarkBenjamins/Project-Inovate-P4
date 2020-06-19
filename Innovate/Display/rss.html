@@ -1,0 +1,37 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <p id="titleTweakers"></p>
+        <p id="descriptionTweakers"></p>
+        <p id="pubDateTweakers"></p>
+        <script type="text/javascript">
+            fetch("./tweakers.json")
+                .then(function(resp) {
+                    return resp.json();
+                })
+                .then(function(data) {
+                    console.log(data);
+                    document.getElementById("titleTweakers").innerHTML = data[0].title;
+                    document.getElementById("descriptionTweakers").innerHTML = data[0].description;
+                    document.getElementById("pubDateTweakers").innerHTML = data[0].pubDate;
+                });
+        </script>
+        <p id="titleNu"></p>
+        <p id="descriptionNu"></p>
+        <p id="pubDateNu"></p>
+        <script type="text/javascript">
+            fetch("./nu.json")
+                .then(function(resp) {
+                    return resp.json();
+                })
+                .then(function(data) {
+                    console.log(data);
+                    document.getElementById("titleNu").innerHTML = data[0].title;
+                    document.getElementById("descriptionNu").innerHTML = data[0].description;
+                    document.getElementById("pubDateNu").innerHTML = data[0].pubDate;
+                });
+        </script>
+    </body>
+</html>

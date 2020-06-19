@@ -45,28 +45,11 @@ function getCurrentDate()
     let date = weekDay + " " + day +  " " + month + " WeekNr. " + week;
     //let date = year + "/" + month + "/" + day;
 
-        document.getElementById('date').innerHTML = date;
-    /**
-     * @deprecated 
-     * let element1 = document.getElementById('date');
-     * element1.innerHTML = date;
-     * return date;
-     */
+    document.getElementById('date').innerHTML = date;
 }
 
 // dit is een auto refresher van een uur.
 // Tussen 23:59 en 00:01 zal de de date updaten.
 setInterval(getCurrentDate, 3600);
-
-/**
- * @deprecated
- * voor de uitgebrijder versie getCurrentDate()
- */
-// function getCurrentDate() 
-// {
-//     var time = new Date();
-//     document.getElementById("date").innerHTML = time.toDateString();
-// }
-//setInterval(getCurrentDate, 3600000);
 
 export { getCurrentDate }; 

@@ -30,11 +30,11 @@ function showBuienradar()
 {
     clearAllData()
     locateElement("koptekst", 'Buienradar');
+    locateElement("toNewsfeed", '<button class="buttonToNewsfeed" type="button" onclick="showNewsfeed()">Back to newsfeed</button>');
     locateElement("paginaInhoud", 
     '<iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.77917&lng=6.90694&overname=2&zoom=8&naam=Emmen&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no>'+
     '</iframe>'+
     '<IFRAME class="weerInfo" SRC="https://gadgets.buienradar.nl/gadget/radarfivedays" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=256 HEIGHT=406></IFRAME>');
-    locateElement("toNewsfeed", '<button class="buttonToNewsfeed" type="button" onclick="showNewsfeed()">Back to newsfeed</button>');
 }
 
 /**
@@ -46,6 +46,30 @@ function showNewsfeed()
 {
     clearAllData()
     locateElement("koptekst",'Newsfeed');
+    locateElement("paginaInhoud",
+    '<div class="rss-box">'+
+        '<div class="tweakersRSS">'+
+        '<marquee behavior="scroll" direction="left"><p id="titleTweakers"></p>'+
+        '<p id="descriptionTweakers"></p>'+
+        '</marquee></div>'+
+        fetch("./tweakers.json").then(function(resp) {return resp.json();})
+            .then(function(data) {
+                console.log(data);
+                document.getElementById("titleTweakers").innerHTML = data[0].title;
+                document.getElementById("descriptionTweakers").innerHTML = data[0].description;
+            })+
+        '<div class="nuRSS">'+
+        '<marquee behavior="scroll" direction="left"><p id="titleNu"></p>'+
+        '<p id="descriptionNu"></p>'+
+        '</marquee></div>'+
+        fetch("./Nu.json").then(function(resp) {return resp.json();})
+            .then(function(data) {
+                console.log(data);
+                document.getElementById("titleNu").innerHTML = data[0].title;
+                document.getElementById("descriptionNu").innerHTML = data[0].description;
+            })+
+    '</div>'
+    );
 }
 
 /**
@@ -108,18 +132,7 @@ function showLogoffPage()
         '<input type="text" id="newPassword" name="newPassword" placeholder="New password"><br>'+
         '<button onclick="changePassword()" type="submit">ChangePassword</button>'+
         '<br>'+
-        //'<hr class="logoffHr">'+
-    //'</form>'+
-
-    // '<h1>Change user Avatar</h1><br>'+
-    // '<form action="#">'+
-    //     '<div>'+
-    //         '<input type="hidden" id="user_id" value="75" />'+
-    //         '<input type="file" id="avatar_img" accept="image/x-png" multiple />'+
-    //     '</div>'+
-    //     '<div class="changeAvatarButton">'+
-    //         '<button id="btnSubmit" onclick="">Upload Avatar</button>'+
-    //     '</div>'+
+        '<hr class="logoffHr">'+
     '</form>'
     );
 }
@@ -145,11 +158,17 @@ function showWijzigBeschikbaarheid()
     '</div>'+
     '<div id="row">'+  
         '<div style="text-align:center;margin:0 auto">'+
-            '<button class="mijnbutton beschikbaar" style="margin: 20px;">Beschikbaar</button>'+
-            '<button class="mijnbutton aanwezig" style="margin: 20px;">Aanwezig</button>'+
-            '<button class="mijnbutton afwezig" style="margin: 20px;">Afwezig</button>'+
+            '<button class="mijnbutton beschikbaar" style="margin: 20px;" id="1" onclick="sendData(1, 1)">Beschikbaar</button>'+
+            '<button class="mijnbutton aanwezig" style="margin: 20px;" id="2" onclick="sendData(1, 2)">Aanwezig</button>'+
+            '<button class="mijnbutton afwezig" style="margin: 20px;" id="3" onclick="sendData(1, 3)">Afwezig</button>'+
         '</div> '+
-    '</div>');
+    '</div>'+
+    '<br />'+
+    '<br />'+
+    '<p id="SEND"></p>'+
+    '<br />'+
+    '<p id="text"></p>'
+    );
 }
 
 /**

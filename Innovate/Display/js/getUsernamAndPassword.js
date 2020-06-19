@@ -128,42 +128,6 @@ function checkUsernameAndPassword()
 	)
 }
 
-
-/**
- * @note na de validatie zou je een get kunnen maken waarin je de username in de url balk zet.
- * op die manier kun je kijken of de gebruiker op een pagina mag komen, en of de gebruiker een gebruiker is.
- */
-
-
-/**
- * @deprecated {getInfo()} validate is ingebouwd bij de checkUsernameAndPassword functie.
- * Waardoor de check al gedaan wordt in de functie en is aangepast aan de eisen van het systeem.
- * Functie om de user input te valideren met de array.
- * Validate {true} Ingelogd melding, waarna je wordt doorgelinkt naar de ingelogde pagina.
- * Validate {false} Error melding.
- * @param {username} De input die de user invuld.
- * @param {password} De input die de user invuld.
- */
-// function getInfo() 
-// {
-// 	// user input naar var 
-// 	var username = document.getElementById('username').value
-// 	var password = document.getElementById('password').value
-
-//     for(var i = 0; i < user.length; i++) 
-//     {
-//         // Checkt of user input overeenkomt met een waarde die in de objPeople array staat.
-//         if(username == user[i].username && password == user[i].password) 
-//         {
-// 			alert(inputUsername + " is logged in!!!")
-//             // stop de functie als je ingelogd bent
-//             window.location.href = "Test_newsfeedLogin.html";
-// 			return
-// 		}
-// 	}
-// 	alert("Incorrect username or password.")
-//}
-
 function checkLoginAgainstDatabase(username, password)
 {
 	
@@ -186,6 +150,4 @@ function checkLoginAgainstDatabase(username, password)
     }
 
 	request.send(data);
-
-
 }
