@@ -18,8 +18,6 @@ import { getTime } from './getTime.js';
 import { getCurrentDate } from './getDate.js';
 import { getDetails } from './getDetails.js';
 /**
- * @note deze werkt niet
- * @Storm_Visser kun jij dit oplossen?
  * import { getDetails } from './getDetails.js';
 */
 

@@ -1,52 +1,43 @@
-
+let count = 0;
 /**
  * Functie om door de waardes van de JSON file heen te loopen.
  * @note Het aantal loops is afhankelijk van de grote van de JSON File
  */
-let count = 0;
-//let Alldocenten = "test";
-// function getJson()
-// {
+function getDetails()
+{
     let xmlhttp = new XMLHttpRequest();
+    let teacher = [];
+    let myObj = null;
     xmlhttp.open("GET", "teacher.json", true);
 
     xmlhttp.onload = function () {
         myObj = JSON.parse(xmlhttp.responseText);
-        var Alldocenten = docenten.unshift({voornaam: myObj[0].voornaam,achternaam: myObj[0].achternaam,status: myObj[0].status,foto: " "});
-    }
 
+        for (let x = 0; x < Object.keys(myObj).length; x++) {
+            teacher[x] = { fname: myObj[x].voornaam, lname: myObj[x].achternaam, status: myObj[x].status };
+            makeDetails(teacher[x].fname, teacher[x].lname, teacher[x].status);
+        }
+    }
+    console.log(teacher);
     xmlhttp.send(null);
-
-function getDetails()
-{
-    //getJson();
-    console.log(Alldocenten)
-    for (let index = 0; index < Alldocenten.length; index++) 
-    {
-        let details = Alldocenten[count].voornaam + " "+ Alldocenten[count].achternaam;
-        console.log(Alldocenten);
-        makeDetails()
-        
-    }
 }
-
 /**
  * Functie om de status van de JSON file uit te lezen en aan de hand daarvan de kleur te bepalen.
  * @return {colour} De kleur die gelijk staat aan de status.
  */
-function getColour()
+function getColour(status)
 {
     let colour;
-    switch(Alldocenten[count].status)
+    switch(status)
     {
-        case 0:
-            colour = "green"    //groen, aanwezig en beschikbaar
-            break;
         case 1:
-            colour = "red"      //rood, afwezig
+            colour = "green"    //groen, aanwezig en beschikbaar
             break;
         case 2:
             colour = "#ffe066"  //geel, aanwezig maar niet beschikbaar
+            break;
+        case 3:
+            colour = "red"      //rood, afwezig
             break;
         default:
             colour = "#737373"  //grijs, default als het onbekend is
@@ -58,13 +49,13 @@ function getColour()
  * Functie om de gegevens van de docent op te halen.
  * @return {details} Bevat de status kleur, fotolocatie, voornaam en achternaam van de gebruiker.
  */
-function makeDetails()
+function makeDetails(Fname, Lname, Status)
 {
     //haal de kleur op
-    let colour = getColour();
+    let colour = getColour(Status);
 
     // voeg de voor en achternaam samen
-    let details = Alldocenten[count].voornaam + " "+ Alldocenten[count].achternaam;
+    let details = Fname + " "+ Lname;
 
     //maak een div aan waar de list elementen in kunnen
     let divElem = document.createElement("div");
