@@ -50,11 +50,13 @@ function showNewsfeed()
     locateElement("rssBox",
     '<div class="rss-box">'+
         '<div class="tweakersRSS">'+
+            '<h4>Tweakers.net</h4>'+
             '<marquee behavior="scroll" direction="left"><p id="titleTweakers"></p>'+
                 '<p id="descriptionTweakers"></p>'+
             '</marquee>'+
         '</div>'+
         '<div class="nuRSS">'+
+            '<h4>Nu.nl</h4>'+
             '<marquee behavior="scroll" direction="left"><p id="titleNu"></p>'+
                 '<p id="descriptionNu"></p>'+
             '</marquee>'+
