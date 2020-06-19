@@ -20,6 +20,7 @@ function clearAllData()
     locateElement("logOFF", '');
     locateElement("aanwezigheidCheck", '');
     locateElement("showTheMessage", '');
+    locateElement("rssBox", '')
 }
 /**
  * Functie die de inhoud van de buienradar pagina laat zien.
@@ -46,33 +47,36 @@ function showNewsfeed()
 {
     clearAllData()
     locateElement("koptekst",'Newsfeed');
-    locateElement("paginaInhoud",
+    locateElement("rssBox",
     '<div class="rss-box">'+
         '<div class="tweakersRSS">'+
             '<marquee behavior="scroll" direction="left"><p id="titleTweakers"></p>'+
                 '<p id="descriptionTweakers"></p>'+
             '</marquee>'+
         '</div>'+
-        fetch("./tweakers.json").then(function(resp) {return resp.json();})
-            .then(function(data)
-            {
-                console.log(data);
-                document.getElementById("titleTweakers").innerHTML = data[0].title;
-                document.getElementById("descriptionTweakers").innerHTML = data[0].description;
-            })+
         '<div class="nuRSS">'+
-        '<marquee behavior="scroll" direction="left"><p id="titleNu"></p>'+
-        '<p id="descriptionNu"></p>'+
-        '</marquee></div>'+
-        fetch("./Nu.json").then(function(resp) {return resp.json();})
-            .then(function(data) 
-            {
-                console.log(data);
-                document.getElementById("titleNu").innerHTML = data[0].title;
-                document.getElementById("descriptionNu").innerHTML = data[0].description;
-            })+
+            '<marquee behavior="scroll" direction="left"><p id="titleNu"></p>'+
+                '<p id="descriptionNu"></p>'+
+            '</marquee>'+
+        '</div>'+
     '</div>'
     );
+    fetch("./tweakers.json")
+        .then(function(resp) {return resp.json();})
+        .then(function(data)
+        {
+            console.log(data);
+            document.getElementById("titleTweakers").innerHTML = data[0].title;
+            document.getElementById("descriptionTweakers").innerHTML = data[0].description;
+        })
+    fetch("./Nu.json")
+        .then(function(resp) {return resp.json();})
+        .then(function(data) 
+        {
+            console.log(data);
+            document.getElementById("titleNu").innerHTML = data[0].title;
+            document.getElementById("descriptionNu").innerHTML = data[0].description;
+        })
 }
 
 /**
