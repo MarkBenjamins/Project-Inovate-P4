@@ -30,7 +30,7 @@ function showBuienradar()
 {
     clearAllData()
     locateElement("koptekst", 'Buienradar');
-    locateElement("toNewsfeed", '<button class="buttonToNewsfeed" type="button" onclick="showNewsfeed()">Back to newsfeed</button>');
+    locateElement("toNewsfeed", '<button type="button" onclick="showNewsfeed()">Back to newsfeed</button>');
     locateElement("paginaInhoud", 
     '<iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.77917&lng=6.90694&overname=2&zoom=8&naam=Emmen&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no>'+
     '</iframe>'+
@@ -49,11 +49,13 @@ function showNewsfeed()
     locateElement("paginaInhoud",
     '<div class="rss-box">'+
         '<div class="tweakersRSS">'+
-        '<marquee behavior="scroll" direction="left"><p id="titleTweakers"></p>'+
-        '<p id="descriptionTweakers"></p>'+
-        '</marquee></div>'+
+            '<marquee behavior="scroll" direction="left"><p id="titleTweakers"></p>'+
+                '<p id="descriptionTweakers"></p>'+
+            '</marquee>'+
+        '</div>'+
         fetch("./tweakers.json").then(function(resp) {return resp.json();})
-            .then(function(data) {
+            .then(function(data)
+            {
                 console.log(data);
                 document.getElementById("titleTweakers").innerHTML = data[0].title;
                 document.getElementById("descriptionTweakers").innerHTML = data[0].description;
@@ -63,7 +65,8 @@ function showNewsfeed()
         '<p id="descriptionNu"></p>'+
         '</marquee></div>'+
         fetch("./Nu.json").then(function(resp) {return resp.json();})
-            .then(function(data) {
+            .then(function(data) 
+            {
                 console.log(data);
                 document.getElementById("titleNu").innerHTML = data[0].title;
                 document.getElementById("descriptionNu").innerHTML = data[0].description;
