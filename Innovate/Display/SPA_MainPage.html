@@ -19,7 +19,7 @@
         <title>Project Innovate</title>
     </head>
 
-    <body>
+    <body onload="showNewsfeed()">
         <div class="container-fluid">
             <div class="row header">
 
@@ -70,18 +70,22 @@
             <!-- Content -->
             <div class="row worksheet">
                 <div class="col-sm-12 col-md-12 col-lg-9 col-xl-9 newsfeed margintop">
+                    
+                    <!--Page Header-->
+                    <h1 id="koptekst" class="kopTekst"></h1>
+
+                    <!--Newsfeed-->
+                    <div id="rssBox" class="rssBox"></div>
+
+                    <!--Buienradar-->
+                    <div id="buienradarScreen" class="buienradar"></div>
+                    <div id="toNewsfeed" class="kopTekst"></div>
 
                     <!--Login screen-->
                     <div id="loginScreen" class="loginScreen"></div>
 
                     <!--LogOffPage-->
                     <div id="logOFF" class="logoffScreen"></div>
-
-                    <!--Newsfeed, buienradar-->
-                    <h1 id="koptekst" class="kopTekst">Newsfeed</h1>
-                    <div id="toNewsfeed" class="kopTekst"></div>
-                    <div id="paginaInhoud" class="buienradar"></div>
-                    <div id="rssBox" class="rssBox"></div>
 
                     <!--Aanwezigheid-->
                     <div id="aanwezigheidCheck"></div>
@@ -97,13 +101,13 @@
                 </div>
             </div>
         </div>
-        <!-- <script src="../Display/js/getFileUploader.js"></script> -->
+        
         <script src="../Display/js/darkMode.js"></script>
         <script src="../Display/js/SPA.js"></script>
         <script type = "module" src="../Display/js/main.js" ></script>
+        <script src="../Display/js/setStatus.js"></script>
+        <!-- <script src="../Display/js/getFileUploader.js"></script> -->
         <!-- <script src="../Display/js/getChangePassword.js"></script> -->
         <!-- <script src="../Display/js/getUsernamAndPassword.js"></script> -->
-        <script src="../Display/js/setStatus.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </body>
 </html>

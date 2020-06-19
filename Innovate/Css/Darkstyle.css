@@ -308,17 +308,23 @@ button:active
 
 .tweakersRSS
 {
-    width: 45%;
+    width: 97%;
+    bottom: 17%;
+    position: absolute;
+    float: left;
+    border-bottom: 3px solid #737373;
+}
+
+.nuRSS
+{
+    width: 97%;
     bottom: 0;
     position: absolute;
     float: left;
 }
 
-.nuRSS
+h4
 {
-    width: 45%;
-    left: 55%;
-    bottom: 0;
-    position: absolute;
-    float: right;
+    margin: 0;
+    padding: 0;
 }
