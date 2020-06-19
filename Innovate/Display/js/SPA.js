@@ -14,7 +14,7 @@ function locateElement(locatie, waarde)
 function clearAllData()
 {
     locateElement("koptekst", '');
-    locateElement("paginaInhoud", '');
+    locateElement("buienradarScreen", '');
     locateElement("toNewsfeed", '');
     locateElement("loginScreen", '');
     locateElement("logOFF", '');
@@ -22,6 +22,7 @@ function clearAllData()
     locateElement("showTheMessage", '');
     locateElement("rssBox", '')
 }
+
 /**
  * Functie die de inhoud van de buienradar pagina laat zien.
  * @note Om dit te doen moet de pagina eerst leeg gemaakt worden door de clearAllData() functie.
@@ -32,7 +33,7 @@ function showBuienradar()
     clearAllData()
     locateElement("koptekst", 'Buienradar');
     locateElement("toNewsfeed", '<button type="button" onclick="showNewsfeed()">Back to newsfeed</button>');
-    locateElement("paginaInhoud", 
+    locateElement("buienradarScreen", 
     '<iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.77917&lng=6.90694&overname=2&zoom=8&naam=Emmen&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no>'+
     '</iframe>'+
     '<IFRAME class="weerInfo" SRC="https://gadgets.buienradar.nl/gadget/radarfivedays" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=256 HEIGHT=406></IFRAME>');
@@ -63,19 +64,19 @@ function showNewsfeed()
         '</div>'+
     '</div>'
     );
+
     fetch("./tweakers.json")
         .then(function(resp) {return resp.json();})
         .then(function(data)
         {
-            console.log(data);
             document.getElementById("titleTweakers").innerHTML = data[0].title;
             document.getElementById("descriptionTweakers").innerHTML = data[0].description;
         })
+
     fetch("./Nu.json")
         .then(function(resp) {return resp.json();})
         .then(function(data) 
         {
-            console.log(data);
             document.getElementById("titleNu").innerHTML = data[0].title;
             document.getElementById("descriptionNu").innerHTML = data[0].description;
         })
