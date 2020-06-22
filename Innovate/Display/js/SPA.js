@@ -30,7 +30,7 @@ function clearAllData()
  */
 function showBuienradar()
 {
-    clearAllData()
+    clearAllData();
     locateElement("koptekst", 'Buienradar');
     locateElement("toNewsfeed", '<button type="button" onclick="showNewsfeed()">Back to newsfeed</button>');
     locateElement("buienradarScreen", 
@@ -46,7 +46,7 @@ function showBuienradar()
  */
 function showNewsfeed()
 {
-    clearAllData()
+    clearAllData();
     locateElement("koptekst",'Newsfeed');
     locateElement("rssBox",
     '<div class="rss-box">'+
@@ -71,7 +71,7 @@ function showNewsfeed()
         {
             document.getElementById("titleTweakers").innerHTML = data[0].title;
             document.getElementById("descriptionTweakers").innerHTML = data[0].description;
-        })
+        });
 
     fetch("./Nu.json")
         .then(function(resp) {return resp.json();})
@@ -79,7 +79,7 @@ function showNewsfeed()
         {
             document.getElementById("titleNu").innerHTML = data[0].title;
             document.getElementById("descriptionNu").innerHTML = data[0].description;
-        })
+        });
 }
 
 /**
@@ -91,7 +91,7 @@ function showNewsfeed()
  */
 function showLogonPage()
 {
-    clearAllData()
+    clearAllData();
     locateElement("loginScreen",
     '<h1>Login</h1><br>'+
     '<div id="error"></div>'+
@@ -111,7 +111,7 @@ function showLogonPage()
     '</form>'+
     '<hr class="loginHr">'+
     '<button type="button" onclick="showNewsfeed()">Back to newsfeed</button>'
-    )
+    );
 }
 
 /**
@@ -121,7 +121,7 @@ function showLogonPage()
  */
 function showLogoffPage()
 {
-    clearAllData()
+    clearAllData();
     locateElement("logOFF",
     '<h1>Logout</h1>'+
     '<form>'+
@@ -154,7 +154,7 @@ function showLogoffPage()
  */
 function showWijzigBeschikbaarheid()
 {
-    clearAllData()
+    clearAllData();
     locateElement("aanwezigheidCheck",
     '<div class="row">'+
     '   <div style="text-align:center;margin:0 auto">'+
@@ -188,7 +188,7 @@ function showWijzigBeschikbaarheid()
  */
 function showMessage()
 {
-    clearAllData()
+    clearAllData();
     locateElement("showTheMessage",
     '<h1>Message</h1><br>'+
     '<p>Upload your file here with the following extension : .jpg, .jpeg, png.</p>'+
@@ -204,7 +204,8 @@ function showMessage()
 
     '<button onclick="remove()"> Remove all picture s </button><br>'+
     '<div id="result" class="result">'+
-    '<style>div.result>img{height: 250px;border-radius: 10px;}</style>');
+    '<style>div.result>img{height: 250px;border-radius: 10px;}</style>'
+    );
 }
 
 /**
@@ -213,9 +214,9 @@ function showMessage()
  */
 function loguitkill()
 {
-    clearAllData()
-    disableAllButtons()
-    showNewsfeed()
+    clearAllData();
+    disableAllButtons();
+    showNewsfeed();
     document.getElementById('docentLogoColorChange').setAttribute ("onClick", "showLogonPage()");
 }
 
@@ -224,12 +225,12 @@ function loguitkill()
  */
 function tussenLogin()
 {
-    showNewsfeed()
-    window.localStorage.setItem('user','user')
+    showNewsfeed();
+    window.localStorage.setItem('user','user');
 
     if (window.localStorage.length > 0)
     {
-        enabelAllButtons()
+        enabelAllButtons();
         document.getElementById('docentLogoColorChange').setAttribute ("onClick", "showLogoffPage()");
     }
 }
@@ -266,7 +267,7 @@ function enabelAllButtons()
  */
 function disableAllButtons()
 {
-    window.localStorage.clear()
+    window.localStorage.clear();
     locateElement("aanwezigheidLogo",'');
     locateElement("addMessageLogo",'');
     locateElement("newsfeedLogo",'');
