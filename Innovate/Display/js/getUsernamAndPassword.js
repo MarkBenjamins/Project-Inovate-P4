@@ -58,7 +58,7 @@ function checkUsernameAndPassword()
 			}
 
 			// if password bestaat uit minder dan 3 karakters error.
-			else if (username.value.length <= 3) 
+			else if (username.value.length < 3) 
 			{
 				messages.push('Password must be longer than 3 characters')
 			}
@@ -70,7 +70,7 @@ function checkUsernameAndPassword()
 			}
 
 			// if password bestaat uit minder dan 3 karakters error.
-			else if (password.value.length <= 3) 
+			else if (password.value.length < 3) 
 			{
 				messages.push('Password must be longer than 3 characters')
 			}

@@ -42,7 +42,7 @@ function getData()
 			$idhash = crypt($arrayrow["ID"], $token);
 			if($clientToken . $serverToken == $token)
 			{
-				echo $usernamehash . "&" . $clientToken;				
+				echo $idhash . "&" . $clientToken;				
 			}
 			else
 			{
@@ -58,7 +58,6 @@ function createToken()
 	$rand1 = rand(2, 7);
 	for($i=0;$i <= $rand1;$i++)
 	{
-		//$token = (string) $token . random_int(1, getrandmax());
 		$token = (string) $token . random_int(1, 999);
 	}
 	return $token;
@@ -67,8 +66,6 @@ function createToken()
 function clientToken($token)
 {
 	$newToken = substr($token, 0, (strlen($token) * 0.5));
-	//echo("Totaal : " . strlen($token) ."<br> Eerste : ". (strlen($token) * 0.5));
-	//echo("<br> substring(token, 0, " . (strlen($token) * 0.5 ).")");
 
 	return $newToken;
 }
@@ -76,8 +73,6 @@ function clientToken($token)
 function serverToken($token)
 {
 	$newToken = substr($token, (strlen($token) * 0.5), strlen($token));
-	//echo("<br> Laatste : ". (strlen($token) * 0.5));
-	//echo("<br> substring(token, ".(strlen($token) * 0.5 ).", " . (strlen($token)).")");
 
 	return $newToken;
 }
