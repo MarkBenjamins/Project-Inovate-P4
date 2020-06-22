@@ -110,6 +110,4 @@ function makeDetails(Fname, Lname, Status)
     count++;
     return details;
 }
-//roep elke 10 seconden de functie aan
-
 export { getDetails };
