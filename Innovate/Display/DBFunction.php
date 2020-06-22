@@ -26,11 +26,11 @@ function GetData()
             mysqli_stmt_execute($stmt);
         }
 
-        echo ('Status is aangepast naar ');
+        echo ('<div style="text-align:center;margin:0 auto"><p>Status is aangepast naar ');
         switch ($status)
         {
             case 1:
-                echo "beschikbaar.";
+                 "beschikbaar.";
                 break;
             case 2:
                 echo "aanwezig.";
@@ -39,6 +39,7 @@ function GetData()
                 echo "afwezig.";
                 break;
         }
+        echo ('</p></div>');
     }
     else
     {
