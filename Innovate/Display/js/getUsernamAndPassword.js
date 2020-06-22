@@ -20,10 +20,10 @@ var user =
 /**
  * Constanten voor de {checkUsernameAndPassword()} functie.
  */
-const username = document.getElementById('name')
-const password = document.getElementById('password')
-const formLogin = document.getElementById('form')
-const errorElement = document.getElementById('error')
+const username = document.getElementById('name');
+const password = document.getElementById('password');
+const formLogin = document.getElementById('form');
+const errorElement = document.getElementById('error');
 
 /**
  * Functie om de user input voor username en password te valideren.
@@ -48,58 +48,58 @@ function checkUsernameAndPassword()
 			// if input username is leeg error.
 			if (username.value === '' || username.value == null || username.value === ' ') 
 			{
-				messages.push('Username is required')
+				messages.push('Username is required');
 			}
 
 			// if input password is leeg error.
 			else if (password.value === '' || password.value == null || password.value === ' ') 
 			{
-				messages.push('Password is required')
+				messages.push('Password is required');
 			}
 
 			// if password bestaat uit minder dan 3 karakters error.
 			else if (username.value.length <= 3) 
 			{
-				messages.push('Password must be longer than 3 characters')
+				messages.push('Password must be longer than 3 characters');
 			}
 
 			// if password bestaat uit meer dan 19 karakters error.
 			else if (username.value.length >= 20) 
 			{
-				messages.push('Password must be less than 20 characters')
+				messages.push('Password must be less than 20 characters');
 			}
 
 			// if password bestaat uit minder dan 3 karakters error.
 			else if (password.value.length <= 3) 
 			{
-				messages.push('Password must be longer than 3 characters')
+				messages.push('Password must be longer than 3 characters');
 			}
 
 			// if password beaat uit meer dan 19 karakters error.
 			else if (password.value.length >= 20) 
 			{
-				messages.push('Password must be less than 20 characters')
+				messages.push('Password must be less than 20 characters');
 			}
 
 			// if password is wachtwoord of password error.
 			else if (password.value === 'password'|| password.value === 'wachtwoord' 
 					|| password.value === 'Password'|| password.value === 'Wachtwoord') 
 			{
-				messages.push('Password cannot be password or wachtwoord')
+				messages.push('Password cannot be password or wachtwoord');
 			}
 
 			// if username is password error.
 			else if(username.value === password.value)
 			{
-				messages.push('The username cannot be used as password')
+				messages.push('The username cannot be used as password');
 			}
 
 			// if input username en input password gelijk zijn aan username en password uit array user.
 			// ga naar de volgende pagina, anders geef een errror. 
 			else
 			{
-				var inputUsername = username.value
-				var inputPassword = password.value
+				var inputUsername = username.value;
+				var inputPassword = password.value;
 				// loop door de array list en vergelijk met user input.
 				for(var i = 0; i < user.length; i++) 
 				{
@@ -107,22 +107,21 @@ function checkUsernameAndPassword()
 					if(inputUsername == user[i].username && inputPassword == user[i].password) 
 					{
 						// stuur de gebruiker na validatie door naar de volgende pagina.
-						e.preventDefault()
+						e.preventDefault();
 						checkLoginAgainstDatabase(inputUsername, inputPassword);
-						alert(inputUsername + " is logged in!!!")
-						//window.location.href = "Test_newsfeedLogin.html";
-						return
+						alert(inputUsername + " is logged in!!!");
+						return;
 					}
 				}
-				e.preventDefault()
-				messages.push("Incorrect username or password.")
+				e.preventDefault();
+				messages.push("Incorrect username or password.");
 			}
 
 			// Als de input niet voldoet stuur dan de error naar het scherm
 			if(messages.length > 0) 
 			{
-				e.preventDefault()
-				errorElement.innerText = messages.join(', ')
+				e.preventDefault();
+				errorElement.innerText = messages.join(', ');
 			}
 		}
 	)

@@ -20,11 +20,11 @@ var user =
 /**
  * Constanten voor de {checkUsernameAndPassword()} functie.
  */
-const username = document.getElementById('name')
-const password = document.getElementById('password')
-const newPassword = document.getElementById('newPassword')
-const form = document.getElementById('form')
-const errorElement = document.getElementById('error')
+const username = document.getElementById('name');
+const password = document.getElementById('password');
+const newPassword = document.getElementById('newPassword');
+const form = document.getElementById('form');
+const errorElement = document.getElementById('error');
 
 /**
  * Functie om het wachtwoord te wijzigenen met validatie eisen

@@ -4,8 +4,8 @@
  * @note js valideert op .jpg, .jpeg, png 
  * @todo send to database.
  */
-var form = document.getElementById('form')
-var parentDiv = document.getElementById('result')
+var form = document.getElementById('form');
+var parentDiv = document.getElementById('result');
 
 function validate_fileupload(fileName) 
 {
@@ -20,20 +20,20 @@ function validate_fileupload(fileName)
 
     for (var i = 0; i <= allowed_extensions.length; i++) 
     {
-        if (allowed_extensions[i] == file_extension) 
+        if (allowed_extensions[i] == file_extension)
         {
             form.addEventListener
                 ('submit', function (event)
                 {
-                    event.preventDefault()
+                    event.preventDefault();
 
-                    var reader = new FileReader()
-                    var name = document.getElementById("image").files[0].name
+                    var reader = new FileReader();
+                    var name = document.getElementById("image").files[0].name;
 
                     let file = $("#image").prop('files')[0];
                     console.log(file);
 
-                    reader.readAsDataURL(document.getElementById("image").files[0])
+                    reader.readAsDataURL(document.getElementById("image").files[0]);
 
                     reader.onload = function ()
                     {
@@ -56,14 +56,13 @@ function validate_fileupload(fileName)
                         {
                             if (this.result && localStorage) 
                             {
-                                window.localStorage.setItem(name, this.result)
-                                alert("Image is saved locally.")
-                                showImage()
+                                window.localStorage.setItem(name, this.result);
+                                alert("Image is saved locally.");
+                                showImage();
                             }
                             else 
                             {
-                                alert("Somthing went wrong please try again.")
-                                //return false
+                                alert("Somthing went wrong please try again.");
                             }
                         })
                     }
@@ -91,13 +90,13 @@ function showImage()
     // als je de remove functie drukt ziet hij geen gebruiker meer
     for (let i = 0; i < window.localStorage.length; i++) 
     {
-        let res = window.localStorage.getItem(window.localStorage.key(i))
-        var image = new Image()
+        let res = window.localStorage.getItem(window.localStorage.key(i));
+        var image = new Image();
         image.src = res;
-        parentDiv.appendChild(image)
+        parentDiv.appendChild(image);
     }
 }
-showImage()
+showImage();
 
 /**
  * Functie om alle files te verwijderen.
@@ -106,6 +105,6 @@ showImage()
  */
 function remove() 
 {
-    window.localStorage.clear()
-    parentDiv.innerHTML = ''
+    window.localStorage.clear();
+    parentDiv.innerHTML = '';
 }
