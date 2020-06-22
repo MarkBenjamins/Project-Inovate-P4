@@ -1,3 +1,6 @@
+/**
+ * Function om de data uit de database op te vragen en weg te schrijven in een JSON file.
+ */
 let photo;
 let xmlhttp = new XMLHttpRequest();
 let teacher = [];
@@ -19,9 +22,13 @@ xmlhttp.onload = function ()
         };
     }
 }
-
 xmlhttp.send(null);
 
+/**
+ * Functie om de status aan te passen in de database.
+ * @param {id} id Het id nummer van de gebuiker die ingelogd is.
+ * @param {status} status De status van de persoon die is ingelogd.
+ */
 function sendData(id, status)
 {
     let data =id + "=" + status;
