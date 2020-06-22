@@ -1,4 +1,5 @@
 /**
+ * Functie om de tijd te krijgen.
  * @source https://www.tutorialrepublic.com/javascript-tutorial/javascript-timers.php
  */
 function getTime() 

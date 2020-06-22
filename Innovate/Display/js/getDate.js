@@ -27,7 +27,6 @@ function getWeek()
  */
 function getCurrentDate()
 {
-    //let year = TODAY.getFullYear();
     let week = getWeek();
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     let month = months[TODAY.getMonth()];
@@ -43,8 +42,6 @@ function getCurrentDate()
         day = "0" + day;
     }
     let date = weekDay + " " + day +  " " + month + " WeekNr. " + week;
-    //let date = year + "/" + month + "/" + day;
-
     document.getElementById('date').innerHTML = date;
 }
 

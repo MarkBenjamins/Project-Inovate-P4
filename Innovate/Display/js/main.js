@@ -14,15 +14,15 @@
  * aan het eind van de file met de functie zet je een export in dit formaat:
  * export { functienaam };
  */
-import { getTime } from './getTime.js';
-import { getCurrentDate } from './getDate.js';
-import { getDetails } from './getDetails.js';
-/**
- * import { getDetails } from './getDetails.js';
-*/
 
+ // Importeer de code om de tijd weer te geven
+import { getTime } from './getTime.js';
 getTime();
 
+// Importeer de code om de datum weer te gebven.
+import { getCurrentDate } from './getDate.js';
 getCurrentDate();
 
+// IMport de code om de
+import { getDetails } from './getDetails.js';
 getDetails();

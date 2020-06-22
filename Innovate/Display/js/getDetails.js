@@ -11,10 +11,12 @@ function getDetails()
     let myObj = null;
     xmlhttp.open("GET", "teacher.json", true);
 
-    xmlhttp.onload = function () {
+    xmlhttp.onload = function () 
+    {
         myObj = JSON.parse(xmlhttp.responseText);
 
-        for (let x = 0; x < Object.keys(myObj).length; x++) {
+        for (let x = 0; x < Object.keys(myObj).length; x++) 
+        {
             teacher[x] = { fname: myObj[x].voornaam, lname: myObj[x].achternaam, status: myObj[x].status };
             makeDetails(teacher[x].fname, teacher[x].lname, teacher[x].status);
         }
@@ -31,16 +33,16 @@ function getColour(status)
     switch(status)
     {
         case 1:
-            colour = "green"    //groen, aanwezig en beschikbaar
+            colour = "green"    // groen, aanwezig en beschikbaar
             break;
         case 2:
-            colour = "yellow"  //geel, aanwezig maar niet beschikbaar
+            colour = "yellow"   // geel, aanwezig maar niet beschikbaar
             break;
         case 3:
-            colour = "red"      //rood, afwezig
+            colour = "red"      // rood, afwezig
             break;
         default:
-            colour = "#737373"  //grijs, default als het onbekend is
+            colour = "#737373"  // grijs, default als het onbekend is
     }
     return colour;
 }
@@ -69,7 +71,7 @@ function makeDetails(Fname, Lname, Status)
     //maak er tekst voor dat nieuwe list element
     let textElem = document.createTextNode(details);
 
-    statusSpanElem.appendChild(statusElem)
+    statusSpanElem.appendChild(statusElem);
     //koppel het statuselement aan het list element
     listElem.appendChild(statusSpanElem);
     //koppel het textelement aan het listelement
@@ -80,12 +82,7 @@ function makeDetails(Fname, Lname, Status)
     //zet de stijl en de class van het statuselement aanhankelijk van de status
     statusElem.style.backgroundColor = colour;
     statusElem.setAttribute("class", "TeacherStatus");
-    // statusElem.style.width = "5px";
-    // statusElem.style.height = "30px";
-    // statusElem.style.float = "left"
-    // statusElem.style.marginRight = "5px"
-    // statusElem.style.marginTop = "-5px"
-    //set de class van het divElement
+
     if(count%2 == 0)
     {
         divElem.setAttribute("class", "TeacherBlock1");
@@ -94,14 +91,6 @@ function makeDetails(Fname, Lname, Status)
     {
         divElem.setAttribute("class", "TeacherBlock2");
     }
-
-    // divElem.style.height = "40px";
-    // divElem.style.width = "110%";
-    // divElem.style.marginBottom = "10px";
-    // divElem.style.paddingTop = "10px";
-    // divElem.style.paddingLeft = "10px";
-    // divElem.style.backgroundColor = "white";
-    // divElem.style.color = "black";
 
     //plak het gemaakte listelement onder het element van de UL
     document.getElementById("list").appendChild(divElem);
