@@ -7,7 +7,7 @@ GetData();
 
 function GetData()
 {
-    require "../Include/DBConnect.php";
+    require "php/DBConnect.php";
     
     if($_POST)
     {
@@ -48,7 +48,7 @@ function GetData()
 
 function GetDocent()
 {
-    require "../Include/DBConnect.php";
+    require "php/DBConnect.php";
     $sql = "SELECT d.id, voornaam, achternaam, status, foto FROM docent d
         JOIN user u ON u.id = d.id WHERE Statusdisplay = 0";
 
