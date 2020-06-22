@@ -30,10 +30,6 @@
 
                 <!-- weather knop -->
                 <div class="col-sm-4 col-md-2 col-lg-1 col-xl-1 white margintop">
-                    <p class="weather-icon">
-                    <!-- <img src="<?php echo '../img/iconen-weerlive/' . $current->image . '.png';?>"> -->
-                    </p>
-                    <!-- <p><?php echo $temperatuur;?> °C</p> -->
                     <button class="weatherbutton" id="1" value="ONN" onclick="showBuienradar();">
                         <IFRAME SRC="https://gadgets.buienradar.nl/gadget/weathersymbol" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=50 HEIGHT=40></IFRAME>
                         <p>  19.9 °C  </p>
@@ -70,7 +66,6 @@
             <!-- Content -->
             <div class="row worksheet">
                 <div class="col-sm-12 col-md-12 col-lg-9 col-xl-9 newsfeed margintop">
-                    
                     <!--Page Header-->
                     <h1 id="koptekst" class="kopTekst"></h1>
 
@@ -92,8 +87,9 @@
 
                     <!--Message-->
                     <div id="showTheMessage"></div>
-
                 </div>
+
+                <!--Huidige docent aanwezigheid-->
                 <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 margintop">
                     <ul id="list">
                         <!--hier wordt met Js de list elementen aan toegevoegd-->
