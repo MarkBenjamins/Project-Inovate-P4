@@ -39,5 +39,3 @@ function sendData(id, status)
     }
     request.send(data);
 }
-
-export { sendData }; 
