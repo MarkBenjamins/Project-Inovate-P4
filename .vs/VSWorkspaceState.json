@@ -5,7 +5,9 @@
     "\\Innovate\\Css",
     "\\Innovate\\Display",
     "\\Innovate\\Display\\js",
-    "\\Innovate\\img"
+    "\\Innovate\\img",
+    "\\Innovate\\Include",
+    "\\Innovate\\nbproject"
   ],
   "SelectedNode": "\\Innovate\\Display\\js\\getUsernamAndPassword.js",
   "PreviewInSolutionExplorer": false

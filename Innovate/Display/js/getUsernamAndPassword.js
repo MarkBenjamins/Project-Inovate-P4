@@ -129,7 +129,7 @@ function checkLoginAgainstDatabase(username, password)
 		if (this.readyState == 4 && this.status == 200)
 		{
 			sessionStorage.id = request.responseText;
-			//console.log(sessionStorage.id);
+			console.log(sessionStorage.id);
         }
     }
 	request.send(data);
