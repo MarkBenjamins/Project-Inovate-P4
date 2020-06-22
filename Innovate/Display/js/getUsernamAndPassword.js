@@ -101,7 +101,7 @@ function checkUsernameAndPassword()
 				var inputPassword = password.value
 
 				e.preventDefault()
-				checkLoginAgainstDatabase(inputUsername, inputPassword);
+				login(inputUsername, inputPassword);
 				return
 			}
 
@@ -115,7 +115,7 @@ function checkUsernameAndPassword()
 	)
 }
 
-function checkLoginAgainstDatabase(username, password)
+function login(username, password)
 {
 	 
 	let data = "username="+ username + "& password="+ password;
@@ -129,8 +129,40 @@ function checkLoginAgainstDatabase(username, password)
 		if (this.readyState == 4 && this.status == 200)
 		{
 			sessionStorage.id = request.responseText;
-			console.log(sessionStorage.id);
         }
     }
 	request.send(data);
+	setInterval(sessionCheck, 2000);
+}
+
+function sessionCheck()
+{
+	if (typeof sessionStorage.id !== 'undefined')
+	{
+		let response = "";
+		let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
+		let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
+		let data = "id=" + id + "&token=" + token;
+		let request = new XMLHttpRequest();
+
+		request.open("POST", "../Display/testdatabase.php", true);
+		request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+		request.onreadystatechange = function () {
+			if (this.readyState == 4 && this.status == 200) {
+				response = request.responseText;
+
+				if (response == false)
+				{
+					storage.removeItem("id");
+                }
+			}
+		}
+		request.send(data);
+	}
+	else
+	{
+		// Geen sessie dus word er niks mee gedaan
+    }
+   
 }
