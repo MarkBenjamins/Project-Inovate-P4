@@ -171,9 +171,9 @@ function showWijzigBeschikbaarheid()
     '</div>'+
     '<div id="row">'+  
         '<div style="text-align:center;margin:0 auto">'+
-            '<button class="mijnbutton beschikbaar" style="margin: 20px;" id="1" onclick="sendData(3, 1); getDetails();">Beschikbaar</button>'+
-            '<button class="mijnbutton aanwezig" style="margin: 20px;" id="2" onclick="sendData(3, 2); getDetails();">Aanwezig</button>'+
-            '<button class="mijnbutton afwezig" style="margin: 20px;" id="3" onclick="sendData(3, 3); getDetails();">Afwezig</button>'+
+            '<button class="mijnbutton beschikbaar" style="margin: 20px;" id="1" onclick="sendData(3, 1);">Beschikbaar</button>'+
+            '<button class="mijnbutton aanwezig" style="margin: 20px;" id="2" onclick="sendData(3, 2);">Aanwezig</button>'+
+            '<button class="mijnbutton afwezig" style="margin: 20px;" id="3" onclick="sendData(3, 3);">Afwezig</button>'+
         '</div> '+
     '</div>'+
     '<br />'+

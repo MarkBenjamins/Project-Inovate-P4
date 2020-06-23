@@ -23,6 +23,6 @@ getTime();
 import { getCurrentDate } from './getDate.js';
 getCurrentDate();
 
-// IMport de code om de
+// import de code om de docenten op te halen
 import { getDetails } from './getDetails.js';
-setInterval(getDetails(),10000);
+getDetails();
