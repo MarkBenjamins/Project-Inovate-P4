@@ -31,7 +31,7 @@ xmlhttp.send(null);
  */
 function sendData(id, status)
 {
-    let data =id + "=" + status;
+    let data = "docentID="+ id + "&status=" + status;
     let request = new XMLHttpRequest();
     
     request.open("POST", "DBFunction.php", true);

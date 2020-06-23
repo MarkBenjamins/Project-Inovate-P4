@@ -98,7 +98,7 @@ function showLogonPage()
     locateElement("loginScreen",
     '<h1>Login</h1><br>'+
     '<div id="error"></div>'+
-    '<form id="form" method="GET">'+
+    '<form id="form" method="POST">'+
         '<div class="loginForm">'+
             '<label for="name">Name</label><br>'+
             '<input id="name" name="name" type="text" placeholder="Username">'+
@@ -108,7 +108,7 @@ function showLogonPage()
             '<input id="password" name="password" type="password" placeholder="Password">'+
         '</div>'+
         '<div>'+
-            '<button onclick="tussenLogin()" type="submit">Login</button>'+
+            '<button type="submit" onclick=checkUsernameAndPassword()>Login</button>'+
         '</div><br>'+
         '<p><a href="mailto:someone@example.com">Forgot your password?</a></p>'+
     '</form>'+
@@ -229,9 +229,11 @@ function loguitkill()
 function tussenLogin()
 {
     showNewsfeed();
-    window.localStorage.setItem('user','user');
+    //window.localStorage.setItem('user','user');
 
-    if (window.localStorage.length > 0)
+
+    //if (window.localStorage.length > 0)
+    if(typeof sessionStorage.id !== 'undefined')
     {
         enabelAllButtons();
         document.getElementById('docentLogoColorChange').setAttribute ("onClick", "showLogoffPage()");
@@ -243,7 +245,7 @@ function tussenLogin()
  */
 function enabelAllButtons()
 {
-    if (window.localStorage.length > 0)
+    if (typeof sessionStorage.id !== 'undefined')
     {
         let aanwezigheid = "../img/icons-scherm/aanwezigheid.png";
         let message = "../img/icons-scherm/addmessage.png";
