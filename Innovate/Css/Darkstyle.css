@@ -105,7 +105,7 @@ body
     height: 100%;
     min-height: 670px;
     background-color: var( --gray-dark-color);
-    border-right: 15px solid var( --dark-blue-color);
+    padding: 0px 10px;
 }
 
 .margintop
@@ -308,19 +308,17 @@ button:active
 
 .tweakersRSS
 {
-    width: 97%;
+    width: 97.5%;
     bottom: 17%;
     position: absolute;
-    float: left;
     border-bottom: 3px solid #737373;
 }
 
 .nuRSS
 {
-    width: 97%;
+    width: 97.5%;
     bottom: 0;
     position: absolute;
-    float: left;
 }
 
 h4
