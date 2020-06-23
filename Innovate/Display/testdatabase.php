@@ -7,6 +7,13 @@ if(isset($_POST["username"]) && isset($_POST["password"]))
 	getData($data);
 }
 
+if(isset($_POST["logout"]) && isset($_POST["logoutid"]) && isset($_POST["logouttoken"]))
+{
+	$data = $_POST;
+	unset($_POST);
+	logout($data);
+}
+
 if(isset($_POST["id"]) && isset($_POST["token"]))
 {
 	$data = $_POST;
@@ -18,7 +25,8 @@ function getData($data)
 {
 	require "DBConnect.php";
 
-	session_start();
+	getEncrypt();
+
 	$cipher = $_SESSION["cipher"];
 	$iv = $_SESSION["iv"];
 
@@ -32,40 +40,50 @@ function getData($data)
 	}
 
 	if(!mysqli_stmt_bind_param($stmt, "ss", $data["username"], $data["password"])){
-		die("Could not bind the parameters to the preapred statemeng");
+		die("Could not bind the parameters to the prepared statment");
 	}
 
 	if(!mysqli_stmt_execute($stmt)){
-		die("could not execute the preapred statment");
+		die("could not execute the prepared statment");
 	}
 
 	$result = mysqli_stmt_get_result($stmt);
 
-	foreach($result as $arrayrow)
-	{
-		$clientToken = clienttoken($token);
-		$serverToken = serverToken($token);
-		
-		$idhash = openssl_encrypt($arrayrow["ID"], $cipher, $token, $options=0, $iv);
-		$_SESSION["serverToken"]= $serverToken;
+	$rowcount = mysqli_num_rows($result);
 
-		if($clientToken . $serverToken == $token)
+	if($rowcount !== 0)
+	{
+
+		foreach($result as $arrayrow)
 		{
-			echo $idhash . "&" . $clientToken;	
-			if(checkDBForToken($arrayrow["ID"]))
+			$clientToken = clienttoken($token);
+			$serverToken = serverToken($token);
+		
+			$idhash = openssl_encrypt($arrayrow["ID"], $cipher, $token, $options=0, $iv);
+			$_SESSION["serverToken"]= $serverToken;
+
+			if($clientToken . $serverToken == $token)
 			{
-				delteTokenFromDB($arrayrow["ID"]);
-				tokenToDB($arrayrow["ID"], $token);
+				echo $idhash . "&" . $clientToken;	
+
+				if(checkDBForToken($arrayrow["ID"]))
+				{
+					deleteTokenFromDB($arrayrow["ID"]);
+					tokenToDB($arrayrow["ID"], $token);
+				}
+				else {
+					tokenToDB($arrayrow["ID"], $token);
+				}
 			}
-			else {
-				tokenToDB($arrayrow["ID"], $token);
+			else
+			{
+				echo"False :( Please login again";
 			}
-		}
-		else
-		{
-			echo"False :( Please login again";
 		}
 	}  
+	else{
+		echo "Wrong Username or Password";
+	}
 }
 
 function createToken()
@@ -105,11 +123,11 @@ function checkDBForToken($id)
 	}
 
 	if(!mysqli_stmt_bind_param($stmt, "s", $id)){
-		die("Could not bind the parameters to the preapred statemeng");
+		die("Could not bind the parameters to the prepared statment");
 	}
 
 	if(!mysqli_stmt_execute($stmt)){
-		die("could not execute the preapred statment");
+		die("could not execute the prepared statment");
 	}
 
 	$result = mysqli_stmt_get_result($stmt);
@@ -123,7 +141,7 @@ function checkDBForToken($id)
 	}
 }
 
-function delteTokenFromDB($id)
+function deleteTokenFromDB($id)
 {
 	require "DBConnect.php";
 
@@ -135,11 +153,11 @@ function delteTokenFromDB($id)
 	}
 
 	if(!mysqli_stmt_bind_param($stmt, "s", $id)){
-		die("Could not bind the parameters to the preapred statemeng");
+		die("Could not bind the parameters to the prepared statment");
 	}
 
 	if(!mysqli_stmt_execute($stmt)){
-		die("could not execute the preapred statment");
+		die("could not execute the prepared statment");
 	}
 }
 
@@ -155,11 +173,11 @@ function tokenToDB($id, $token)
 	}
 
 	if(!mysqli_stmt_bind_param($stmt, "ss", $id, $token)){
-		die("Could not bind the parameters to the preapred statemeng");
+		die("Could not bind the parameters to the prepared statment");
 	}
 
 	if(!mysqli_stmt_execute($stmt)){
-		die("could not execute the preapred statment");
+		die("could not execute the prepared statment");
 	}
 }
 
@@ -206,5 +224,25 @@ function sessioncheck($data)
 	{
 		unset($_SESSION["serverToken"]);
 		echo false;
+	}
+}
+
+function logout($data)
+{
+	require "DBConnect.php";
+
+	$sql = "DELETE FROM login WHERE ID = ?";
+        
+	if(!$stmt = mysqli_prepare($conn, $sql)) 
+	{
+		die("Gegeven statement niet kunnen preparen");
+	}
+
+	if(!mysqli_stmt_bind_param($stmt, "s", $data[1])){
+		die("Could not bind the parameters to the prepared statment");
+	}
+
+	if(!mysqli_stmt_execute($stmt)){
+		die("could not execute the prepared statment");
 	}
 }

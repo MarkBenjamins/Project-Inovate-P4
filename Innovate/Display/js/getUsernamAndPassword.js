@@ -128,11 +128,21 @@ function login(username, password)
     {
 		if (this.readyState == 4 && this.status == 200)
 		{
-			sessionStorage.id = request.responseText;
+			if (request.responseText.search("&") !== -1) {
+				sessionStorage.id = request.responseText;
+
+				document.getElementById("login").onclick = logout;
+				document.getElementById("login").value = "logout";
+				document.getElementById("form").reset();
+			}
+			else {
+				document.getElementById("SEND").innerText = request.responseText;
+			}
         }
     }
 	request.send(data);
 	setInterval(sessionCheck, 2000);
+	
 }
 
 function sessionCheck()
@@ -148,7 +158,8 @@ function sessionCheck()
 		request.open("POST", "../Display/testdatabase.php", true);
 		request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-		request.onreadystatechange = function () {
+		request.onreadystatechange = function ()
+		{
 			if (this.readyState == 4 && this.status == 200) {
 				response = request.responseText;
 
@@ -160,9 +171,21 @@ function sessionCheck()
 		}
 		request.send(data);
 	}
-	else
-	{
-		// Geen sessie dus word er niks mee gedaan
-    }
-   
+}
+
+function logout()
+{
+	let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
+	let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
+	let data = "logout=true&logoutid=" + id + "&logouttoken=" + token;
+
+	let request = new XMLHttpRequest();
+
+	sessionStorage.removeItem("id");
+	request.open("POST", "../Display/testdatabase.php", true);
+	request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+	request.onreadystatechange = function () {
+	}
+	request.send(data);
 }
