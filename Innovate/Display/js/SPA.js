@@ -82,6 +82,7 @@ function showNewsfeed()
             document.getElementById("titleNu").innerHTML = data[0].title;
             document.getElementById("descriptionNu").innerHTML = data[0].description;
         });
+        window.open("http://localhost/Project-Inovate-P4/Innovate/Display/RSS.php");
 }
 
 /**
