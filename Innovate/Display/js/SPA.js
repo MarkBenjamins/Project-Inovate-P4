@@ -36,7 +36,7 @@ function showBuienradar()
     locateElement("buienradarScreen", 
     '<iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.77917&lng=6.90694&overname=2&zoom=8&naam=Emmen&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no>'+
     '</iframe>'+
-    '<IFRAME class="weerInfo" SRC="https://gadgets.buienradar.nl/gadget/radarfivedays" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=256 HEIGHT=406></IFRAME>');
+    '<iframe class="weerInfo" SRC="https://gadgets.buienradar.nl/gadget/radarfivedays" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=256 HEIGHT=406></iframe>');
 }
 
 /**
@@ -57,6 +57,7 @@ function showNewsfeed()
                 '<p id="descriptionTweakers"></p>'+
             '</marquee>'+
         '</div>'+
+
         '<div class="nuRSS">'+
             '<h4>Nu.nl</h4>'+
             '<marquee behavior="scroll" direction="left">'+
@@ -103,13 +104,16 @@ function showLogonPage()
             '<label for="name">Name</label><br>'+
             '<input id="name" name="name" type="text" placeholder="Username">'+
         '</div>'+
+
         '<div class="loginForm">'+
             '<label for="password">Password</label><br>'+
             '<input id="password" name="password" type="password" placeholder="Password">'+
         '</div>'+
+
         '<div>'+
             '<button type="submit" onclick=checkUsernameAndPassword()>Login</button>'+
         '</div><br>'+
+
         '<p><a href="mailto:someone@example.com">Forgot your password?</a></p>'+
     '</form>'+
     '<hr class="loginHr">'+
@@ -139,12 +143,14 @@ function showLogoffPage()
     '<form id="formChange" class="formPassword">'+
         '<label>Username</label><br>'+
         '<input type="text" id="name" name="name" placeholder="Username"><br>'+
+
         '<label>Old password</label><br>'+
         '<input type="password" id="password" name="password" placeholder="Current password"><br>'+
+
         '<label>New password</label><br>'+
         '<input type="text" id="newPassword" name="newPassword" placeholder="New password"><br>'+
-        '<button onclick="changePassword()" type="submit">ChangePassword</button>'+
-        '<br>'+
+
+        '<button onclick="changePassword()" type="submit">ChangePassword</button><br>'+
         '<hr class="logoffHr">'+
     '</form>'
     );
@@ -159,23 +165,26 @@ function showWijzigBeschikbaarheid()
 {
     clearAllData();
     locateElement("aanwezigheidCheck",
-        '<div class="row">' +
-        '   <div style="text-align:center;margin:0 auto">' +
-        '<h1>Wijzig Beschikbaarheid</h1>' +
-        '</div>' +
-        '</div>' +
-        '<div class="row">' +
-        '   <div style="text-align:center;margin:0 auto">' +
-        'Klik op een knop om je status te wijzigen:' +
-        '</div>' +
-        '</div>' +
-        '<div id="row">' +
+    '<div class="row">' +
         '<div style="text-align:center;margin:0 auto">' +
-       '<button class="mijnbutton beschikbaar" style="margin: 20px;" id="1" onclick="sendData(1);">Beschikbaar</button>'+
+            '<h1>Wijzig Beschikbaarheid</h1>' +
+        '</div>' +
+    '</div>' +
+
+    '<div class="row">' +
+        '<div style="text-align:center;margin:0 auto">' +
+            'Klik op een knop om je status te wijzigen:' +
+        '</div>' +
+    '</div>' +
+
+    '<div id="row">' +
+        '<div style="text-align:center;margin:0 auto">' +
+            '<button class="mijnbutton beschikbaar" style="margin: 20px;" id="1" onclick="sendData(1);">Beschikbaar</button>'+
             '<button class="mijnbutton aanwezig" style="margin: 20px;" id="2" onclick="sendData(2);">Aanwezig</button>'+
             '<button class="mijnbutton afwezig" style="margin: 20px;" id="3" onclick="sendData(3);">Afwezig</button>'+
         '</div> '+
     '</div>'+
+
     '<br />'+
     '<br />'+
     '<p id="SEND"></p>'+
@@ -228,10 +237,7 @@ function loguitkill()
 function tussenLogin()
 {
     showNewsfeed();
-    //window.localStorage.setItem('user','user');
 
-
-    //if (window.localStorage.length > 0)
     if(typeof sessionStorage.id !== 'undefined')
     {
         enabelAllButtons();
@@ -277,17 +283,19 @@ function disableAllButtons()
     locateElement("newsfeedLogo",'');
 }
 
-function logout() {
+function logout() 
+{
     let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
     let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
     let data = "logout=true&logoutid=" + id + "&logouttoken=" + token;
-   
+
     let request = new XMLHttpRequest();
 
     sessionStorage.removeItem("id");
     request.open("POST", "../Display/DBFunction.php", true);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
+    // @Avijn doet dit iets?
     request.onreadystatechange = function ()
     {
     }
