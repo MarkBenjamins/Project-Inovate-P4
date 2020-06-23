@@ -25,4 +25,4 @@ getCurrentDate();
 
 // IMport de code om de
 import { getDetails } from './getDetails.js';
-getDetails();
+setInterval(getDetails(),10000);
