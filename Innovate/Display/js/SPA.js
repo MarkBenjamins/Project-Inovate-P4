@@ -129,7 +129,7 @@ function showLogoffPage()
     '<h1>Logout</h1>'+
     '<form>'+
         '<p> Do you want to logout?</p>'+
-        '<button type="button" onclick="loguitkill()">Logout</button>'+
+        '<button type="button" onclick="logout(); loguitkill();">Logout</button>'+
         '<br>'+
         '<hr class="logoffHr">'+
     '</form>'+
@@ -159,21 +159,21 @@ function showWijzigBeschikbaarheid()
 {
     clearAllData();
     locateElement("aanwezigheidCheck",
-    '<div class="row">'+
-    '   <div style="text-align:center;margin:0 auto">'+
-            '<h1>Wijzig Beschikbaarheid</h1>'+
-        '</div>'+
-    '</div>'+
-    '<div class="row">'+
-    '   <div style="text-align:center;margin:0 auto">'+
-            'Klik op een knop om je status te wijzigen:'+
-        '</div>'+
-    '</div>'+
-    '<div id="row">'+  
-        '<div style="text-align:center;margin:0 auto">'+
-            '<button class="mijnbutton beschikbaar" style="margin: 20px;" id="1" onclick="sendData(3, 1);">Beschikbaar</button>'+
-            '<button class="mijnbutton aanwezig" style="margin: 20px;" id="2" onclick="sendData(3, 2);">Aanwezig</button>'+
-            '<button class="mijnbutton afwezig" style="margin: 20px;" id="3" onclick="sendData(3, 3);">Afwezig</button>'+
+        '<div class="row">' +
+        '   <div style="text-align:center;margin:0 auto">' +
+        '<h1>Wijzig Beschikbaarheid</h1>' +
+        '</div>' +
+        '</div>' +
+        '<div class="row">' +
+        '   <div style="text-align:center;margin:0 auto">' +
+        'Klik op een knop om je status te wijzigen:' +
+        '</div>' +
+        '</div>' +
+        '<div id="row">' +
+        '<div style="text-align:center;margin:0 auto">' +
+       '<button class="mijnbutton beschikbaar" style="margin: 20px;" id="1" onclick="sendData(1);">Beschikbaar</button>'+
+            '<button class="mijnbutton aanwezig" style="margin: 20px;" id="2" onclick="sendData(2);">Aanwezig</button>'+
+            '<button class="mijnbutton afwezig" style="margin: 20px;" id="3" onclick="sendData(3);">Afwezig</button>'+
         '</div> '+
     '</div>'+
     '<br />'+
@@ -217,7 +217,6 @@ function showMessage()
  */
 function loguitkill()
 {
-    clearAllData();
     disableAllButtons();
     showNewsfeed();
     document.getElementById('docentLogoColorChange').setAttribute ("onClick", "showLogonPage()");
@@ -276,4 +275,21 @@ function disableAllButtons()
     locateElement("aanwezigheidLogo",'');
     locateElement("addMessageLogo",'');
     locateElement("newsfeedLogo",'');
+}
+
+function logout() {
+    let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
+    let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
+    let data = "logout=true&logoutid=" + id + "&logouttoken=" + token;
+   
+    let request = new XMLHttpRequest();
+
+    sessionStorage.removeItem("id");
+    request.open("POST", "../Display/DBFunction.php", true);
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    request.onreadystatechange = function ()
+    {
+    }
+    request.send(data);
 }

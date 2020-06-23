@@ -139,7 +139,6 @@ function logout() {
 	let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
 	let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
 	let data = "logout=true&logoutid=" + id + "&logouttoken=" + token;
-
 	let request = new XMLHttpRequest();
 
 	sessionStorage.removeItem("id");
