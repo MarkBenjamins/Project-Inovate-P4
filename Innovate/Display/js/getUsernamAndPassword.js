@@ -1,23 +1,4 @@
 /**
- * Array list die de JSON file moet voorstellen.
- 
-var user = 
-[
-	{ // user @ 0 index
-		username: "mark",
-		password: "mark1"
-	},
-	{ // user @ 1 index
-		username: "storm",
-		password: "storm1"
-	},
-	{ // user @ 2 index
-		username: "jenny",
-		password: "jenny1"
-	}
-]
-*/
-/**
  * Constanten voor de {checkUsernameAndPassword()} functie.
  */
 const username = document.getElementById('name')
@@ -117,7 +98,6 @@ function checkUsernameAndPassword()
 
 function login(username, password)
 {
-	 
 	let data = "username="+ username + "& password="+ password;
 	let request = new XMLHttpRequest();
 
@@ -136,7 +116,7 @@ function login(username, password)
 				document.getElementById("form").reset();
 			}
 			else {
-				document.getElementById("SEND").innerText = request.responseText;
+				document.getElementById("error").innerText = request.responseText;
 			}
         }
     }
