@@ -18,6 +18,7 @@ const errorElement = document.getElementById('error')*/
  * - Username cannot be te password.
  * - Check of username en password bij elkaar horen.
  */
+
 function checkUsernameAndPassword() {
 	form.addEventListener
 		('submit', (e) => {
