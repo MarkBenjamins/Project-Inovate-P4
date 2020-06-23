@@ -47,7 +47,6 @@ body
 .padding
 {
     padding-left: 15px;
-    padding-right: 15px;
 }
 
 @font-face
@@ -325,4 +324,9 @@ h4
 {
     margin: 0;
     padding: 0;
+}
+
+.Docenten
+{
+    padding: 0px 0px 0px 15px;
 }
