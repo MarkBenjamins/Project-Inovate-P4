@@ -39,6 +39,7 @@ function GetData()
                 echo "afwezig.";
                 break;
         }
+        GetDocent();
     }
     else
     {
