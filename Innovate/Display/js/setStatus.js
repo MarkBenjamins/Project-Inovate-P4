@@ -31,7 +31,8 @@ xmlhttp.send(null);
  */
 function sendData(status)
 {
-    if (typeof sessionStorage.id !== 'undefined') {
+    if (typeof sessionStorage.id !== 'undefined') 
+    {
         let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
         let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
 
@@ -41,8 +42,10 @@ function sendData(status)
         request.open("POST", "../Display/DBFunction.php", true);
         request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-        request.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200) {
+        request.onreadystatechange = function () 
+        {
+            if (this.readyState == 4 && this.status == 200) 
+            {
                 document.getElementById("SEND").innerHTML = this.responseText;
             }
         }
