@@ -74,13 +74,26 @@ body
     max-height: 100%;
 }
 
-.darkmode
+.darkmodeBox
 {
     height: 90px;
-    width: 90px;
-    background-color: grey;
-    float: right;
-    padding: 0;
+    background-color: black;
+    text-align: center;
+}
+
+
+.darkmode
+{
+    border: 2px solid black;
+    height:100%;
+    margin-left: -15px;
+    margin-right: -15px;
+    background-color: black;
+}
+
+.darkmode:hover
+{
+    background-color: black;
 }
 
 .weerknop
