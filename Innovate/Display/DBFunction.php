@@ -22,6 +22,7 @@ if(isset($_POST["id"]) && isset($_POST["token"]))
 	unset($_POST);
 	sessioncheck($data);
 }
+
 if(isset($_POST["docentID"]) && isset($_POST["docentToken"]) && isset($_POST["status"]))
 {
 	$data = $_POST;
@@ -108,17 +109,19 @@ function getData($data)
 	$token = createToken();		
 
 	$sql = "SELECT ID, Username, Password FROM user WHERE Username = ? AND Password = ?";
-        
+
 	if(!$stmt = mysqli_prepare($conn, $sql)) 
 	{
 		die("Gegeven statement niet kunnen preparen");
 	}
 
-	if(!mysqli_stmt_bind_param($stmt, "ss", $data["username"], $data["password"])){
+	if(!mysqli_stmt_bind_param($stmt, "ss", $data["username"], $data["password"]))
+	{
 		die("Could not bind the parameters to the prepared statment");
 	}
 
-	if(!mysqli_stmt_execute($stmt)){
+	if(!mysqli_stmt_execute($stmt))
+	{
 		die("could not execute the prepared statment");
 	}
 
@@ -130,12 +133,11 @@ function getData($data)
 
 	if($rowcount !== 0)
 	{
-
 		foreach($result as $arrayrow)
 		{
 			$clientToken = clienttoken($token);
 			$serverToken = serverToken($token);
-		
+
 			$idhash = openssl_encrypt($arrayrow["ID"], $cipher, $token, $options=0, $iv);
 			$_SESSION["serverToken"]= $serverToken;
 
@@ -148,7 +150,8 @@ function getData($data)
 					deleteTokenFromDB($arrayrow["ID"]);
 					tokenToDB($arrayrow["ID"], $token);
 				}
-				else {
+				else 
+				{
 					tokenToDB($arrayrow["ID"], $token);
 				}
 			}
@@ -158,7 +161,8 @@ function getData($data)
 			}
 		}
 	}  
-	else{
+	else
+	{
 		echo "Wrong Username or Password";
 	}
 }
@@ -177,14 +181,12 @@ function createToken()
 function clientToken($token)
 {
 	$newToken = substr($token, 0, (strlen($token) * 0.5));
-
 	return $newToken;
 }
 
 function serverToken($token)
 {
 	$newToken = substr($token, (strlen($token) * 0.5), strlen($token));
-
 	return $newToken;
 }
 
@@ -193,17 +195,19 @@ function checkDBForToken($id)
 	require "../Include/DBConnect.php";
 
 	$sql = "SELECT * FROM login WHERE ID = ?";
-        
+
 	if(!$stmt = mysqli_prepare($conn, $sql)) 
 	{
 		die("Gegeven statement niet kunnen preparen");
 	}
 
-	if(!mysqli_stmt_bind_param($stmt, "s", $id)){
+	if(!mysqli_stmt_bind_param($stmt, "s", $id))
+	{
 		die("Could not bind the parameters to the prepared statment");
 	}
 
-	if(!mysqli_stmt_execute($stmt)){
+	if(!mysqli_stmt_execute($stmt))
+	{
 		die("could not execute the prepared statment");
 	}
 
@@ -224,17 +228,19 @@ function deleteTokenFromDB($id)
 	require "../Include/DBConnect.php";
 
 	$sql = "DELETE FROM login WHERE ID = ?";
-        
+
 	if(!$stmt = mysqli_prepare($conn, $sql)) 
 	{
 		die("Gegeven statement niet kunnen preparen");
 	}
 
-	if(!mysqli_stmt_bind_param($stmt, "s", $id)){
+	if(!mysqli_stmt_bind_param($stmt, "s", $id))
+	{
 		die("Could not bind the parameters to the prepared statment");
 	}
 
-	if(!mysqli_stmt_execute($stmt)){
+	if(!mysqli_stmt_execute($stmt))
+	{
 		die("could not execute the prepared statment");
 	}
 	mysqli_stmt_close($stmt);
@@ -245,17 +251,19 @@ function tokenToDB($id, $token)
 	require "../Include/DBConnect.php";
 
 	$sql = "INSERT INTO `login`(ID, Token) VALUES (?, ?)";
-        
+
 	if(!$stmt = mysqli_prepare($conn, $sql)) 
 	{
 		die("Gegeven statement niet kunnen preparen");
 	}
 
-	if(!mysqli_stmt_bind_param($stmt, "ss", $id, $token)){
+	if(!mysqli_stmt_bind_param($stmt, "ss", $id, $token))
+	{
 		die("Could not bind the parameters to the prepared statment");
 	}
 
-	if(!mysqli_stmt_execute($stmt)){
+	if(!mysqli_stmt_execute($stmt))
+	{
 		die("could not execute the prepared statment");
 	}
 	mysqli_stmt_close($stmt);
@@ -284,17 +292,19 @@ function sessioncheck($data)
 	$id = openssl_decrypt($data["id"], $cipher, $token, $options=0, $vi);
 
 	$sql = "SELECT token FROM login WHERE ID = ? AND token = ?";
-        
+
 	if(!$stmt = mysqli_prepare($conn, $sql)) 
 	{
 		die("Gegeven statement niet kunnen preparen");
 	}
 
-	if(!mysqli_stmt_bind_param($stmt, "ss", $id, $token)){
+	if(!mysqli_stmt_bind_param($stmt, "ss", $id, $token))
+	{
 		die("Could not bind the parameters to the prepared statment");
 	}
 
-	if(!mysqli_stmt_execute($stmt)){
+	if(!mysqli_stmt_execute($stmt))
+	{
 		die("could not execute the prepared statment");
 	}
 
@@ -321,17 +331,19 @@ function logout($data)
 	$id = openssl_decrypt($data["logoutid"], $cipher, $token, $options=0, $iv);
 
 	$sql = "DELETE FROM login WHERE ID = ?";
-        
+
 	if(!$stmt = mysqli_prepare($conn, $sql)) 
 	{
 		die("Gegeven statement niet kunnen preparen");
 	}
 
-	if(!mysqli_stmt_bind_param($stmt, "s", $id)){
+	if(!mysqli_stmt_bind_param($stmt, "s", $id))
+	{
 		die("Could not bind the parameters to the prepared statment");
 	}
 
-	if(!mysqli_stmt_execute($stmt)){
+	if(!mysqli_stmt_execute($stmt))
+	{
 		die("could not execute the prepared statment");
 	}
 	mysqli_stmt_close($stmt);
