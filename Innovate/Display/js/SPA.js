@@ -166,19 +166,19 @@ function showWijzigBeschikbaarheid()
     clearAllData();
     locateElement("aanwezigheidCheck",
     '<div class="row">' +
-        '<div style="text-align:center;margin:0 auto">' +
+        '<div class="beschikbaarheid">' +
             '<h1>Wijzig Beschikbaarheid</h1>' +
         '</div>' +
     '</div>' +
 
     '<div class="row">' +
-        '<div style="text-align:center;margin:0 auto">' +
+        '<div class="beschikbaarheid">' +
             'Klik op een knop om je status te wijzigen:' +
         '</div>' +
     '</div>' +
 
     '<div id="row">' +
-        '<div style="text-align:center;margin:0 auto">' +
+        '<div class="beschikbaarheid">' +
             '<button class="mijnbutton beschikbaar" style="margin: 20px;" id="1" onclick="sendData(1);">Beschikbaar</button>'+
             '<button class="mijnbutton aanwezig" style="margin: 20px;" id="2" onclick="sendData(2);">Aanwezig</button>'+
             '<button class="mijnbutton afwezig" style="margin: 20px;" id="3" onclick="sendData(3);">Afwezig</button>'+
