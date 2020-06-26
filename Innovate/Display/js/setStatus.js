@@ -50,5 +50,8 @@ function sendData(status)
             }
         }
         request.send(data);
+
+        styleSheet = '../Css/buttons/' + status + '.css';
+        document.getElementById('buttonsheet').setAttribute('href', styleSheet);
     }
 }
