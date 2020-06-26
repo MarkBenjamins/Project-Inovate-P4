@@ -30,7 +30,7 @@ function GetData()
         switch ($status)
         {
             case 1:
-                 "beschikbaar.";
+                echo "beschikbaar.";
                 break;
             case 2:
                 echo "aanwezig.";
