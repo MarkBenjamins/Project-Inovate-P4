@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
     <head>
         <link rel="stylesheet" href="../Css/bootstrap.css" type="text/css">
@@ -31,7 +31,7 @@
                 <!-- weather knop -->
                 <div class="col-sm-4 col-md-2 col-lg-1 col-xl-1 white margintop">
                     <button class="weatherbutton" id="1" value="ONN" onclick="showBuienradar();">
-                        <IFRAME SRC="https://gadgets.buienradar.nl/gadget/weathersymbol" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=50 HEIGHT=40></IFRAME>
+                        <iframe SRC="https://gadgets.buienradar.nl/gadget/weathersymbol" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=50 HEIGHT=40></iframe>
                         <p>  19.9 °C  </p>
                     </button>
                 </div>
@@ -42,7 +42,7 @@
                 </div>
 
                 <!-- Dark Mode Knop -->
-                <div class="col-sm-2 col-md-2 col-lg-1 col-xl-1 margintop">
+                <div class="col-sm-4 col-md-2 col-lg-1 col-xl-1 darkmodeBox margintop">
                     <button class="darkmode" id="DarkModeKnop" value="ONN" onclick="javascript:toggle();"> 
                         <img src="../img/icons-scherm/darkmode_icon.png" alt="Dark Mode" class='image'>
                     </button>
@@ -90,7 +90,7 @@
                 </div>
 
                 <!--Huidige docent aanwezigheid-->
-                <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 margintop">
+                <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 margintop Docenten">
                     <ul id="list">
                         <!--hier wordt met Js de list elementen aan toegevoegd-->
                     </ul>
@@ -100,10 +100,10 @@
         
         <script src="../Display/js/darkMode.js"></script>
         <script src="../Display/js/SPA.js"></script>
-        <script type = "module" src="../Display/js/main.js" ></script>
+        <script type = "module" src="../Display/js/main.js?n=1" ></script>
         <script src="../Display/js/setStatus.js"></script>
-        <!-- <script src="../Display/js/getFileUploader.js"></script> -->
+        <script src="../Display/js/getFileUploader.js"></script>
         <!-- <script src="../Display/js/getChangePassword.js"></script> -->
-        <!-- <script src="../Display/js/getUsernamAndPassword.js"></script> -->
+        <script src="../Display/js/getUsernamAndPassword.js"></script>
     </body>
 </html>
