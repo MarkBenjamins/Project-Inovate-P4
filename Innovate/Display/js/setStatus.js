@@ -51,11 +51,4 @@ function sendData(status)
         }
         request.send(data);
     }
-<<<<<<< HEAD
-    request.send(data);
-
-    styleSheet = '../Css/buttons/' + status + '.css';
-    document.getElementById('buttonsheet').setAttribute('href', styleSheet);
-=======
->>>>>>> parent of 5edc23b... Revert "Merge branch 'master' of https://github.com/MarkBenjamins/Project-Inovate-P4"
 }
