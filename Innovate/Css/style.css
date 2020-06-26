@@ -47,6 +47,7 @@ body
 .padding
 {
     padding-left: 15px;
+    padding-right: 15px;
 }
 
 @font-face
@@ -71,26 +72,15 @@ body
     max-height: 100%;
 }
 
-.darkmodeBox
-{
-    height: 90px;
-    background-color: black;
-    text-align: center;
-}
-
 .darkmode
 {
-    border: 2px solid black;
-    height:100%;
-    margin-left: -15px;
-    margin-right: -15px;
-    background-color: black;
+    height: 90px;
+    width: 90px;
+    background-color: grey;
+    float: right;
+    padding: 0;
 }
 
-.darkmode:hover
-{
-    background-color: black;
-}
 .worksheet
 {
     padding-left: 20px;
@@ -104,7 +94,7 @@ body
     max-height: 100%;
     min-height: 670px;
     background-color: white;
-    padding: 0px 10px;
+    border-right: 15px solid #6298bc;
 }
 
 .margintop
@@ -307,7 +297,7 @@ button:active
 
 .tweakersRSS
 {
-    width: 97.5%;
+    width: 97%;
     bottom: 17%;
     position: absolute;
     border-bottom: 3px solid black;
@@ -315,7 +305,7 @@ button:active
 
 .nuRSS
 {
-    width: 97.5%;
+    width: 97%;
     bottom: 0;
     position: absolute;
 }
@@ -324,15 +314,4 @@ h4
 {
     margin: 0;
     padding: 0;
-}
-
-.Docenten
-{
-    padding: 0px 0px 0px 15px;
-}
-
-.beschikbaarheid
-{
-    text-align:center;
-    margin:0 auto;
 }
