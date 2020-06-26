@@ -24,6 +24,8 @@ function getDetails()
     }
     xmlhttp.send(null);
     setTimeout(getDetails, 5000);
+    //dit is voor productie dan refreshed hij minder vaak en knippert hij dus niet
+    //setTimeout(getDetails, 10000);
 }
 /**
  * Functie om de status van de JSON file uit te lezen en aan de hand daarvan de kleur te bepalen.
