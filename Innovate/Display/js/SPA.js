@@ -215,8 +215,7 @@ function showMessage()
     '</form><br>'+
 
     '<button onclick="remove()"> Remove all picture s </button><br>'+
-    '<div id="result" class="result">'+
-    '<style>div.result>img{height: 250px;border-radius: 10px;}</style>'
+    '<div id="result" class="result">'
     );
 }
 
