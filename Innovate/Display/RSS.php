@@ -58,5 +58,5 @@
 	}     
 ?>
 <script type='text/javascript'>
-	close();
+close();
 </script>

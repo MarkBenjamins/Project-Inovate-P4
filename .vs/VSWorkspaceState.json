@@ -2,13 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\Innovate",
-    "\\Innovate\\Archief",
+    "\\Innovate\\Css",
     "\\Innovate\\Display",
-    "\\Innovate\\Display\\js",
     "\\Innovate\\img",
-    "\\Innovate\\Include",
-    "\\Innovate\\nbproject"
+    "\\Innovate\\include"
   ],
-  "SelectedNode": "\\Innovate\\Display\\js\\getFileUploader.js",
+  "SelectedNode": "\\Innovate",
   "PreviewInSolutionExplorer": false
 }

@@ -29,26 +29,20 @@ xmlhttp.send(null);
  * @param {id} id Het id nummer van de gebuiker die ingelogd is.
  * @param {status} status De status van de persoon die is ingelogd.
  */
-function sendData(status)
+function sendData(id, status)
 {
-    if (typeof sessionStorage.id !== 'undefined') 
+    let data =id + "=" + status;
+    let request = new XMLHttpRequest();
+    
+    request.open("POST", "DBFunction.php", true);
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    request.onreadystatechange = function ()
     {
-        let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
-        let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
-
-        let data = "docentID=" + id + "&docentToken=" + token + "&status=" + status;
-        let request = new XMLHttpRequest();
-
-        request.open("POST", "../Display/DBFunction.php", true);
-        request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-        request.onreadystatechange = function () 
+        if (this.readyState == 4 && this.status == 200)
         {
-            if (this.readyState == 4 && this.status == 200) 
-            {
-                document.getElementById("SEND").innerHTML = this.responseText;
-            }
+        document.getElementById("SEND").innerHTML = this.responseText;
         }
-        request.send(data);
     }
+    request.send(data);
 }
