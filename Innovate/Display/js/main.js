@@ -26,3 +26,6 @@ getCurrentDate();
 // import de code om de docenten op te halen
 import { getDetails } from './getDetails.js';
 getDetails();
+
+//function reload() { location.reload();}
+setInterval(location.reload, 10000);

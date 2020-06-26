@@ -57,6 +57,3 @@
 		fclose($fp);
 	}     
 ?>
-<script type='text/javascript'>
-	close();
-</script>
