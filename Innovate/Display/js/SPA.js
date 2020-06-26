@@ -36,7 +36,7 @@ function showBuienradar()
     locateElement("buienradarScreen", 
     '<iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.77917&lng=6.90694&overname=2&zoom=8&naam=Emmen&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no>'+
     '</iframe>'+
-    '<IFRAME class="weerInfo" SRC="https://gadgets.buienradar.nl/gadget/radarfivedays" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=256 HEIGHT=406></IFRAME>');
+    '<iframe class="weerInfo" SRC="https://gadgets.buienradar.nl/gadget/radarfivedays" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=256 HEIGHT=406></iframe>');
 }
 
 /**
@@ -57,6 +57,7 @@ function showNewsfeed()
                 '<p id="descriptionTweakers"></p>'+
             '</marquee>'+
         '</div>'+
+
         '<div class="nuRSS">'+
             '<h4>Nu.nl</h4>'+
             '<marquee behavior="scroll" direction="left">'+
@@ -98,18 +99,21 @@ function showLogonPage()
     locateElement("loginScreen",
     '<h1>Login</h1><br>'+
     '<div id="error"></div>'+
-    '<form id="form" method="GET">'+
+    '<form id="form" method="POST">'+
         '<div class="loginForm">'+
             '<label for="name">Name</label><br>'+
             '<input id="name" name="name" type="text" placeholder="Username">'+
         '</div>'+
+
         '<div class="loginForm">'+
             '<label for="password">Password</label><br>'+
             '<input id="password" name="password" type="password" placeholder="Password">'+
         '</div>'+
+
         '<div>'+
-            '<button onclick="tussenLogin()" type="submit">Login</button>'+
+            '<button type="submit" onclick=checkUsernameAndPassword()>Login</button>'+
         '</div><br>'+
+
         '<p><a href="mailto:someone@example.com">Forgot your password?</a></p>'+
     '</form>'+
     '<hr class="loginHr">'+
@@ -129,7 +133,7 @@ function showLogoffPage()
     '<h1>Logout</h1>'+
     '<form>'+
         '<p> Do you want to logout?</p>'+
-        '<button type="button" onclick="loguitkill()">Logout</button>'+
+        '<button type="button" onclick="logout(); loguitkill();">Logout</button>'+
         '<br>'+
         '<hr class="logoffHr">'+
     '</form>'+
@@ -139,12 +143,14 @@ function showLogoffPage()
     '<form id="formChange" class="formPassword">'+
         '<label>Username</label><br>'+
         '<input type="text" id="name" name="name" placeholder="Username"><br>'+
+
         '<label>Old password</label><br>'+
         '<input type="password" id="password" name="password" placeholder="Current password"><br>'+
+
         '<label>New password</label><br>'+
         '<input type="text" id="newPassword" name="newPassword" placeholder="New password"><br>'+
-        '<button onclick="changePassword()" type="submit">ChangePassword</button>'+
-        '<br>'+
+
+        '<button onclick="changePassword()" type="submit">ChangePassword</button><br>'+
         '<hr class="logoffHr">'+
     '</form>'
     );
@@ -159,23 +165,26 @@ function showWijzigBeschikbaarheid()
 {
     clearAllData();
     locateElement("aanwezigheidCheck",
-    '<div class="row">'+
-    '   <div style="text-align:center;margin:0 auto">'+
-            '<h1>Wijzig Beschikbaarheid</h1>'+
-        '</div>'+
-    '</div>'+
-    '<div class="row">'+
-    '   <div style="text-align:center;margin:0 auto">'+
-            'Klik op een knop om je status te wijzigen:'+
-        '</div>'+
-    '</div>'+
-    '<div id="row">'+  
-        '<div style="text-align:center;margin:0 auto">'+
-            '<button class="mijnbutton beschikbaar" style="margin: 20px;" id="1" onclick="sendData(3, 1); getDetails();">Beschikbaar</button>'+
-            '<button class="mijnbutton aanwezig" style="margin: 20px;" id="2" onclick="sendData(3, 2); getDetails();">Aanwezig</button>'+
-            '<button class="mijnbutton afwezig" style="margin: 20px;" id="3" onclick="sendData(3, 3); getDetails();">Afwezig</button>'+
+    '<div class="row">' +
+        '<div class="beschikbaarheid">' +
+            '<h1>Wijzig Beschikbaarheid</h1>' +
+        '</div>' +
+    '</div>' +
+
+    '<div class="row">' +
+        '<div class="beschikbaarheid">' +
+            'Klik op een knop om je status te wijzigen:' +
+        '</div>' +
+    '</div>' +
+
+    '<div id="row">' +
+        '<div class="beschikbaarheid">' +
+            '<button class="mijnbutton beschikbaar" style="margin: 20px;" id="1" onclick="sendData(1);">Beschikbaar</button>'+
+            '<button class="mijnbutton aanwezig" style="margin: 20px;" id="2" onclick="sendData(2);">Aanwezig</button>'+
+            '<button class="mijnbutton afwezig" style="margin: 20px;" id="3" onclick="sendData(3);">Afwezig</button>'+
         '</div> '+
     '</div>'+
+
     '<br />'+
     '<br />'+
     '<p id="SEND"></p>'+
@@ -196,12 +205,12 @@ function showMessage()
     '<h1>Message</h1><br>'+
     '<p>Upload your file here with the following extension : .jpg, .jpeg, png.</p>'+
 
-    '<form id="form" enctype="multipart/form-data" method="POST">'+
+    '<form id="fileuploadf" enctype="multipart/form-data" method="POST">'+
         '<div class="form-group">'+
-            '<input type="file" name="fileUpload" accept=".jpg, .jpeg, .png" class="form-control" id="image" onchange="validate_fileupload(this.value);">'+
+            '<input id="fileupload" type="file" name="image" accept="image/*" class="form-control" id="image">'+
         '</div>'+
         '<div class="form-group">'+
-            '<button type="submit"> Uploaden </button>'+
+            '<button type="submit" id="uploadfile" onclick="validate_fileupload()">Upload</button>'+
         '</div>'+
     '</form><br>'+
 
@@ -217,7 +226,6 @@ function showMessage()
  */
 function loguitkill()
 {
-    clearAllData();
     disableAllButtons();
     showNewsfeed();
     document.getElementById('docentLogoColorChange').setAttribute ("onClick", "showLogonPage()");
@@ -229,9 +237,8 @@ function loguitkill()
 function tussenLogin()
 {
     showNewsfeed();
-    window.localStorage.setItem('user','user');
 
-    if (window.localStorage.length > 0)
+    if(typeof sessionStorage.id !== 'undefined')
     {
         enabelAllButtons();
         document.getElementById('docentLogoColorChange').setAttribute ("onClick", "showLogoffPage()");
@@ -243,7 +250,7 @@ function tussenLogin()
  */
 function enabelAllButtons()
 {
-    if (window.localStorage.length > 0)
+    if (typeof sessionStorage.id !== 'undefined')
     {
         let aanwezigheid = "../img/icons-scherm/aanwezigheid.png";
         let message = "../img/icons-scherm/addmessage.png";
@@ -274,4 +281,23 @@ function disableAllButtons()
     locateElement("aanwezigheidLogo",'');
     locateElement("addMessageLogo",'');
     locateElement("newsfeedLogo",'');
+}
+
+function logout() 
+{
+    let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
+    let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
+    let data = "logout=true&logoutid=" + id + "&logouttoken=" + token;
+
+    let request = new XMLHttpRequest();
+
+    sessionStorage.removeItem("id");
+    request.open("POST", "../Display/DBFunction.php", true);
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    // @Avijn doet dit iets?
+    request.onreadystatechange = function ()
+    {
+    }
+    request.send(data);
 }
