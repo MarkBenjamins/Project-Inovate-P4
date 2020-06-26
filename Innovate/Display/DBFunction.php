@@ -54,7 +54,7 @@ function setStatus($data)
         mysqli_stmt_execute($stmt);
     }
 
-    echo ('Status is aangepast naar ');
+    echo ('<div style="text-align:center;margin:0 auto"><p>Status is aangepast naar ');
     switch ($status)
     {
         case 1:
@@ -67,6 +67,7 @@ function setStatus($data)
             echo "afwezig.";
             break;
     }
+    echo ('</p></div>');
     GetDocent();
 }
 
