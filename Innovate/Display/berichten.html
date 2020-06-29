@@ -1,20 +1,23 @@
 <script type="text/javascript">
-    var i = 0;//start punt
+    var i = 0;//Start punt
     var images = [];
-    var time = 3000;
+    var time = 5000;//Hoelang het duurt tot het bericht veranderd
 
-    //image list
+    //Berichten lijst
     images[0] = '../img/berichten/1.png';
     images[1] = '../img/berichten/2.png';
 
-    //change image
-    function changeImg(){
+    //Bericht veranderen
+    function changeImg()
+    {
         document.slide.src = images[i];
 
-        if(i < images.length - 1){
+        if(i < images.length - 1)
+        {
             i++;
         }
-        else{
+        else
+        {
             i = 0;
         }
 

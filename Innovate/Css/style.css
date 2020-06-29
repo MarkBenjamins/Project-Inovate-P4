@@ -342,3 +342,18 @@ h4
     height: 250px;
     border-radius: 10px;
 }
+
+.bericht-box
+{
+    height: 390px;
+    width: 100%;
+}
+
+.bericht-box iframe
+{
+    border:none;
+    padding: 0;
+    width: 80%;
+    height: 100%;
+    margin-left: 10%;
+}
