@@ -34,8 +34,7 @@ function showBuienradar()
     locateElement("koptekst", 'Buienradar');
     locateElement("toNewsfeed", '<button type="button" onclick="showNewsfeed()">Back to newsfeed</button>');
     locateElement("buienradarScreen", 
-    '<iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.77917&lng=6.90694&overname=2&zoom=8&naam=Emmen&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no>'+
-    '</iframe>'+
+    '<iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.77917&lng=6.90694&overname=2&zoom=8&naam=Emmen&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no></iframe>'+
     '<iframe class="weerInfo" SRC="https://gadgets.buienradar.nl/gadget/radarfivedays" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=256 HEIGHT=406></iframe>');
 }
 
@@ -80,13 +79,16 @@ function showNewsfeed()
     images[1] = '../../img/berichten/2.png';
 
     //change image
-    function getBerichten(){
+    function getBerichten()
+    {
         document.slide.src = images[i];
 
-        if(i < images.length - 1){
+        if(i < images.length - 1)
+        {
             i++;
         }
-        else{
+        else
+        {
             i = 0;
         }
 
@@ -109,7 +111,6 @@ function showNewsfeed()
             document.getElementById("titleNu").innerHTML = data[0].title;
             document.getElementById("descriptionNu").innerHTML = data[0].description;
         });
-        //window.open("http://localhost/Project-Inovate-P4/Innovate/Display/RSS.php");
 }
 
 /**
