@@ -214,10 +214,7 @@ function showMessage()
         '<div class="form-group">'+
             '<button type="submit" id="uploadfile" onclick="sendimage()">Upload</button>'+
         '</div>'+
-    '</form><br>'+
-
-    '<button onclick="remove()"> Remove all picture s </button><br>'+
-    '<div id="result" class="result">'
+    '</form><br>'
     );
 }
 
