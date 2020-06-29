@@ -46,7 +46,7 @@ function showBuienradar()
 function showNewsfeed()
 {
     clearAllData();
-    locateElement("koptekst",'Newsfeed');
+    locateElement("koptekst",'');
     locateElement("rssBox",
     '<div class="bericht-box">'+
         '<iframe src="http://localhost/Project-Inovate-P4/Innovate/Display/berichten.html"></iframe>'+
@@ -56,16 +56,16 @@ function showNewsfeed()
         '<div class="tweakersRSS">'+
             '<h4>Tweakers.net</h4>'+
             '<marquee behavior="scroll" direction="left">'+
-                '<p id="titleTweakers"></p>'+
-                '<p id="descriptionTweakers"></p>'+
+                '<p id="titleTweakers" class="textRss"></p>'+
+                '<p id="descriptionTweakers" class="textRss"></p>'+
             '</marquee>'+
         '</div>'+
 
         '<div class="nuRSS">'+
             '<h4>Nu.nl</h4>'+
             '<marquee behavior="scroll" direction="left">'+
-                '<p id="titleNu"></p>'+
-                '<p id="descriptionNu"></p>'+
+                '<p id="titleNu" class="textRss"></p>'+
+                '<p id="descriptionNu" class="textRss"xam></p>'+
             '</marquee>'+
         '</div>'+
     '</div>'

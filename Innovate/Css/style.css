@@ -326,6 +326,11 @@ button:active
     height: 0;
 }
 
+.textRss
+{
+    margin-bottom: 8px;
+}
+
 h4
 {
     margin: 0;
