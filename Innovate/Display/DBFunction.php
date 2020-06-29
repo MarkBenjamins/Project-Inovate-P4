@@ -284,6 +284,8 @@ function getEncrypt()
 
 function sessioncheck($data)
 {
+	require "../Include/DBConnect.php";
+	
 	session_start();
 
 	$cipher = $_SESSION["cipher"];
