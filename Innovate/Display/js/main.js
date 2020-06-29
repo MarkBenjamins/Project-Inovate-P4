@@ -15,17 +15,18 @@
  * export { functienaam };
  */
 
- // Importeer de code om de tijd weer te geven
+ // Importeer de code om de tijd weer te geven.
 import { getTime } from './getTime.js';
 getTime();
 
-// Importeer de code om de datum weer te gebven.
+// Importeer de code om de datum weer te geven.
 import { getCurrentDate } from './getDate.js';
 getCurrentDate();
 
-// import de code om de docenten op te halen
+// Import de code om de docenten op te halen.
 import { getDetails } from './getDetails.js';
 getDetails();
 
-//function reload() { location.reload();}
-setInterval(location.reload, 10000);
+// Reload de pagina om het uur zodat de RSS-feed wordt geupdate.
+function reload() { location.reload(); }
+setInterval(reload, 3600000);
