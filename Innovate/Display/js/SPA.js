@@ -49,6 +49,9 @@ function showNewsfeed()
     clearAllData();
     locateElement("koptekst",'Newsfeed');
     locateElement("rssBox",
+    '<div class="bericht-box">'+
+        '<img name="slide" width="100%" height="350"></img>'+
+    '</div>'+
     '<div class="rss-box">'+
         '<div class="tweakersRSS">'+
             '<h4>Tweakers.net</h4>'+
@@ -67,6 +70,29 @@ function showNewsfeed()
         '</div>'+
     '</div>'
     );
+
+    var i = 0;
+    var images = [];
+    var time = 3000;
+
+    //image list
+    images[0] = '../../img/berichten/1.png';
+    images[1] = '../../img/berichten/2.png';
+
+    //change image
+    function getBerichten(){
+        document.slide.src = images[i];
+
+        if(i < images.length - 1){
+            i++;
+        }
+        else{
+            i = 0;
+        }
+
+        setTimeout("getBerichten()", time);
+    }
+    window.onload = getBerichten;
 
     fetch("./tweakers.json")
         .then(function(resp) {return resp.json();})
