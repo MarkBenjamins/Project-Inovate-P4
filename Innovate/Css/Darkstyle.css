@@ -333,6 +333,12 @@ button:active
     position: absolute;
 }
 
+#rss
+{
+    visibility: hidden;
+    height: 0;
+}
+
 h4
 {
     margin: 0;

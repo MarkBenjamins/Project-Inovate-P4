@@ -50,6 +50,7 @@ function showNewsfeed()
     locateElement("rssBox",
     '<div class="bericht-box">'+
         '<iframe src="http://localhost/Project-Inovate-P4/Innovate/Display/berichten.html"></iframe>'+
+        '<iframe src="http://localhost/Project-Inovate-P4/Innovate/Display/rss.php" id="rss"></iframe>'+ //Vernieuwd de rss Jsons
     '</div>'+
     '<div class="rss-box">'+
         '<div class="tweakersRSS">'+

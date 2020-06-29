@@ -56,4 +56,13 @@
 		fwrite($fp, json_encode($posts));
 		fclose($fp);
 	}     
+	$page = $_SERVER['PHP_SELF'];
+	$sec = "30";
 ?>
+<html>
+    <head>
+    	<meta http-equiv="refresh" content="<?php echo $sec?>;URL='<?php echo $page?>'">
+    </head>
+    <body>
+    </body>
+</html>
