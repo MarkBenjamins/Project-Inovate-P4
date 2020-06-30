@@ -207,7 +207,7 @@ function showMessage()
     '<h1>Message</h1><br>'+
     '<p>Upload your file here with the following extension : .jpg, .jpeg, png.</p>'+
 
-    '<form id="fileuploadform"  enctype="multipart/form-data" method="POST">'+
+    '<form id="fileuploadform" enctype="multipart/form-data" method="POST">'+
         '<div class="form-group">'+
     '<input id="fileupload" type="file" name="image" accept="image/*" class="form-control" multiple>' +
         '</div>'+
