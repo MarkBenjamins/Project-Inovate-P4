@@ -289,13 +289,13 @@ function sessioncheck($data)
 	session_start();
 
 	$cipher = $_SESSION["cipher"];
-	$vi = $_SESSION["iv"];
+	$iv = $_SESSION["iv"];
 
 	$token = $data["token"] .  $_SESSION["serverToken"];
-	$id = openssl_decrypt($data["id"], $cipher, $token, $options=0, $vi);
+	$id = openssl_decrypt($data["id"], $cipher, $token, $options=0, $iv);
 
 	$sql = "SELECT token FROM login WHERE ID = ? AND token = ?";
-
+	echo  $data["id"] ."  " .$id. "  ". $token;
 	if(!$stmt = mysqli_prepare($conn, $sql)) 
 	{
 		die("Gegeven statement niet kunnen preparen");
@@ -313,7 +313,7 @@ function sessioncheck($data)
 
 	$result = mysqli_stmt_get_result($stmt);
 	
-	if($result == False)
+	if($result == false)
 	{
 		unset($_SESSION["serverToken"]);
 		echo false;

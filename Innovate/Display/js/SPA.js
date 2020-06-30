@@ -49,8 +49,8 @@ function showNewsfeed()
     locateElement("koptekst",'');
     locateElement("rssBox",
     '<div class="bericht-box">'+
-        '<iframe src="http://localhost/Project-Inovate-P4/Innovate/Display/berichten.html"></iframe>'+
-        '<iframe src="http://localhost/Project-Inovate-P4/Innovate/Display/rss.php" id="rss"></iframe>'+ //Vernieuwd de rss Jsons
+        '<iframe src="../Display/berichten.html"></iframe>'+
+        '<iframe src="../Display/rss.php" id="rss"></iframe>'+ //Vernieuwd de rss Jsons
     '</div>'+
     '<div class="rss-box">'+
         '<div class="tweakersRSS">'+
@@ -267,6 +267,8 @@ function enabelAllButtons()
 
         locateElement("newsfeedLogo",
         '<img onclick="showNewsfeed()" src="../img/icons-scherm/logo.png" alt="Logo" class="image"></img>');
+        console.log("appelflapt");
+        sessionCheck();
     }
 }
 

@@ -4,9 +4,9 @@
     "\\Innovate",
     "\\Innovate\\Css",
     "\\Innovate\\Display",
-    "\\Innovate\\img",
-    "\\Innovate\\include"
+    "\\Innovate\\Display\\js",
+    "\\Innovate\\img"
   ],
-  "SelectedNode": "\\Innovate",
+  "SelectedNode": "\\Innovate\\Display\\js\\getFileUploader.js",
   "PreviewInSolutionExplorer": false
 }

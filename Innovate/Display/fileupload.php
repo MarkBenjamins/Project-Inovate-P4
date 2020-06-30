@@ -19,4 +19,14 @@ function saveImage($data)
     	echo"Message NOT added, Try another .jpg, .jpeg or a .png file";
     }
 }
+
+function sendtodbo($data)
+{
+    require "../Include/DBConnect.php";
+    require "DBFunction.php";
+    $sql = "INSERT INTO bericht (userID, link, ShowBericht) VALUES (?, ?, ?)";
+
+
+
+}
 ?>

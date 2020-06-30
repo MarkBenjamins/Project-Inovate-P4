@@ -147,10 +147,10 @@ function sessionCheck()
 			if (this.readyState == 4 && this.status == 200) 
 			{
 				response = request.responseText;
-
+				console.log(response);
 				if (response == false) 
 				{
-					storage.removeItem("id");
+					sessionStorage.removeItem("id");
 				}
 			}
 		}
