@@ -295,7 +295,6 @@ function sessioncheck($data)
 	$id = openssl_decrypt($data["id"], $cipher, $token, $options=0, $iv);
 
 	$sql = "SELECT token FROM login WHERE ID = ? AND token = ?";
-	echo  $data["id"] ."  " .$id. "  ". $token;
 	if(!$stmt = mysqli_prepare($conn, $sql)) 
 	{
 		die("Gegeven statement niet kunnen preparen");
