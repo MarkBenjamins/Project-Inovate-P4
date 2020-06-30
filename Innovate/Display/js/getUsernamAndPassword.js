@@ -146,7 +146,7 @@ function sessionCheck()
 		{
 			if (this.readyState == 4 && this.status == 200) 
 			{
-				response = request.responseText;
+				response = request.responseText; 
 				if (response == false) 
 				{
 					sessionStorage.removeItem("id");
