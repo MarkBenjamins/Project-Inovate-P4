@@ -212,9 +212,9 @@ function showMessage()
     '<input id="fileupload" type="file" name="image" accept="image/*" class="form-control" multiple>' +
         '</div>'+
         '<div class="form-group">'+
-            '<button type="submit" id="uploadfile" onclick="getImage()">Upload</button>'+
+            '<button type="submit" id="uploadfile" onclick="sendimage()">Upload</button>'+
         '</div>'+
-        '</form><br>'
+    '</form><br>'
     );
 }
 
@@ -258,7 +258,8 @@ function enabelAllButtons()
             aanwezigheid = "../img/icons-scherm/aanwezigheid_wit.png";
             message = "../img/icons-scherm/addmessage_wit.png";
         }
-
+        document.getElementById("menu").setAttribute('class', 'col-12 col-sm-12 col-md-12 col-lg-5 col-xl-3 margintop');
+        document.getElementById("darmodediv").setAttribute('class', 'col-12 col-sm-2 col-md-2 col-lg-1 col-xl-1 darkmodeBox margintop');
         locateElement("menu",
         '<!-- Login Knop -->' +
         '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="buttonMenu">' +
@@ -277,6 +278,7 @@ function enabelAllButtons()
 
         locateElement("newsfeedLogo",
         '<img onclick="showNewsfeed()" src="../img/icons-scherm/logo.png" alt="Logo" class="image"></img>');
+        sessionCheck();
     }
 }
 
