@@ -25,12 +25,12 @@
             <div class="row header">
 
                 <!-- Klok -->
-                <div class="col-sm-8 col-md-10 col-lg-2 col-xl-2 white margintop">
+                <div class=" col-9 col-sm-8 col-md-10 col-lg-10 col-xl-2 white margintop">
                     <h2 class="clock"><span id="clock"></span></h2>
                 </div>
 
                 <!-- weather knop -->
-                <div class="col-sm-4 col-md-2 col-lg-1 col-xl-1 white margintop">
+                <div class="col-3 col-sm-4 col-md-2 col-lg-2 col-xl-1 white margintop">
                     <button class="weatherbutton" id="1" value="ONN" onclick="showBuienradar();">
                         <iframe SRC="https://gadgets.buienradar.nl/gadget/weathersymbol" NORESIZE SCROLLING=NO HSPACE=0 VSPACE=0 FRAMEBORDER=0 MARGINHEIGHT=0 MARGINWIDTH=0 WIDTH=50 HEIGHT=40></iframe>
                         <p>  19.9 °C  </p>
@@ -38,29 +38,31 @@
                 </div>
 
                 <!-- Date -->
-                <div class="col-sm-10 col-md-10 col-lg-5 col-xl-5 white margintop">
+                <div class="col-12 col-sm-10 col-md-10 col-lg-6 col-xl-5 white margintop">
                     <h2><span id="date"></span></h2>
                 </div>
 
                 <!-- Dark Mode Knop -->
-                <div class="col-sm-4 col-md-2 col-lg-1 col-xl-1 darkmodeBox margintop">
+                <div class="col-6 col-sm-2 col-md-2 col-lg-1 col-xl-1 darkmodeBox margintop">
                     <button class="darkmode" id="DarkModeKnop" value="ONN" onclick="javascript:toggle();"> 
                         <img src="../img/icons-scherm/darkmode_icon.png" alt="Dark Mode" class='image'>
                     </button>
                 </div>
 
                 <!-- Naviagion bar -->
-                <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 margintop">
-                    <div class="row height padding">
+                <div class="col-6 col-sm-12 col-md-12 col-lg-5 col-xl-3 margintop" id="menu">
+                    <!--<div class="row height padding">-->
                         <!-- Login Knop -->
-                        <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="buttonMenu"> 
+                        <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 buttonlogin" id="buttonMenu"> 
                             <img onclick="showLogonPage()" id="docentLogoColorChange" src="../img/icons-scherm/docent.png" alt="Login" class='image'> 
                         </div>
                         <!--  Alleen als er ingelogd is: Extra buttons  -->
+                        <!--
                         <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="aanwezigheidLogo"></div>
                         <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="addMessageLogo"></div>
                         <div class="col-sm-3 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="newsfeedLogo"></div>
-                    </div>      
+                        -->
+                    <!--</div>-->      
                 </div>
             </div>
 

@@ -259,6 +259,16 @@ function enabelAllButtons()
             message = "../img/icons-scherm/addmessage_wit.png";
         }
 
+        locateElement("menu",
+        '<!-- Login Knop -->' +
+        '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="buttonMenu">' +
+            '<img onclick="showLogonPage()" id="docentLogoColorChange" src="../img/icons-scherm/docent.png" alt="Login" class="image">' +
+        '</div>' +
+        '<!--  Alleen als er ingelogd is: Extra buttons  -->' +
+        '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="aanwezigheidLogo"></div>' +
+        '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="addMessageLogo"></div>' +
+        '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="newsfeedLogo"></div>');  
+
         locateElement("aanwezigheidLogo",
         '<img onclick="showWijzigBeschikbaarheid()" id="aanwezigheidLogoColorChange" src="' + aanwezigheid + '" alt="Aanwezigheid" class="image"></img>');
 
