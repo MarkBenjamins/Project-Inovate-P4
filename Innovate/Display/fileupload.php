@@ -1,13 +1,8 @@
 <?php   
-if(isset($_FILES['image']))
+if(isset($_POST))
 {
     $data = $_FILES['image'];
     saveImage($data);
-}
-if(isset($_POST["id"]) && isset($_POST["token"]) && isset($_POST["name"]))
-{
-    $data = $_POST;
-    sendtodbo($data);
 }
 
 function saveImage($data)
@@ -29,89 +24,9 @@ function sendtodbo($data)
 {
     require "../Include/DBConnect.php";
     require "DBFunction.php";
+    $sql = "INSERT INTO bericht (userID, link, ShowBericht) VALUES (?, ?, ?)";
 
-	$cipher = $_SESSION["cipher"];
-	$iv = $_SESSION["iv"];
-    $location = '../img/message/' . $data["name"];
-    $null = 0;
 
-	$token = $data["token"] . $_SESSION["serverToken"];
-	$id = openssl_decrypt($data["id"], $cipher, $token, $options=0, $iv);
-    
-    if(checkForDouble($id, $location))
-    {
-        $sql = "INSERT INTO bericht (userID, link, ShowBericht) VALUES (?, ?, ?)";
 
-        if(!$stmt = mysqli_prepare($conn, $sql)) 
-	    {
-		    die("Gegeven statement niet kunnen preparen");
-	    }
-
-	    if(!mysqli_stmt_bind_param($stmt, "isi", $id, $location, $null))
-	    {
-		    die("Could not bind the parameters to the prepared statment");
-	    }
-
-	    if(!mysqli_stmt_execute($stmt))
-	    {
-		    die("could not execute the prepared statment");
-	    }
-	    mysqli_stmt_close($stmt);
-        echo("Bericht toegevoegd");
-        getMessage();
-    }
-    else 
-    {
-	    echo("Dit bericht staat al in de database");
-    }
-}
-
-function checkForDouble($id, $location)
-{
-    require "../Include/DBConnect.php";
-    $sql = "SELECT UserID, Link FROM bericht";
-
-     if(!$stmt = mysqli_prepare($conn, $sql))
-    {
-        die("Could not prepare the given statment");
-    }
-    else 
-    {
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-        $rowcount = mysqli_num_rows($result);
-
-	    if($rowcount == 0)
-        {
-            return true;
-        }    
-    }      
-    mysqli_stmt_close($stmt);
-}
-
-function getMessage()
-{
-	require "../Include/DBConnect.php";
-
-    $sql = "SELECT UserID, Link FROM bericht";
-
-    if(!$stmt = mysqli_prepare($conn, $sql))
-    {
-        die("Could not prepare the given statment");
-    }
-    else 
-    {
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-
-        foreach($result as $row)
-        {
-            $obj[] = $row;        
-		}	
-
-        $messages = json_encode($obj, JSON_FORCE_OBJECT);
-        file_put_contents('message.json', $messages);
-    }      
-    mysqli_stmt_close($stmt);
 }
 ?>

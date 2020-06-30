@@ -312,9 +312,10 @@ function sessioncheck($data)
 
 	$result = mysqli_stmt_get_result($stmt);
 	
-	if(mysqli_num_rows($result) == 0)
+	if($result == false)
 	{
 		unset($_SESSION["serverToken"]);
+		echo false;
 	}
 	mysqli_stmt_close($stmt);
 }
