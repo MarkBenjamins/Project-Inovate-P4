@@ -1,6 +1,7 @@
 /**
  * Function om de data uit de database op te vragen en weg te schrijven in een JSON file.
  */
+document.getElementById('test334').setAttribute('class', 'aanwezig');
 let photo;
 let xmlhttp = new XMLHttpRequest();
 let teacher = [];
@@ -47,11 +48,14 @@ function sendData(status)
             if (this.readyState == 4 && this.status == 200) 
             {
                 document.getElementById("SEND").innerHTML = this.responseText;
+                document.getElementById("button1").setAttribute('class', "button1");
+                document.getElementById("button2").setAttribute('class', "button2");
+                document.getElementById("button3").setAttribute('class', "button3");
+                buttonclass = "button" + status  + ' set';
+                buttonid = "button" + status;
+                document.getElementById(buttonid).setAttribute('class', buttonclass);
             }
         }
         request.send(data);
-
-        styleSheet = '../Css/buttons/' + status + '.css';
-        document.getElementById('buttonsheet').setAttribute('href', styleSheet);
     }
 }

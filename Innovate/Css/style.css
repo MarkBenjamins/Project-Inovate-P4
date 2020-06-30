@@ -252,35 +252,54 @@ button:active
     padding-left: 13px;
     padding-top: 13px;
     padding-right: 5px;
+    padding-bottom: 13px;
 }
 
-.beschikbaar
+.button1
 {
     border: 2px solid green;
+    margin: 20px;
 }
 
-.beschikbaar:hover
+.button1.set
+{
+    background-color: lightgreen;
+}
+
+.button1:hover
 {
     background-color: green;
     color: white; 
 }
 
-.aanwezig
+.button2
 {
     border: 2px solid orange;
+    margin: 20px;
 }
 
-.aanwezig:hover
+.button2.set
+{
+    background-color: yellow;
+}
+
+.button2:hover
 {
     background-color: orange;
 }
 
-.afwezig
+.button3
 {
     border: 2px solid red;
+    margin: 20px;
 }
 
-.afwezig:hover
+.button3.set
+{
+    background-color: pink;
+}
+
+.button3:hover
 {
     background-color: red;
     color: white;

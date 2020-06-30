@@ -265,38 +265,60 @@ button:active
     padding-left: 13px;
     padding-top: 13px;
     padding-right: 5px;
+    padding-bottom: 13px;
 }
 
-.beschikbaar
+
+.button1
 {
     border: 2px solid green;
+    margin: 20px;
 }
 
-.beschikbaar:hover
+.button1.set
+{
+    background-color: darkgreen;
+}
+
+.button1:hover
 {
     background-color: green;
+    color: white; 
 }
 
-.aanwezig
+.button2
 {
     border: 2px solid orange;
+    margin: 20px;
 }
 
-.aanwezig:hover
+.button2.set
+{
+    background-color: darkorange;
+    color: black;
+}
+
+.button2:hover
 {
     background-color: orange;
     color: black;
 }
 
-.afwezig
+.button3
 {
     border: 2px solid red;
+    margin: 20px;
 }
 
-.afwezig:hover
+.button3.set
+{
+    background-color: darkred;
+}
+
+.button3:hover
 {
     background-color: red;
-
+    color: white;
 }
 
 .weatherbutton
