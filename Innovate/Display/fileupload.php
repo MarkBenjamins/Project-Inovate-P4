@@ -77,14 +77,20 @@ function sendtodbo($data)
 function checkForDouble($id, $location)
 {
     require "../Include/DBConnect.php";
-    $sql = "SELECT UserID, Link FROM bericht";
 
-     if(!$stmt = mysqli_prepare($conn, $sql))
+    $sql = "SELECT * FROM bericht WHERE UserID = ? AND Link = ?";
+
+    if(!$stmt = mysqli_prepare($conn, $sql))
     {
         die("Could not prepare the given statment");
     }
     else 
     {
+        if(!mysqli_stmt_bind_param($stmt, "is", $id, $location))
+	    {
+		    die("Could not bind the parameters to the prepared statment");
+	    }
+
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
         $rowcount = mysqli_num_rows($result);
