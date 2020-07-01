@@ -181,7 +181,7 @@ function showWijzigBeschikbaarheid()
 
     '<div id="row">' +
         '<div class="beschikbaarheid">' +
-            '<button id="button1" class="button1" onclick="sendData(1);">Aanwezig</button>'+
+            '<button id="button1" class="button1" onclick="sendData(1);">Beschikbaar</button>'+
             '<button id="button2" class="button2" onclick="sendData(2);">Aanwezig</button>'+
             '<button id="button3" class="button3" onclick="sendData(3);">Afwezig</button>'+
         '</div> '+
@@ -262,16 +262,16 @@ function enabelAllButtons()
         }
         document.getElementById("menu").setAttribute('class', 'col-12 col-sm-12 col-md-12 col-lg-5 col-xl-3 margintop');
         document.getElementById("darmodediv").setAttribute('class', 'col-12 col-sm-2 col-md-2 col-lg-1 col-xl-1 darkmodeBox margintop');
-        locateElement("menu",
-        '<!-- Login Knop -->' +
-        '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="buttonMenu">' +
-            '<img onclick="showLogonPage()" id="docentLogoColorChange" src="../img/icons-scherm/docent.png" alt="Login" class="image">' +
-        '</div>' +
+        document.getElementById("buttonMenu").setAttribute('class', 'col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin')
+        var extraButtons = document.createElement("P");
+        extraButtons.innerHTML = 
         '<!--  Alleen als er ingelogd is: Extra buttons  -->' +
         '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="aanwezigheidLogo"></div>' +
         '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="addMessageLogo"></div>' +
-        '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="newsfeedLogo"></div>');  
+        '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="newsfeedLogo"></div>';  
 
+        document.getElementById("menu").appendChild(extraButtons);
+        
         locateElement("aanwezigheidLogo",
         '<img onclick="showWijzigBeschikbaarheid()" id="aanwezigheidLogoColorChange" src="' + aanwezigheid + '" alt="Aanwezigheid" class="image"></img>');
 
