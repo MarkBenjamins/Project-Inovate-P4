@@ -80,7 +80,7 @@ function getMessages(id)
 
         for (let x = 0; x < Object.keys(messages).length; x++) {
             if (messages[x].UserID == id) {
-                console.log(messages[x].link);
+                //console.log(messages[x].link);
                 message = { link: messages[x].Link };
                 createTable(message[x].link)
             }
@@ -90,7 +90,7 @@ function getMessages(id)
 
 
 
-function createTable()
+function createTable(link)
 {
     //maak de table======================================================
     //maak een div aan waar de list elementen in kunnen
@@ -105,15 +105,15 @@ function createTable()
     let td2 = tr2.insertCell();
     let td3 = tr2.insertCell();
     //plaats de tabel
-    //document.getElementById("addTable").appendChild(table);
+    document.getElementById("addTable").appendChild(table);
     table.className = "tableFromJS"
     //maak de image en zet hem in de tabel===============================
     //maak een image aan
     let img = document.createElement("img")
     //set de source en de class van de img
-    img.src = "img/capture.jpg";
+    img.src = link;
     img.className = "imgInTableFromJS"
-    //plak de img aan de td    
+    //plak de img aan de td
     td1.appendChild(img);
     //laat de img 2 colommen breed zijn
     td1.colSpan = 2;
