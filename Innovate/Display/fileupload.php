@@ -2,12 +2,20 @@
 if(isset($_FILES['image']))
 {
     $data = $_FILES['image'];
+    unset($_FILES);
     saveImage($data);
 }
 if(isset($_POST["id"]) && isset($_POST["token"]) && isset($_POST["name"]))
 {
     $data = $_POST;
+    unset($_POST);
     sendtodbo($data);
+}
+if(isset($_GET["id"]) && isset($_GET["token"]))
+{
+    $data = $_GET;
+    $unset($_GET);
+    getID($data);
 }
 
 function saveImage($data)
@@ -29,7 +37,7 @@ function sendtodbo($data)
 {
     require "../Include/DBConnect.php";
     require "DBFunction.php";
-
+    session_start();
 	$cipher = $_SESSION["cipher"];
 	$iv = $_SESSION["iv"];
     $location = '../img/message/' . $data["name"];
@@ -114,4 +122,16 @@ function getMessage()
     }      
     mysqli_stmt_close($stmt);
 }
+
+/*
+function getID($data)
+{
+    require "DBFunction.php";
+    session_start();
+	$cipher = $_SESSION["cipher"];
+	$iv = $_SESSION["iv"];
+    $id = openssl_decrypt($data["id"], $cipher, $token, $options=0, $iv);
+    echo $id;
+}
+*/
 ?>

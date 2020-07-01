@@ -214,7 +214,9 @@ function showMessage()
         '<div class="form-group">'+
             '<button type="submit" id="uploadfile" onclick="sendimage()">Upload</button>'+
         '</div>'+
-    '</form><br>'
+     '</form><br>' +
+     '<table id="messageID">' +
+     '</table >'
     );
 }
 
