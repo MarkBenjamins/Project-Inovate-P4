@@ -54,6 +54,7 @@ function getMessages()
 
 function createTable(link, UserID)
 {
+    let responseID;
     let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
     let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
     let data = `id=${id}&token=${token}`;
@@ -67,7 +68,7 @@ function createTable(link, UserID)
         if (this.readyState == 4 && this.status == 200) 
         {
             
-            let responseID = request.responseText;
+            responseID = request.responseText;
             console.log(responseID);
             localStorage.setItem("id", responseID);
         }
