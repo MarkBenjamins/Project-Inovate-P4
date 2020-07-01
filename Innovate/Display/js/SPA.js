@@ -209,15 +209,15 @@ function showMessage()
 
     '<form id="fileuploadform" enctype="multipart/form-data" method="POST">'+
         '<div class="form-group">'+
-    '<input id="fileupload" type="file" name="image" accept="image/*" class="form-control" multiple>' +
+            '<input id="fileupload" type="file" name="image" accept="image/*" class="form-control" multiple>' +
         '</div>'+
         '<div class="form-group">'+
             '<button type="submit" id="uploadfile" onclick="sendimage()">Upload</button>'+
         '</div>'+
-     '</form><br>' +
-     '<table id="messageID">' +
-     '</table >'+
-     '<div id=addTable></div>'
+    '</form><br>' +
+    '<table id="messageID">' +
+    '</table >'+
+    '<div id=addTable></div>'
     );
     //test
     //locateElement("StormTest",'<div id=addTable></div>');
