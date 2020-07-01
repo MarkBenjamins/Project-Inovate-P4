@@ -284,6 +284,7 @@ function enabelAllButtons()
 
         locateElement("newsfeedLogo",
         '<img onclick="showNewsfeed()" src="../img/icons-scherm/logo.png" alt="Logo" class="image"></img>');
+        //sessionCheck();
     }
 }
 

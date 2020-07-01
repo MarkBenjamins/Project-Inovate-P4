@@ -32,7 +32,7 @@ function sendToDB(file)
     let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
     let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
     let name = file.name;
-    let data = `id=${id}&token=${token}&name=${name}`;
+    let data = `idDB=${id}&tokenDB=${token}&nameDB=${name}`;
 
     let request = new XMLHttpRequest();
     request.open("POST", "../Display/fileupload.php", true);
@@ -62,13 +62,13 @@ function getID()
     {
         if (this.readyState == 4 && this.status == 200) 
         {
-            getMessages(request.responseText);
+            //getMessages(request.responseText);
         }
     }
     request.send(data);
 }
 
-function getMessages(id)
+/*function getMessages(id)
 {
     document.getElementById("messageID").innerHTML = "";
     let xmlhttp = new XMLHttpRequest();
@@ -95,40 +95,42 @@ function createTable(link)
 {
     //maak de table======================================================
     //maak een div aan waar de list elementen in kunnen
-    let table = document.createElement("table");
-    //maak een table row aan
-    let tr1 = table.insertRow();
-    //maak een cell in die tablerow komt
-    let td1 = tr1.insertCell();
-    //maak de tweede row aan
-    let tr2 = table.insertRow();
-    //maak 2 cells aan
-    let td2 = tr2.insertCell();
-    let td3 = tr2.insertCell();
-    //plaats de tabel
-    document.getElementById("addTable").appendChild(table);
-    table.className = "tableFromJS"
-    //maak de image en zet hem in de tabel===============================
-    //maak een image aan
-    let img = document.createElement("img")
-    //set de source en de class van de img
-    img.src = link;
-    img.className = "imgInTableFromJS"
-    //plak de img aan de td
-    td1.appendChild(img);
-    //laat de img 2 colommen breed zijn
-    td1.colSpan = 2;
-    //maak de knoppen====================================================
-    //maak de buttons aan
-    let del = document.createElement("button");
-    let show = document.createElement("button");
-    // maak de onclicks
-    del.setAttribute("onclick", "javascript: console.log('you clicked verwijderen');");
-    show.setAttribute("onclick", "javascript: console.log('you clicked laat zien');");
-    //plaats de tekst in de buttons
-    del.textContent = "verwijder";
-    show.textContent = "laat zien";
-    //plaats de buttons in de tabel
-    td2.appendChild(del);
-    td3.appendChild(show);
-}
+    let divElem = document.createElement("div");
+    //maak een nieuw list element aan
+    let listElem = document.createElement("li");
+    //maak een nieuw div element aan
+    let statusElem = document.createElement("div");
+    //maak een span aan om de div in te zetten
+    let statusSpanElem = document.createElement("span");
+
+    //maak er tekst voor dat nieuwe list element
+    let textElem = document.createTextNode(details);
+
+    statusSpanElem.appendChild(statusElem);
+    //koppel het statuselement aan het list element
+    listElem.appendChild(statusSpanElem);
+    //koppel het textelement aan het listelement
+    listElem.appendChild(textElem);
+    //koppel het list element aan het div element
+    divElem.appendChild(listElem);
+
+    //zet de stijl en de class van het statuselement aanhankelijk van de status
+    statusElem.style.backgroundColor = colour;
+    statusElem.setAttribute("class", "TeacherStatus");
+
+    if(count%2 == 0)
+    {
+        divElem.setAttribute("class", "TeacherBlock1");
+    }
+    else
+    {
+        divElem.setAttribute("class", "TeacherBlock2");
+    }
+
+    //plak het gemaakte listelement onder het element van de UL
+    document.getElementById("list").appendChild(divElem);
+
+    //een counter voor de array
+    count++;
+    return details;
+}*/

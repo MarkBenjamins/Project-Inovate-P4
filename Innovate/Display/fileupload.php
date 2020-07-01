@@ -5,7 +5,7 @@ if(isset($_FILES['image']))
     unset($_FILES);
     saveImage($data);
 }
-if(isset($_POST["id"]) && isset($_POST["token"]) && isset($_POST["name"]))
+if(isset($_POST["idDB"]) && isset($_POST["tokenDB"]) && isset($_POST["nameDB"]))
 {
     $data = $_POST;
     unset($_POST);
@@ -40,11 +40,11 @@ function sendtodbo($data)
     session_start();
 	$cipher = $_SESSION["cipher"];
 	$iv = $_SESSION["iv"];
-    $location = '../img/message/' . $data["name"];
+    $location = '../img/message/' . $data["nameDB"];
     $null = 0;
 
-	$token = $data["token"] . $_SESSION["serverToken"];
-	$id = openssl_decrypt($data["id"], $cipher, $token, $options=0, $iv);
+	$token = $data["tokenDB"] . $_SESSION["serverToken"];
+	$id = openssl_decrypt($data["idDB"], $cipher, $token, $options=0, $iv);
     
     if(checkForDouble($id, $location))
     {
@@ -123,7 +123,7 @@ function getMessage()
     mysqli_stmt_close($stmt);
 }
 
-/*
+
 function getID($data)
 {
     require "DBFunction.php";
@@ -133,5 +133,5 @@ function getID($data)
     $id = openssl_decrypt($data["id"], $cipher, $token, $options=0, $iv);
     echo $id;
 }
-*/
+
 ?>
