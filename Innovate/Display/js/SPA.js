@@ -216,8 +216,12 @@ function showMessage()
         '</div>'+
      '</form><br>' +
      '<table id="messageID">' +
-     '</table >'
+     '</table >'+
+     '<div id=addTable></div>'
     );
+    //test
+    //locateElement("StormTest",'<div id=addTable></div>');
+    //createTable("../img/berichten/1.png");
 }
 
 /**
