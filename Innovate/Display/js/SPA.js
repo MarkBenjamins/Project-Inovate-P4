@@ -212,7 +212,7 @@ function showMessage()
             '<input id="fileupload" type="file" name="image" accept="image/*" class="form-control" multiple>' +
         '</div>'+
         '<div class="form-group">'+
-            '<button type="submit" id="uploadfile" onclick="getImage()">Upload</button>'+
+            '<button type="submit" id="uploadfile" onclick="getImage(), getMessages()">Upload</button>'+
         '</div>'+
     '</form><br>' +
     '<table id="messageID">' +

@@ -11,10 +11,10 @@ if(isset($_POST["idDB"]) && isset($_POST["tokenDB"]) && isset($_POST["nameDB"]))
     unset($_POST);
     sendtodbo($data);
 }
-if(isset($_POST["id"]) && isset($_POST["token"]))
+if(isset($_GET["id"]) && isset($_GET["token"]))
 {
-    $data = $_POST;
-    unset($_POST);
+    $data = $_GET;
+    unset($_GET);
     getID($data);
 }
 
@@ -132,6 +132,7 @@ function getMessage()
 
 function getID($data)
 {
+    getMessage();
     require "DBFunction.php";
     session_start();
 	$cipher = $_SESSION["cipher"];

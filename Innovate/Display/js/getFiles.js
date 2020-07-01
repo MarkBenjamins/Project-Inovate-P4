@@ -1,31 +1,27 @@
-// function ID()
-// {
-//     let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
-//     let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
-//     let data = `id=${id}&token=${token}`;
-//     let request = new XMLHttpRequest();
-//     request.open("POST", "../Display/fileupload.php", true);
-//     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+function getMessages() {
+    let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
+    let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
+    let data = `id=${id}&token=${token}`;
+    let request = new XMLHttpRequest();
+    request.open("GET", "../Display/fileupload.php", true);
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-    
-//     request.onreadystatechange = function () 
-//     {
-//         if (this.readyState == 4 && this.status == 200) 
-//         {
-            
-//             let responseID = request.responseText;
-//             console.log(responseID);
-//             localStorage.setItem("id", responseID);
-//             return true;
-//         }
-//     }
-//     request.send(data);
-// }
 
-function getMessages()
+    request.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+
+            responseID = request.responseText;
+            console.log(responseID);
+            jsontoarray(responseID);
+        }
+    }
+    request.send(data);
+}
+
+function jsontoarray()
 {
     document.getElementById("addTable").innerHTML = "";
-    //localStorage.clear();
+    localStorage.clear();
     let xmlhttp = new XMLHttpRequest();
     let messages = null;
     xmlhttp.open("GET", "message.json", true);
@@ -37,45 +33,19 @@ function getMessages()
         if (this.readyState == 4 && this.status == 200)
         {
             messages = JSON.parse(xmlhttp.responseText);
-            //console.log(messages);
             for (let x = 0; x < Object.keys(messages).length; x++) 
             {
                 console.log(messages[x].Link);
                 console.log(messages[x].UserID);
-                //ID();
-                //console.log(localStorage.key("id"));
                 createTable(messages[x].Link, messages[x].UserID);
             }
         }
     }
     xmlhttp.send(null);
-    localStorage.clear();
 }
 
 function createTable(link, UserID)
-{
-    let responseID;
-    let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
-    let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
-    let data = `id=${id}&token=${token}`;
-    let request = new XMLHttpRequest();
-    request.open("POST", "../Display/fileupload.php", true);
-    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-    
-    request.onreadystatechange = function () 
-    {
-        if (this.readyState == 4 && this.status == 200) 
-        {
-            
-            responseID = request.responseText;
-            console.log(responseID);
-            localStorage.setItem("id", responseID);
-        }
-    }
-    request.send(data);
-    if(responseID == UserID)
-    {
+ {
         //maak de table======================================================
         //maak een div aan waar de list elementen in kunnen
         let table = document.createElement("table");
@@ -114,5 +84,4 @@ function createTable(link, UserID)
         //plaats de buttons in de tabel
         td2.appendChild(del);
         td3.appendChild(show);
-    }
 }

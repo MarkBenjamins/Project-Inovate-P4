@@ -10,8 +10,7 @@ function getImage()
     {
         var file = document.getElementById("fileupload").files[0];
 
-        sendImage(file);
-        sendToDB(file);
+        sendToDB(file)
         e.preventDefault();
     }
     );
@@ -32,7 +31,7 @@ function sendToDB(file)
     let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
     let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
     let name = file.name;
-    let data = `idDB=${id}&tokenDB=${token}&nameDB=${name}`;
+    let data = "idDB=" + id + "&tokenDB=" + token + "&nameDB=" + name;
 
     let request = new XMLHttpRequest();
     request.open("POST", "../Display/fileupload.php", true);
@@ -44,6 +43,10 @@ function sendToDB(file)
         {
             alert(request.responseText);
             getID();
+            if (request.responseText == "Bericht toegevoegd")
+            {
+                sendImage(file);
+            }
         }
     }
     request.send(data);
