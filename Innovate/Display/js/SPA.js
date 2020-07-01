@@ -181,7 +181,7 @@ function showWijzigBeschikbaarheid()
 
     '<div id="row">' +
         '<div class="beschikbaarheid">' +
-            '<button id="button1" class="button1" onclick="sendData(1);">Aanwezig</button>'+
+            '<button id="button1" class="button1" onclick="sendData(1);">beschikbaar</button>'+
             '<button id="button2" class="button2" onclick="sendData(2);">Aanwezig</button>'+
             '<button id="button3" class="button3" onclick="sendData(3);">Afwezig</button>'+
         '</div> '+
