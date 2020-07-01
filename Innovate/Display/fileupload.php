@@ -11,10 +11,10 @@ if(isset($_POST["idDB"]) && isset($_POST["tokenDB"]) && isset($_POST["nameDB"]))
     unset($_POST);
     sendtodbo($data);
 }
-if(isset($_GET["id"]) && isset($_GET["token"]))
+if(isset($_POST["id"]) && isset($_POST["token"]))
 {
-    $data = $_GET;
-    $unset($_GET);
+    $data = $_POST;
+    unset($_POST);
     getID($data);
 }
 
@@ -135,9 +135,9 @@ function getID($data)
     require "DBFunction.php";
     session_start();
 	$cipher = $_SESSION["cipher"];
-	$iv = $_SESSION["iv"];
+    $iv = $_SESSION["iv"];
+    $token = $data["token"] . $_SESSION["serverToken"];
     $id = openssl_decrypt($data["id"], $cipher, $token, $options=0, $iv);
     echo $id;
 }
-
 ?>

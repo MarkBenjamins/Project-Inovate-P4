@@ -6,7 +6,7 @@ let count = 0;
 function getDetails()
 {
     document.getElementById("list").innerHTML = "";
-    localStorage.clear();
+    //localStorage.clear();
     let xmlhttp = new XMLHttpRequest();
     let teacher = [];
     let myObj = null;
