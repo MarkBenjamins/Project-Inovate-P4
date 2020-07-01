@@ -24,10 +24,6 @@ function sendImage(file)
     formdata.append('image', file);
 
     request.open("POST", "../Display/fileupload.php", true);
-    request.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-        }
-    }
     request.send(formdata);
 }
 
@@ -42,8 +38,10 @@ function sendToDB(file)
     request.open("POST", "../Display/fileupload.php", true);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-    request.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
+    request.onreadystatechange = function () 
+    {
+        if (this.readyState == 4 && this.status == 200) 
+        {
             alert(request.responseText);
             getID();
         }
@@ -51,7 +49,8 @@ function sendToDB(file)
     request.send(data);
 }
 
-function getID() {
+function getID() 
+{
     let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
     let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
     let data = `id=${id}&token=${token}`;
@@ -59,8 +58,10 @@ function getID() {
     request.open("GET", "../Display/fileupload.php", true);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-    request.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
+    request.onreadystatechange = function () 
+    {
+        if (this.readyState == 4 && this.status == 200) 
+        {
             getMessages(request.responseText);
         }
     }
