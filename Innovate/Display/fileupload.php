@@ -78,7 +78,7 @@ function checkForDouble($id, $location)
 {
     require "../Include/DBConnect.php";
 
-    $sql = "SELECT * FROM bericht WHERE UserID = ? AND Link = ?";
+    $sql = "SELECT userID FROM bericht WHERE UserID = ? AND Link = ?";
 
     if(!$stmt = mysqli_prepare($conn, $sql))
     {
