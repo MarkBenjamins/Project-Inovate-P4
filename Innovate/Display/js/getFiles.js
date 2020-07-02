@@ -89,3 +89,13 @@ function createTable(link, UserID)
         td2.appendChild(del);
         td3.appendChild(show);
 }
+
+function deleteMessage()
+{
+    
+}
+
+function showMessage()
+{
+    
+}
