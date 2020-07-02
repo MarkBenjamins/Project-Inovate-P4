@@ -295,11 +295,11 @@ function disableAllButtons()
     document.getElementById("menu").setAttribute('class', 'col-6 col-sm-12 col-md-12 col-lg-5 col-xl-3 margintop');
     document.getElementById("darmodediv").setAttribute('class', 'col-6 col-sm-2 col-md-2 col-lg-1 col-xl-1 darkmodeBox margintop');
     document.getElementById("buttonMenu").setAttribute('class', 'col-sm-12 col-md-12 col-lg-12 col-xl-12 buttonlogin')
-    /*locateElement("aanwezigheidLogo",'');
-    locateElement("addMessageLogo",'');
-    locateElement("newsfeedLogo",'');*/
 }
 
+/**
+ * Functie om uit te loggen.
+ */
 function logout() 
 {
     let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));

@@ -1,12 +1,4 @@
 /**
- * Constanten voor de {checkUsernameAndPassword()} functie.
- *//*
-const username = document.getElementById('name')
-const password = document.getElementById('password')
-const formLogin = document.getElementById('form')
-const errorElement = document.getElementById('error')*/
-
-/**
  * Functie om de user input voor username en password te valideren.
  * Na de validate met de array user wordt de gebruiker doorgestuurd en stopt de code. 
  * 
@@ -125,8 +117,6 @@ function login(username, password)
 		}
 	}
 	request.send(data);
-	// @Avijn is dit nog nodig?
-	//setInterval(sessionCheck, 2000);
 }
 
 function sessionCheck() 
@@ -168,9 +158,5 @@ function logout()
 	request.open("POST", "../Display/DBFunction.php", true);
 	request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-	// @Avijn doet dit iets?
-	request.onreadystatechange = function () 
-	{
-	}
 	request.send(data);
 }

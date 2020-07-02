@@ -40,6 +40,7 @@ function jsontoarray()
     }
     xmlhttp.send(null);
 }
+
 /*
 functie om een tabel te maken waarin je de foto kunt verwijderen of kunt laten zien
 */

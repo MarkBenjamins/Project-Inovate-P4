@@ -1,7 +1,6 @@
 /**
  * Function om de data uit de database op te vragen en weg te schrijven in een JSON file.
  */
-//document.getElementById('test334').setAttribute('class', 'aanwezig');
 let photo;
 let xmlhttp = new XMLHttpRequest();
 let teacher = [];
