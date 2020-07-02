@@ -12,7 +12,6 @@ function getMessages()
         if (this.readyState == 4 && this.status == 200) 
         {
             responseID = request.responseText;
-            console.log(responseID);
             jsontoarray(responseID);
         }
     }
@@ -27,16 +26,12 @@ function jsontoarray()
     let xmlhttp = new XMLHttpRequest();
     let messages = null;
     xmlhttp.open("GET", "message.json", true);
-    console.log("test");
-    
-    console.log(localStorage.getItem("id"));
     xmlhttp.onreadystatechange = function () 
     {
         if (this.readyState == 4 && this.status == 200)
         {
             //haal de json file op
             messages = JSON.parse(xmlhttp.responseText);
-            console.log(messages);
             for (let x = 0; x < Object.keys(messages).length; x++) 
             {
                createTable(messages[x].Link, messages[x].UserID, messages[x].ShowBericht);
