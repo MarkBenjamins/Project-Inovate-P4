@@ -1,51 +1,46 @@
-<script type="text/javascript">
-    var images = [];
+﻿<script type="text/javascript">
 
-    function getNews()
+    //Hierdoor word de functie aangeroepen als de applicatie word gestart
+    window.onload = start(0);
+
+    //Set een timeout voor het laten zien van de verscheidene nieuws berichten
+    function start(x)
+    {
+        getNews(x);
+        x++;
+        setTimeout(function () { start (x) }, 5000);
+    }
+
+
+    //Haalt de nieuwsberichten uit de JSON file en laat ze zien in document.slide
+    function getNews(x)
     {
         localStorage.clear();
+        
         //maak een api call
         let xmlhttp = new XMLHttpRequest();
-        let messages = null;
         xmlhttp.open("GET", "message.json", true);
-        
         xmlhttp.onreadystatechange = function () 
         {
             if (this.readyState == 4 && this.status == 200)
             {
                 //haal de json file op
-                var images = [];
                 messages = JSON.parse(xmlhttp.responseText);
-                for (let x = 0; x < Object.keys(messages).length; x++) 
+
+                if (x >= Object.keys(messages).length)
                 {
-                    images[x] = messages[x].Link;
-                    console.log(messages[x].Link);
+                    x = x % Object.keys(messages).length;
+                }
+
+                if (messages[x].ShowBericht == 0)
+                {
+                    document.slide.src = messages[x].Link;
                 }
             }
         }
         xmlhttp.send(null);
     }
 
-    //Bericht veranderen
-    function changeImg()
-    {
-        getNews();
-        console.log(images);
-        var i = 0;//Start punt
-        var time = 5000;//Hoelang het duurt tot het bericht veranderd
-        document.slide.src = images[i];
-        if(i < images.length - 1)
-        {
-            i++;
-        }
-        else
-        {
-            i = 0;
-        }
-        setTimeout("changeImg()", time);
-    }
-    //Hierdoor word de functie aangeroepen als de applicatie word gestart
-    window.onload = changeImg;
 </script>
 
 <!DOCTYPE html>
