@@ -48,9 +48,11 @@ function sendData(status)
             if (this.readyState == 4 && this.status == 200) 
             {
                 document.getElementById("SEND").innerHTML = this.responseText;
+                //Alle buttons worden eerst weer op het standaardwaarde gezet, zodat eerder ingedrukte buttons niet meer zijn ingedrukt.
                 document.getElementById("button1").setAttribute('class', "button1");
                 document.getElementById("button2").setAttribute('class', "button2");
                 document.getElementById("button3").setAttribute('class', "button3");
+                //De ingedrukte button krijgt hier de class 'set', hieraan zit css gekoppeld om de achtergrondkleur te veranderen.
                 buttonclass = "button" + status  + ' set';
                 buttonid = "button" + status;
                 document.getElementById(buttonid).setAttribute('class', buttonclass);
