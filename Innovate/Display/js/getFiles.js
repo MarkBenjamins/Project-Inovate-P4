@@ -76,7 +76,7 @@ function createTable(link, UserID, ShowBericht)
         let show = document.createElement("input");
         let showlabel = document.createElement("label");
         show.type = "checkbox";
-        showlabel.textContent = "laten zien?";
+        showlabel.textContent = " laten zien?";
         if (ShowBericht == 1)
         {
             show.checked = "checked";
