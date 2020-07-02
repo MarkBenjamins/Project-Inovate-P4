@@ -37,7 +37,6 @@ const errorElement = document.getElementById('error');
  * - Username cannot be te password.
  * - Username cannot be te New password.
  * - Check of username en password bij elkaar horen.
- * @todo Zorg er voor dat het wachtwoord echt gewijzigd wordt.
  */
 function changePassword()
 {
