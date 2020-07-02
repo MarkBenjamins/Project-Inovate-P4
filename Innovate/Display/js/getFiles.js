@@ -122,28 +122,28 @@ function deleteTheMessage(userID, link)
     request.send(data);
 }
 
-function showTheMessage(userID, link, showMessage)
-{
-    // let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
-    // let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
-    // let name = file.name;
-    // let data = "idDB=" + id + "&tokenDB=" + token + "&nameDB=" + name;
+// function showTheMessage(userID, link, showMessage)
+// {
+//     // let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
+//     // let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
+//     // let name = file.name;
+//     // let data = "idDB=" + id + "&tokenDB=" + token + "&nameDB=" + name;
 
-    // let request = new XMLHttpRequest();
-    // request.open("POST", "../Display/fileupload.php", true);
-    // request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+//     // let request = new XMLHttpRequest();
+//     // request.open("POST", "../Display/fileupload.php", true);
+//     // request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-    // request.onreadystatechange = function () 
-    // {
-    //     if (this.readyState == 4 && this.status == 200) 
-    //     {
-    //         alert(request.responseText);
-    //         getID();
-    //         if (request.responseText == "Bericht toegevoegd")
-    //         {
-    //             sendImage(file);
-    //         }
-    //     }
-    // }
-    // request.send(data);
-}
+//     // request.onreadystatechange = function () 
+//     // {
+//     //     if (this.readyState == 4 && this.status == 200) 
+//     //     {
+//     //         alert(request.responseText);
+//     //         getID();
+//     //         if (request.responseText == "Bericht toegevoegd")
+//     //         {
+//     //             sendImage(file);
+//     //         }
+//     //     }
+//     // }
+//     // request.send(data);
+// }
