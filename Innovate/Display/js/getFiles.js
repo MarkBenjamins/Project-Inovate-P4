@@ -137,4 +137,5 @@ function showTheMessage(userID, link, showMessage)
         }
     }
     request.send(data);
+    getMessages();
 }
