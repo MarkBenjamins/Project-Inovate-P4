@@ -267,13 +267,13 @@ function enabelAllButtons()
         }
         document.getElementById("menu").setAttribute('class', 'col-12 col-sm-12 col-md-12 col-lg-5 col-xl-3 margintop');
         document.getElementById("darmodediv").setAttribute('class', 'col-12 col-sm-2 col-md-2 col-lg-1 col-xl-1 darkmodeBox margintop');
-        document.getElementById("buttonMenu").setAttribute('class', 'col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin')
+        document.getElementById("buttonMenu").setAttribute('class', 'col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin buttonlogincenter')
         var extraButtons = document.createElement("P");
         extraButtons.innerHTML = 
         '<!--  Alleen als er ingelogd is: Extra buttons  -->' +
-        '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="aanwezigheidLogo"></div>' +
-        '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="addMessageLogo"></div>' +
-        '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin" id="newsfeedLogo"></div>';  
+        '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin buttonlogincenter" id="aanwezigheidLogo"></div>' +
+        '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin buttonlogincenter" id="addMessageLogo"></div>' +
+        '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin buttonlogincenter" id="newsfeedLogo"></div>';  
 
         document.getElementById("menu").appendChild(extraButtons);
         
@@ -295,9 +295,15 @@ function enabelAllButtons()
 function disableAllButtons()
 {
     window.localStorage.clear();
-    locateElement("aanwezigheidLogo",'');
+    document.getElementById("aanwezigheidLogo").remove();
+    document.getElementById("addMessageLogo").remove();
+    document.getElementById("newsfeedLogo").remove();
+    document.getElementById("menu").setAttribute('class', 'col-6 col-sm-12 col-md-12 col-lg-5 col-xl-3 margintop');
+    document.getElementById("darmodediv").setAttribute('class', 'col-6 col-sm-2 col-md-2 col-lg-1 col-xl-1 darkmodeBox margintop');
+    document.getElementById("buttonMenu").setAttribute('class', 'col-sm-12 col-md-12 col-lg-12 col-xl-12 buttonlogin')
+    /*locateElement("aanwezigheidLogo",'');
     locateElement("addMessageLogo",'');
-    locateElement("newsfeedLogo",'');
+    locateElement("newsfeedLogo",'');*/
 }
 
 function logout() 
