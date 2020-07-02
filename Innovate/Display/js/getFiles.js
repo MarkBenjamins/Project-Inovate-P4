@@ -85,10 +85,15 @@ function createTable(link, UserID, ShowBericht)
         if (ShowBericht == 1)
         {
             show.checked = "checked";
+            show.setAttribute("onclick", "javascript: showTheMessage(" + UserID + " , '" + link + "' , 0)");
+        }
+        else
+        {
+            show.setAttribute("onclick", "javascript: showTheMessage(" + UserID + " , '" + link + "' , 1)");
         }
         // maak de onclicks
         del.setAttribute("onclick", "javascript: deleteTheMessage(" + UserID + " , '" + link + "')");
-        show.setAttribute("onclick", "javascript: console.log('you clicked laat zien');");
+        
         //plaats de tekst in de buttons
         del.textContent = "verwijder";
         //plaats de buttons in de tabel
@@ -99,7 +104,6 @@ function createTable(link, UserID, ShowBericht)
 
 function deleteTheMessage(userID, link)
 {
-    console.log("test");
     let data = "deleteID=" + userID + "&deleteLink=" + link;
 
     let request = new XMLHttpRequest();
@@ -110,7 +114,6 @@ function deleteTheMessage(userID, link)
     {
         if (this.readyState == 4 && this.status == 200) 
         {
-            console.log(request.responseText);
             if(request.responseText == true)
             {
                 alert("bericht succesvol verwijderd");
@@ -120,28 +123,23 @@ function deleteTheMessage(userID, link)
     request.send(data);
 }
 
-// function showTheMessage(userID, link, showMessage)
-// {
-//     // let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
-//     // let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
-//     // let name = file.name;
-//     // let data = "idDB=" + id + "&tokenDB=" + token + "&nameDB=" + name;
+function showTheMessage(userID, link, showMessage)
+{
+    let data = "showID=" + userID + "&showLink=" + link + "&showMessage=" + showMessage;
 
-//     // let request = new XMLHttpRequest();
-//     // request.open("POST", "../Display/fileupload.php", true);
-//     // request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    let request = new XMLHttpRequest();
+    request.open("POST", "../Display/fileupload.php", true);
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-//     // request.onreadystatechange = function () 
-//     // {
-//     //     if (this.readyState == 4 && this.status == 200) 
-//     //     {
-//     //         alert(request.responseText);
-//     //         getID();
-//     //         if (request.responseText == "Bericht toegevoegd")
-//     //         {
-//     //             sendImage(file);
-//     //         }
-//     //     }
-//     // }
-//     // request.send(data);
-// }
+    request.onreadystatechange = function () 
+    {
+        if (this.readyState == 4 && this.status == 200) 
+        {
+            if(request.responseText == true)
+            {
+                alert("bericht succesvol aangepast");
+            }
+        }
+    }
+    request.send(data);
+}

@@ -25,6 +25,13 @@ if(isset($_POST["deleteID"]) && isset($_POST["deleteLink"]))
     deleteImg($data);
 }
 
+if(isset($_POST["showID"]) && isset($_POST["showLink"]) && isset($_POST["showMessage"]))
+{
+    $data = $_POST;
+    unset($_POST);
+    setShowMesssage($data);
+}
+
 function saveImage($data)
 {
     $file = $data["tmp_name"];
@@ -194,6 +201,32 @@ function deleteImg($data)
         }
         mysqli_stmt_execute($stmt);
         unlink($deletelink);
+    }      
+    mysqli_stmt_close($stmt);
+    getMessage();
+    return true;
+}
+
+function setShowMesssage($data)
+{
+    require "../Include/DBConnect.php";
+    $showid = $data["showID"];
+    $showlink = $data["showLink"];
+    $showmessage = $data["showMessage"];
+
+    $sql = "UPDATE bericht SET ShowBericht = ? WHERE UserID = ? AND Link = ?";
+
+    if(!$stmt = mysqli_prepare($conn, $sql))
+    {
+        die("Could not prepare the given statment");
+    }
+    else 
+    {
+        if(!mysqli_stmt_bind_param($stmt, "iis", $showmessage, $showid, $showlink))
+        {
+            die("Could not bind the parameters to the given statment");
+        }
+        mysqli_stmt_execute($stmt);
     }      
     mysqli_stmt_close($stmt);
     getMessage();
