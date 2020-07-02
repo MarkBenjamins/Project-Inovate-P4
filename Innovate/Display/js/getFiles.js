@@ -34,12 +34,12 @@ function jsontoarray()
         if (this.readyState == 4 && this.status == 200)
         {
             //haal de json file op
+            
             messages = JSON.parse(xmlhttp.responseText);
+            console.log(messages);
             for (let x = 0; x < Object.keys(messages).length; x++) 
             {
-                console.log(messages[x].Link);
-                console.log(messages[x].UserID);
-                createTable(messages[x].Link, messages[x].UserID);
+               createTable(messages[x].Link, messages[x].UserID);
             }
         }
     }
@@ -64,7 +64,7 @@ function createTable(link, UserID)
         let td3 = tr2.insertCell();
         //plaats de tabel
         document.getElementById("addTable").appendChild(table);
-        table.className = "tableFromJS"
+        table.className = "tableFromJS", "col12"
         //maak de image en zet hem in de tabel===============================
         //maak een image aan
         let img = document.createElement("img")

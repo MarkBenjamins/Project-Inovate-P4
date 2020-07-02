@@ -399,17 +399,21 @@ h4
 }
 table, th, td {
     border: 1px solid black;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 45%;
 }
 .TableFromJS
 {
-    height: 400px;
-    width: 600px;
+    height: auto;
+    width: 40%;
 }
 .imgInTableFromJS
 {
     border: none;
     height: 200px;
-    width: auto;
+    width: 100%;
 }
 
 .center

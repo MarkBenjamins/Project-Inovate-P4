@@ -215,7 +215,7 @@ function showMessage()
     '</form><br>' +
     '<table id="messageID">' +
     '</table >'+
-    '<div id=addTable></div>'
+    '<div id=addTable class=row ></div>'
     );
     getMessages();
 }
