@@ -68,7 +68,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-    	<meta http-equiv="refresh" content="<?php echo $sec?>;URL='<?php echo $page?>'">
+		<meta http-equiv="refresh" content="<?php echo $sec?>;URL='<?php echo $page?>'">
     </head>
     <body>
     </body>
