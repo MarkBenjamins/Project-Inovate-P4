@@ -34,7 +34,7 @@ function jsontoarray()
             messages = JSON.parse(xmlhttp.responseText);
             for (let x = 0; x < Object.keys(messages).length; x++) 
             {
-               createTable(messages[x].Link, messages[x].UserID, messages[x].ShowBericht);
+                createTable(messages[x].Link, messages[x].UserID, messages[x].ShowBericht);
             }
         }
     }
@@ -44,7 +44,7 @@ function jsontoarray()
 functie om een tabel te maken waarin je de foto kunt verwijderen of kunt laten zien
 */
 function createTable(link, UserID, ShowBericht)
- {
+{
         //maak de table======================================================
         //maak een div aan waar de list elementen in kunnen
         let table = document.createElement("table");
