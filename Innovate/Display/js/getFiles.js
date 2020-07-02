@@ -1,4 +1,5 @@
-function getMessages() {
+function getMessages() 
+{
     let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
     let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
     let data = `id=${id}&token=${token}`;
@@ -6,10 +7,10 @@ function getMessages() {
     request.open("GET", "../Display/fileupload.php", true);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-
-    request.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-
+    request.onreadystatechange = function () 
+    {
+        if (this.readyState == 4 && this.status == 200) 
+        {
             responseID = request.responseText;
             console.log(responseID);
             jsontoarray(responseID);
@@ -34,7 +35,6 @@ function jsontoarray()
         if (this.readyState == 4 && this.status == 200)
         {
             //haal de json file op
-            
             messages = JSON.parse(xmlhttp.responseText);
             console.log(messages);
             for (let x = 0; x < Object.keys(messages).length; x++) 
@@ -50,7 +50,6 @@ functie om een tabel te maken waarin je de foto kunt verwijderen of kunt laten z
 */
 function createTable(link, UserID, ShowBericht)
  {
-
         //maak de table======================================================
         //maak een div aan waar de list elementen in kunnen
         let table = document.createElement("table");
@@ -65,13 +64,13 @@ function createTable(link, UserID, ShowBericht)
         let td3 = tr2.insertCell();
         //plaats de tabel
         document.getElementById("addTable").appendChild(table);
-        table.className = "tableFromJS", "col12"
+        table.className = "tableFromJS", "col12";
         //maak de image en zet hem in de tabel===============================
         //maak een image aan
-        let img = document.createElement("img")
+        let img = document.createElement("img");
         //set de source en de class van de img
         img.src = link;
-        img.className = "imgInTableFromJS"
+        img.className = "imgInTableFromJS";
         //plak de img aan de td
         td1.appendChild(img);
         //laat de img 2 colommen breed zijn
@@ -88,11 +87,10 @@ function createTable(link, UserID, ShowBericht)
             show.checked = "checked";
         }
         // maak de onclicks
-        del.setAttribute("onclick", `deleteTheMessage(${UserID}, ${link})`);
+        del.setAttribute("onclick", "javascript: deleteTheMessage(" + UserID + " , '" + link + "')");
         show.setAttribute("onclick", "javascript: console.log('you clicked laat zien');");
         //plaats de tekst in de buttons
         del.textContent = "verwijder";
-        show.name
         //plaats de buttons in de tabel
         td2.appendChild(del);
         td3.appendChild(show);
@@ -112,7 +110,7 @@ function deleteTheMessage(userID, link)
     {
         if (this.readyState == 4 && this.status == 200) 
         {
-            //console.log(request.responseText);
+            console.log(request.responseText);
             if(request.responseText == true)
             {
                 alert("bericht succesvol verwijderd");

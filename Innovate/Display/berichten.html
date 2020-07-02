@@ -1,23 +1,39 @@
 <script type="text/javascript">
-    var i = 0;//Start punt
-    var images = [];//Array waar alle images in komen
-    var time = 5000;//Hoelang het duurt tot het bericht veranderd
+    var images = [];
 
-    //Berichten lijst
-    images[0] = '../img/message/1.png';
-    images[1] = '../img/message/2.png';
-    images[2] = '../img/message/3.png';
-    images[3] = '../img/message/4.png';
-    images[4] = '../img/message/5.png';
-    images[5] = '../img/message/6.png';
-    images[6] = '../img/message/7.png';
-    images[7] = '../img/message/8.png';
+    function getNews()
+    {
+        localStorage.clear();
+        //maak een api call
+        let xmlhttp = new XMLHttpRequest();
+        let messages = null;
+        xmlhttp.open("GET", "message.json", true);
+        
+        xmlhttp.onreadystatechange = function () 
+        {
+            if (this.readyState == 4 && this.status == 200)
+            {
+                //haal de json file op
+                var images = [];
+                messages = JSON.parse(xmlhttp.responseText);
+                for (let x = 0; x < Object.keys(messages).length; x++) 
+                {
+                    images[x] = messages[x].Link;
+                    console.log(messages[x].Link);
+                }
+            }
+        }
+        xmlhttp.send(null);
+    }
 
     //Bericht veranderen
     function changeImg()
     {
+        getNews();
+        console.log(images);
+        var i = 0;//Start punt
+        var time = 5000;//Hoelang het duurt tot het bericht veranderd
         document.slide.src = images[i];
-
         if(i < images.length - 1)
         {
             i++;
@@ -26,7 +42,6 @@
         {
             i = 0;
         }
-
         setTimeout("changeImg()", time);
     }
     //Hierdoor word de functie aangeroepen als de applicatie word gestart
