@@ -220,6 +220,9 @@ function showMessage()
     '<div id=addTable></div>'
     );
     getMessages();
+    //test
+    //locateElement("StormTest",'<div id=addTable></div>');
+    //createTable("../img/berichten/1.png");
 }
 
 /**
