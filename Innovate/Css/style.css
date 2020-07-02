@@ -331,9 +331,8 @@ button:active
 .tweakersRSS
 {
     width: 97.5%;
-    bottom: 15%;
+    bottom: 17%;
     position: absolute;
-    border-bottom: 3px solid black;
 }
 
 .nuRSS
@@ -341,6 +340,7 @@ button:active
     width: 97.5%;
     bottom: 0;
     position: absolute;
+    border-top: 3px solid black;
 }
 
 #rss
