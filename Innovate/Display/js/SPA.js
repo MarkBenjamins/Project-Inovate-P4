@@ -92,8 +92,6 @@ function showNewsfeed()
  * Functie die de inhoud van de login pagina laat zien.
  * @note Om dit te doen moet de pagina eerst leeg gemaakt worden door de clearAllData() functie.
  * @note Daarna word er gekeken of er is ingelogd, zodat de extra optie knoppen er bij komen.
- * @bug form is al gedefineerd 
- * @todo fix de bug
  */
 function showLogonPage()
 {
@@ -224,7 +222,7 @@ function showMessage()
 
 /**
  * Functie om je uit te loggen en alle data te wissen
- * @note Het verwijderd ook de afbeeldingen die je in de fileuploader hbet staan.
+ * @note Het verwijderd ook de afbeeldingen die je in de fileuploader hebt staan.
  */
 function loguitkill()
 {
@@ -282,7 +280,6 @@ function enabelAllButtons()
 
         locateElement("newsfeedLogo",
         '<img onclick="showNewsfeed()" src="../img/icons-scherm/logo.png" alt="Logo" class="image"></img>');
-        //sessionCheck();
     }
 }
 
@@ -315,9 +312,5 @@ function logout()
     request.open("POST", "../Display/DBFunction.php", true);
     request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
-    // @Avijn doet dit iets?
-    request.onreadystatechange = function ()
-    {
-    }
     request.send(data);
 }
