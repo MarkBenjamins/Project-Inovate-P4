@@ -407,12 +407,12 @@ table, th, td {
 .TableFromJS
 {
     height: auto;
-    width: 40%;
+    width: 45%;
 }
 .imgInTableFromJS
 {
     border: none;
-    height: 200px;
+    height: 300px;
     width: 100%;
 }
 
