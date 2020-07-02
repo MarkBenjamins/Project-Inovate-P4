@@ -1,4 +1,6 @@
+// Counter voor de functie makeDetails().
 let count = 0;
+
 /**
  * Functie om door de waardes van de JSON file heen te loopen.
  * @note Het aantal loops is afhankelijk van de grote van de JSON File
