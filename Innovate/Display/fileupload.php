@@ -22,14 +22,14 @@ function saveImage($data)
 {
     $file = $data["tmp_name"];
     $location = '../img/message/';
-   
+
     if(move_uploaded_file($data["tmp_name"], $location . $data["name"]))
     {
-       echo("Message added!");
+        echo("Message added!");
     }
     else 
     {
-    	echo"Message NOT added, Try another .jpg, .jpeg or a .png file";
+        echo"Message NOT added, Try another .jpg, .jpeg or a .png file";
     }
 }
 
@@ -51,26 +51,26 @@ function sendtodbo($data)
         $sql = "INSERT INTO bericht (userID, link, ShowBericht) VALUES (?, ?, ?)";
 
         if(!$stmt = mysqli_prepare($conn, $sql)) 
-	    {
-		    die("Gegeven statement niet kunnen preparen");
-	    }
+        {
+            die("Gegeven statement niet kunnen preparen");
+        }
 
-	    if(!mysqli_stmt_bind_param($stmt, "isi", $id, $location, $null))
-	    {
-		    die("Could not bind the parameters to the prepared statment");
-	    }
+        if(!mysqli_stmt_bind_param($stmt, "isi", $id, $location, $null))
+        {
+            die("Could not bind the parameters to the prepared statment");
+        }
 
-	    if(!mysqli_stmt_execute($stmt))
-	    {
-		    die("could not execute the prepared statment");
-	    }
-	    mysqli_stmt_close($stmt);
+        if(!mysqli_stmt_execute($stmt))
+        {
+            die("could not execute the prepared statment");
+        }
+        mysqli_stmt_close($stmt);
         echo("Bericht toegevoegd");
         getMessage();
     }
     else 
     {
-	    echo("Dit bericht staat al in de database");
+        echo("Dit bericht staat al in de database");
     }
 }
 
@@ -87,15 +87,15 @@ function checkForDouble($id, $location)
     else 
     {
         if(!mysqli_stmt_bind_param($stmt, "is", $id, $location))
-	    {
-		    die("Could not bind the parameters to the prepared statment");
-	    }
+        {
+            die("Could not bind the parameters to the prepared statment");
+        }
 
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
         $rowcount = mysqli_num_rows($result);
 
-	    if($rowcount == 0)
+        if($rowcount == 0)
         {
             return true;
         }    
@@ -128,7 +128,6 @@ function getMessage()
     }      
     mysqli_stmt_close($stmt);
 }
-
 
 function getID($data)
 {
