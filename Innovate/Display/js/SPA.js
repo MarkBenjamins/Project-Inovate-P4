@@ -260,24 +260,24 @@ function enabelAllButtons()
             aanwezigheid = "../img/icons-scherm/aanwezigheid_wit.png";
             message = "../img/icons-scherm/addmessage_wit.png";
         }
+        //Hier worden de calssen van het menu en de darkmode aangepast zodat ze op een klein scherm niet meer naast elkaar maar onder elkaar staan, voor meer ruimte voor de knoppen.
         document.getElementById("menu").setAttribute('class', 'col-12 col-sm-12 col-md-12 col-lg-5 col-xl-3 margintop');
         document.getElementById("darmodediv").setAttribute('class', 'col-12 col-sm-2 col-md-2 col-lg-1 col-xl-1 darkmodeBox margintop');
+        //De div waar de inlogknop inzit wordt kleiner gemaakt, zodat de andere knoppen erbij kunnen. Ook wordt hij hier in het midden gezet van de div.
         document.getElementById("buttonMenu").setAttribute('class', 'col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin buttonlogincenter')
+        //Hier worden de divs voor de extra knoppen aangemaakt.
         var extraButtons = document.createElement("knopjes");
         extraButtons.innerHTML = 
         '<!--  Alleen als er ingelogd is: Extra buttons  -->' +
         '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin buttonlogincenter" id="aanwezigheidLogo"></div>' +
         '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin buttonlogincenter" id="addMessageLogo"></div>' +
         '<div class="col-6 col-sm-6 col-md-3 col-lg-3 col-xl-3 buttonlogin buttonlogincenter" id="newsfeedLogo"></div>';  
-
         document.getElementById("menu").appendChild(extraButtons);
-        
+        //Hier word inhoud in de zojuist gemaakte divs gezet.
         locateElement("aanwezigheidLogo",
         '<img onclick="showWijzigBeschikbaarheid()" id="aanwezigheidLogoColorChange" src="' + aanwezigheid + '" alt="Aanwezigheid" class="image"></img>');
-
         locateElement("addMessageLogo",
         '<img onclick="showMessage()" id="addMessageLogoColorChange" src="' + message + '" alt="Add Message" class="image"></img>');
-
         locateElement("newsfeedLogo",
         '<img onclick="showNewsfeed()" src="../img/icons-scherm/logo.png" alt="Logo" class="image"></img>');
     }
