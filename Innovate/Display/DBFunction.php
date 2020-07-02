@@ -2,34 +2,35 @@
 /*
     Execute Functions    
 */
+//Checked of username en password gezet zijn
 if(isset($_POST["username"]) && isset($_POST["password"]))
 {
     $data = $_POST;
 	unset($_POST);
 	getData($data);
 }
-
+//Checked of logout, lougoutid en logouttoken gezet zijn
 if(isset($_POST["logout"]) && isset($_POST["logoutid"]) && isset($_POST["logouttoken"]))
 {
 	$data = $_POST;
 	unset($_POST);
 	logout($data);
 }
-
+//Checked of id en token gezet zijn
 if(isset($_POST["id"]) && isset($_POST["token"]))
 {
 	$data = $_POST;
 	unset($_POST);
 	sessioncheck($data);
 }
-
+//Checked of docentID, docentTokenID en status gezet zijn
 if(isset($_POST["docentID"]) && isset($_POST["docentToken"]) && isset($_POST["status"]))
 {
 	$data = $_POST;
 	unset($_POST);
 	setStatus($data);
 }
-
+//Krijgt data waarmee het mogelijk is om de status aan te passen in de database en doet dat
 function setStatus($data)
 {
 	require "../Include/DBConnect.php";
@@ -70,7 +71,7 @@ function setStatus($data)
     echo ('</p></div>');
     GetDocent();
 }
-
+//vraagt de data van de docenten op uit de database en schrijft deze weg in de teacher.json
 function GetDocent()
 {
 	require "../Include/DBConnect.php";
@@ -97,7 +98,10 @@ function GetDocent()
     }      
     mysqli_stmt_close($stmt);
 }
-
+//Checked de login tegen de database 
+//krijgt een token uit clienttoken en servertoken
+//encrypt de ID en stuurt deze mee met de clientToken
+//De clienttoken + de servertoken maken samen een volledige token die vergeleken word met de token + id in de database
 function getData($data)
 {
 	require "../Include/DBConnect.php";
@@ -167,7 +171,7 @@ function getData($data)
 		echo "Wrong Username or Password";
 	}
 }
-
+//Maakt de volledige token
 function createToken()
 {
 	$token = 0;	
@@ -178,19 +182,19 @@ function createToken()
 	}
 	return $token;
 }
-
+//pakt het stuk van de token wat de clienttoken word
 function clientToken($token)
 {
 	$newToken = substr($token, 0, (strlen($token) * 0.5));
 	return $newToken;
 }
-
+//Pakt het stuk van de token wat de servertoken word
 function serverToken($token)
 {
 	$newToken = substr($token, (strlen($token) * 0.5), strlen($token));
 	return $newToken;
 }
-
+//Checked de volledige token + id tegen de database als een sessie vertificatie
 function checkDBForToken($id)
 {
 	require "../Include/DBConnect.php";
@@ -223,7 +227,7 @@ function checkDBForToken($id)
 	}
 	mysqli_stmt_close($stmt);
 }
-
+//Als de sessie geen resultaat oplevered tijdens het vergelijken met de database word deze token verwijdered en de sessie unset
 function deleteTokenFromDB($id)
 {
 	require "../Include/DBConnect.php";
@@ -246,7 +250,7 @@ function deleteTokenFromDB($id)
 	}
 	mysqli_stmt_close($stmt);
 }
-
+//Schrijft de token + iD weg in de database
 function tokenToDB($id, $token)
 {
 	require "../Include/DBConnect.php";
@@ -269,7 +273,7 @@ function tokenToDB($id, $token)
 	}
 	mysqli_stmt_close($stmt);
 }
-
+//Hier staan de encryptie informatie van het ID 
 function getEncrypt()
 {
 	session_start();
@@ -281,7 +285,7 @@ function getEncrypt()
 	$_SESSION["cipher"] = $cipher;
 	$_SESSION["iv"] = $iv;
 }
-
+//Checked of de sessie nog volledig is in vergelijking tot de database
 function sessioncheck($data)
 {
 	require "../Include/DBConnect.php";
@@ -318,7 +322,7 @@ function sessioncheck($data)
 	}
 	mysqli_stmt_close($stmt);
 }
-
+//Logt de user uit door middle van de id + token uit de database te verwijderen en de sessie te stoppen
 function logout($data)
 {
 	require "../Include/DBConnect.php";
