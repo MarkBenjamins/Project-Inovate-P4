@@ -1,6 +1,6 @@
 <script type="text/javascript">
     var i = 0;//Start punt
-    var images = [];
+    var images = [];//Array waar alle images in komen
     var time = 5000;//Hoelang het duurt tot het bericht veranderd
 
     //Berichten lijst
@@ -29,8 +29,16 @@
 
         setTimeout("changeImg()", time);
     }
-
+    //Hierdoor word de functie aangeroepen als de applicatie word gestart
     window.onload = changeImg;
 </script>
 
-<img name="slide" width="100%" height="100%">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <img name="slide" width="100%" height="100%" alt="Nieuwsberichten">
+    </body>
+</html>
