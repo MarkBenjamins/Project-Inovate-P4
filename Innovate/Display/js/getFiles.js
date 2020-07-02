@@ -1,3 +1,4 @@
+//Update de messages.json file door een call naar de desbetrefende functie te maken 
 function getMessages() 
 {
     let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
@@ -18,6 +19,7 @@ function getMessages()
     request.send(data);
 }
 
+//Vraagt de message.json file op en stopt deze in een array
 function jsontoarray()
 {
     document.getElementById("addTable").innerHTML = "";
@@ -97,7 +99,7 @@ function createTable(link, UserID, ShowBericht)
         td3.appendChild(show);
         td3.appendChild(showlabel);
 }
-
+//Verwijdered de message uit de database en verwijdered deze ook van de server
 function deleteTheMessage(userID, link)
 {
     let data = "deleteID=" + userID + "&deleteLink=" + link;
@@ -118,7 +120,7 @@ function deleteTheMessage(userID, link)
     }
     request.send(data);
 }
-
+//Past de message aan van laten zien of niet laten zien aan de hand van de checkbox
 function showTheMessage(userID, link, showMessage)
 {
     let data = "showID=" + userID + "&showLink=" + link + "&showMessage=" + showMessage;

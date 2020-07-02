@@ -1,37 +1,40 @@
-<?php   
+<?php
+//Kijkt of $_FILES["image"] gezet is
 if(isset($_FILES['image']))
 {
     $data = $_FILES['image'];
     unset($_FILES);
     saveImage($data);
 }
+//Kijkt of $_POST["idDB"] en isset($_POST["tokenDB"] en isset($_POST["nameDB"] gezet is
 if(isset($_POST["idDB"]) && isset($_POST["tokenDB"]) && isset($_POST["nameDB"]))
 {
     $data = $_POST;
     unset($_POST);
     sendtodbo($data);
 }
+//Kijkt of isset($_GET["id"]) en isset($_GET["token"]) gezet is
 if(isset($_GET["id"]) && isset($_GET["token"]))
 {
     $data = $_GET;
     unset($_GET);
     getID($data);
 }
-
+//Kijkt of isset($_POST["deleteID"]) en isset($_POST["deleteLink"])) gezet is
 if(isset($_POST["deleteID"]) && isset($_POST["deleteLink"]))
 {
     $data = $_POST;
     unset($_POST);
     deleteImg($data);
 }
-
+//Kijkt of isset($_POST["showID"]) en isset($_POST["showLink"]) en isset($_POST["showMessage"]) gezet is
 if(isset($_POST["showID"]) && isset($_POST["showLink"]) && isset($_POST["showMessage"]))
 {
     $data = $_POST;
     unset($_POST);
     setShowMesssage($data);
 }
-
+//Slaat het bericht op, op de server
 function saveImage($data)
 {
     $file = $data["tmp_name"];
@@ -46,7 +49,7 @@ function saveImage($data)
         echo"Message NOT added, Try another .jpg, .jpeg or a .png file";
     }
 }
-
+//verzend de locatie van het bericht + de ID van de gebruiker naar de database
 function sendtodbo($data)
 {
     require "../Include/DBConnect.php";
@@ -87,7 +90,7 @@ function sendtodbo($data)
         echo("Dit bericht staat al in de database");
     }
 }
-
+//Controlleerd op in de database of de locatie en de UserID combinatie al bestaat in de database
 function checkForDouble($id, $location)
 {
     require "../Include/DBConnect.php";
@@ -116,7 +119,7 @@ function checkForDouble($id, $location)
     }      
     mysqli_stmt_close($stmt);
 }
-
+//Vraagt alle berichten uit de database op en zet deze in message.json
 function getMessage()
 {
 	require "../Include/DBConnect.php";
@@ -142,7 +145,7 @@ function getMessage()
     }      
     mysqli_stmt_close($stmt);
 }
-
+//decrypt het ID van de gebruiker naar een leesbaar ID
 function getID($data)
 {
     getMessage();
@@ -154,33 +157,7 @@ function getID($data)
     $id = openssl_decrypt($data["id"], $cipher, $token, $options=0, $iv);
     echo $id;
 }
-
-function updateImg()
-{
-    require "../Include/DBConnect.php";
-
-    $sql = "UPDATE  FROM bericht";
-
-    if(!$stmt = mysqli_prepare($conn, $sql))
-    {
-        die("Could not prepare the given statment");
-    }
-    else 
-    {
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-
-        foreach($result as $row)
-        {
-            $obj[] = $row;        
-		}	
-
-        $messages = json_encode($obj, JSON_FORCE_OBJECT);
-        file_put_contents('message.json', $messages);
-    }      
-    mysqli_stmt_close($stmt);
-}
-
+//Verwijdered de link en het bestand uit de database en de server
 function deleteImg($data)
 {
     require "../Include/DBConnect.php";
@@ -206,7 +183,7 @@ function deleteImg($data)
     getMessage();
     return true;
 }
-
+//Update de showMessage van 0 naar 1 of van 1 naar 0
 function setShowMesssage($data)
 {
     require "../Include/DBConnect.php";

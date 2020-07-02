@@ -93,6 +93,7 @@ function checkUsernameAndPassword()
 	)
 }
 
+//Verstuurd de username en het wachtwoord naar de php file waar deze vergeleken word tegen de database
 function login(username, password) 
 {
 	let data = "username=" + username + "& password=" + password;
@@ -119,6 +120,7 @@ function login(username, password)
 	request.send(data);
 }
 
+//Checked of de sessie nog in leven is of dat deze verandered is of door iemand anders gekopieerd word, als de sessie niet goed is word de gebruiker uitgelogd
 function sessionCheck() 
 {
 	if (typeof sessionStorage.id !== 'undefined') 
@@ -147,6 +149,7 @@ function sessionCheck()
 	}
 }
 
+//Logt de gebruiker uit bij het indrukken van de logout knop
 function logout() 
 {
 	let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
