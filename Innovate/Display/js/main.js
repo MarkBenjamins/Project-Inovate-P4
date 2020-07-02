@@ -27,6 +27,6 @@ getCurrentDate();
 import { getDetails } from './getDetails.js';
 getDetails();
 
-// Reload de pagina om het uur zodat de RSS-feed wordt geupdate.
+// Reload de pagina om het uur.
 function reload() { location.reload(); }
 setInterval(reload, 3600000);

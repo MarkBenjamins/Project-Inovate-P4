@@ -28,20 +28,18 @@ function getWeek()
 function getCurrentDate()
 {
     let week = getWeek();
+    //maak een array met alle maanden
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    //haal de gewensten maand in tekst op aan de hand van een getal in de array
+    //0=januari,1=februari, etc.
     let month = months[TODAY.getMonth()];
     let day = TODAY.getDate();
+    //doe hetzelefde maar dan met dagen
     let weekDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     let weekDay = weekDays[TODAY.getDay()]
-    if(month < 10)
-    {
-        month = "0" + month;
-    }
-    if(day < 10)
-    {
-        day = "0" + day;
-    }
+    //voeg de gehele datum samen
     let date = weekDay + " " + day +  " " + month + " WeekNr. " + week;
+    //plak de datum op de pagina
     document.getElementById('date').innerHTML = date;
 }
 

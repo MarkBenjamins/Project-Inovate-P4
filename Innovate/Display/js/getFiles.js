@@ -22,6 +22,7 @@ function jsontoarray()
 {
     document.getElementById("addTable").innerHTML = "";
     localStorage.clear();
+    //maak een api call
     let xmlhttp = new XMLHttpRequest();
     let messages = null;
     xmlhttp.open("GET", "message.json", true);
@@ -32,6 +33,7 @@ function jsontoarray()
     {
         if (this.readyState == 4 && this.status == 200)
         {
+            //haal de json file op
             messages = JSON.parse(xmlhttp.responseText);
             for (let x = 0; x < Object.keys(messages).length; x++) 
             {
@@ -43,7 +45,9 @@ function jsontoarray()
     }
     xmlhttp.send(null);
 }
-
+/*
+functie om een tabel te maken waarin je de foto kunt verwijderen of kunt laten zien
+*/
 function createTable(link, UserID)
  {
         //maak de table======================================================

@@ -6,7 +6,7 @@ let count = 0;
 function getDetails()
 {
     document.getElementById("list").innerHTML = "";
-    //localStorage.clear();
+    //maak een call naar de api
     let xmlhttp = new XMLHttpRequest();
     let teacher = [];
     let myObj = null;
@@ -15,9 +15,10 @@ function getDetails()
     xmlhttp.onload = function () 
     {
         myObj = JSON.parse(xmlhttp.responseText);
-
+        //haal de JSON-file op
         for (let x = 0; x < Object.keys(myObj).length; x++) 
         {
+            //maak een array met alle benodigd
             teacher[x] = { fname: myObj[x].voornaam, lname: myObj[x].achternaam, status: myObj[x].status };
             makeDetails(teacher[x].fname, teacher[x].lname, teacher[x].status);
         }
@@ -87,6 +88,7 @@ function makeDetails(Fname, Lname, Status)
     statusElem.style.backgroundColor = colour;
     statusElem.setAttribute("class", "TeacherStatus");
 
+    // zorg dat de elementen omstebeurten van stijl veranderen
     if(count%2 == 0)
     {
         divElem.setAttribute("class", "TeacherBlock1");
