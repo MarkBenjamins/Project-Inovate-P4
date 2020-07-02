@@ -18,6 +18,13 @@ if(isset($_GET["id"]) && isset($_GET["token"]))
     getID($data);
 }
 
+if(isset($_POST["deleteID"]) && isset($_POST["deleteLink"]))
+{
+    $data = $_POST;
+    unset($_POST);
+    deleteImg($data);
+}
+
 function saveImage($data)
 {
     $file = $data["tmp_name"];
@@ -107,7 +114,7 @@ function getMessage()
 {
 	require "../Include/DBConnect.php";
 
-    $sql = "SELECT UserID, Link FROM bericht";
+    $sql = "SELECT UserID, Link, ShowBericht FROM bericht";
 
     if(!$stmt = mysqli_prepare($conn, $sql))
     {
@@ -139,5 +146,57 @@ function getID($data)
     $token = $data["token"] . $_SESSION["serverToken"];
     $id = openssl_decrypt($data["id"], $cipher, $token, $options=0, $iv);
     echo $id;
+}
+
+function updateImg()
+{
+    require "../Include/DBConnect.php";
+
+    $sql = "UPDATE  FROM bericht";
+
+    if(!$stmt = mysqli_prepare($conn, $sql))
+    {
+        die("Could not prepare the given statment");
+    }
+    else 
+    {
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        foreach($result as $row)
+        {
+            $obj[] = $row;        
+		}	
+
+        $messages = json_encode($obj, JSON_FORCE_OBJECT);
+        file_put_contents('message.json', $messages);
+    }      
+    mysqli_stmt_close($stmt);
+}
+
+function deleteImg($data)
+{
+    require "../Include/DBConnect.php";
+    $deleteid = $data["deleteID"];
+    $deletelink = $data["deleteLink"];
+
+    $sql = "DELETE FROM bericht WHERE UserID = ? AND Link = ?";
+
+    if(!$stmt = mysqli_prepare($conn, $sql))
+    {
+        die("Could not prepare the given statment");
+    }
+    else 
+    {
+        if(!mysqli_stmt_bind_param($stmt, "is", $deleteid, $deletelink))
+        {
+            die("Could not bind the parameters to the given statment");
+        }
+        mysqli_stmt_execute($stmt);
+        unlink($deletelink);
+    }      
+    mysqli_stmt_close($stmt);
+    getMessage();
+    return true;
 }
 ?>

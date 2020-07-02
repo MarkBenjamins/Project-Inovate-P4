@@ -39,7 +39,7 @@ function jsontoarray()
             console.log(messages);
             for (let x = 0; x < Object.keys(messages).length; x++) 
             {
-               createTable(messages[x].Link, messages[x].UserID);
+               createTable(messages[x].Link, messages[x].UserID, messages[x].ShowBericht);
             }
         }
     }
@@ -48,8 +48,9 @@ function jsontoarray()
 /*
 functie om een tabel te maken waarin je de foto kunt verwijderen of kunt laten zien
 */
-function createTable(link, UserID)
+function createTable(link, UserID, ShowBericht)
  {
+
         //maak de table======================================================
         //maak een div aan waar de list elementen in kunnen
         let table = document.createElement("table");
@@ -78,24 +79,71 @@ function createTable(link, UserID)
         //maak de knoppen====================================================
         //maak de buttons aan
         let del = document.createElement("button");
-        let show = document.createElement("button");
+        let show = document.createElement("input");
+        let showlabel = document.createElement("label");
+        show.type = "checkbox";
+        showlabel.textContent = "laten zien?";
+        if (ShowBericht == 1)
+        {
+            show.checked = "checked";
+        }
         // maak de onclicks
-        del.setAttribute("onclick", "javascript: console.log('you clicked verwijderen');");
+        del.setAttribute("onclick", `deleteTheMessage(${UserID}, ${link})`);
         show.setAttribute("onclick", "javascript: console.log('you clicked laat zien');");
         //plaats de tekst in de buttons
         del.textContent = "verwijder";
-        show.textContent = "laat zien";
+        show.name
         //plaats de buttons in de tabel
         td2.appendChild(del);
         td3.appendChild(show);
+        td3.appendChild(showlabel);
 }
 
-function deleteMessage()
+function deleteTheMessage(userID, link)
 {
-    
+    console.log("test");
+    let data = "deleteID=" + userID + "&deleteLink=" + link;
+
+    let request = new XMLHttpRequest();
+    request.open("POST", "../Display/fileupload.php", true);
+    request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    request.onreadystatechange = function () 
+    {
+        if (this.readyState == 4 && this.status == 200) 
+        {
+            //console.log(request.responseText);
+            if(request.responseText == true)
+            {
+                alert("bericht succesvol verwijderd");
+            }
+        }
+    }
+    request.send(data);
 }
 
-function showMessage()
+function showTheMessage(userID, link, showMessage)
 {
-    
+    // let id = sessionStorage.id.slice(0, sessionStorage.id.search("&"));
+    // let token = sessionStorage.id.slice(sessionStorage.id.search("&") + 1, sessionStorage.id.length);
+    // let name = file.name;
+    // let data = "idDB=" + id + "&tokenDB=" + token + "&nameDB=" + name;
+
+    // let request = new XMLHttpRequest();
+    // request.open("POST", "../Display/fileupload.php", true);
+    // request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+    // request.onreadystatechange = function () 
+    // {
+    //     if (this.readyState == 4 && this.status == 200) 
+    //     {
+    //         alert(request.responseText);
+    //         getID();
+    //         if (request.responseText == "Bericht toegevoegd")
+    //         {
+    //             sendImage(file);
+    //         }
+    //     }
+    // }
+    // request.send(data);
 }
